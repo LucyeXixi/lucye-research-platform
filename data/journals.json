@@ -1,0 +1,5604 @@
+[
+  {
+    "name": "4OR-A Quarterly Journal of Operations Research",
+    "abbr": "4OR-Q J OPER RES",
+    "issn": "1619-4500",
+    "eissn": "",
+    "if_2024": 2.6,
+    "if_5year": 2.5,
+    "cas_2025": {
+      "major": "管理学",
+      "tier": 2,
+      "top": false,
+      "review": false
+    },
+    "jcr": "Q2",
+    "review_weeks": null,
+    "acceptance_rate": null,
+    "apc_usd": null,
+    "open_access": "Closed",
+    "articles_per_year": 9,
+    "chinese_ratio": null,
+    "self_cite_rate": 0.077,
+    "subject_areas": [
+      "管理科学",
+      "运筹学与管理科学"
+    ],
+    "letpub_url": "https://www.letpub.com.cn/index.php?journalid=1&page=journalapp&view=detail",
+    "scraped_at": "2026-05-14"
+  },
+  {
+    "name": "ACADEMIC MEDICINE",
+    "abbr": "ACAD MED",
+    "issn": "1040-2446",
+    "eissn": "",
+    "if_2024": 5.2,
+    "if_5year": 6.5,
+    "cas_2025": {
+      "major": "教育学",
+      "tier": 1,
+      "top": true,
+      "review": false
+    },
+    "jcr": "Q1",
+    "review_weeks": null,
+    "acceptance_rate": null,
+    "apc_usd": null,
+    "open_access": "Closed",
+    "articles_per_year": 252,
+    "chinese_ratio": null,
+    "self_cite_rate": 0.115,
+    "subject_areas": [
+      "医学",
+      "卫生保健"
+    ],
+    "letpub_url": "https://www.letpub.com.cn/index.php?journalid=11&page=journalapp&view=detail",
+    "scraped_at": "2026-05-14"
+  },
+  {
+    "name": "Accountability in Research-Ethics Integrity and Policy",
+    "abbr": "ACCOUNT RES",
+    "issn": "0898-9621",
+    "eissn": "",
+    "if_2024": 4.0,
+    "if_5year": 3.7,
+    "cas_2025": {
+      "major": "哲学",
+      "tier": 3,
+      "top": false,
+      "review": false
+    },
+    "jcr": "Q1",
+    "review_weeks": null,
+    "acceptance_rate": null,
+    "apc_usd": null,
+    "open_access": "Closed",
+    "articles_per_year": 58,
+    "chinese_ratio": null,
+    "self_cite_rate": 0.125,
+    "subject_areas": [
+      "MEDICAL ETHICS"
+    ],
+    "letpub_url": "https://www.letpub.com.cn/index.php?journalid=14&page=journalapp&view=detail",
+    "scraped_at": "2026-05-14"
+  },
+  {
+    "name": "ACM COMPUTING SURVEYS",
+    "abbr": "ACM COMPUT SURV",
+    "issn": "0360-0300",
+    "eissn": "",
+    "if_2024": 28.0,
+    "if_5year": 26.3,
+    "cas_2025": {
+      "major": "计算机科学",
+      "tier": 1,
+      "top": true,
+      "review": true
+    },
+    "jcr": "Q1",
+    "review_weeks": null,
+    "acceptance_rate": null,
+    "apc_usd": null,
+    "open_access": "Closed",
+    "articles_per_year": 318,
+    "chinese_ratio": null,
+    "self_cite_rate": 0.014,
+    "subject_areas": [
+      "工程技术",
+      "计算机：理论方法"
+    ],
+    "letpub_url": "https://www.letpub.com.cn/index.php?journalid=19&page=journalapp&view=detail",
+    "scraped_at": "2026-05-14"
+  },
+  {
+    "name": "ACTA ASTRONAUTICA",
+    "abbr": "ACTA ASTRONAUT",
+    "issn": "0094-5765",
+    "eissn": "",
+    "if_2024": 3.4,
+    "if_5year": 3.5,
+    "cas_2025": {
+      "major": "物理与天体物理",
+      "tier": 1,
+      "top": false,
+      "review": false
+    },
+    "jcr": "Q1",
+    "review_weeks": 39.1,
+    "acceptance_rate": 0.5,
+    "apc_usd": null,
+    "open_access": "Closed",
+    "articles_per_year": 679,
+    "chinese_ratio": null,
+    "self_cite_rate": 0.206,
+    "subject_areas": [
+      "工程技术",
+      "工程：宇航"
+    ],
+    "letpub_url": "https://www.letpub.com.cn/index.php?journalid=58&page=journalapp&view=detail",
+    "scraped_at": "2026-05-14"
+  },
+  {
+    "name": "ACTA ASTRONOMICA",
+    "abbr": "ACTA ASTRONOM",
+    "issn": "0001-5237",
+    "eissn": "",
+    "if_2024": 0.6,
+    "if_5year": 1.5,
+    "cas_2025": {
+      "major": "物理与天体物理",
+      "tier": 3,
+      "top": false,
+      "review": false
+    },
+    "jcr": "Q4",
+    "review_weeks": null,
+    "acceptance_rate": null,
+    "apc_usd": null,
+    "open_access": "Closed",
+    "articles_per_year": 7,
+    "chinese_ratio": null,
+    "self_cite_rate": 0.0,
+    "subject_areas": [
+      "地学天文",
+      "天文与天体物理"
+    ],
+    "letpub_url": "https://www.letpub.com.cn/index.php?journalid=59&page=journalapp&view=detail",
+    "scraped_at": "2026-05-14"
+  },
+  {
+    "name": "ACTA MATHEMATICA",
+    "abbr": "ACTA MATH-DJURSHOLM",
+    "issn": "0001-5962",
+    "eissn": "",
+    "if_2024": 6.7,
+    "if_5year": 5.9,
+    "cas_2025": {
+      "major": "数学",
+      "tier": 3,
+      "top": true,
+      "review": false
+    },
+    "jcr": "Q1",
+    "review_weeks": null,
+    "acceptance_rate": null,
+    "apc_usd": null,
+    "open_access": "Closed",
+    "articles_per_year": 9,
+    "chinese_ratio": null,
+    "self_cite_rate": 0.0,
+    "subject_areas": [
+      "数学",
+      "数学"
+    ],
+    "letpub_url": "https://www.letpub.com.cn/index.php?journalid=113&page=journalapp&view=detail",
+    "scraped_at": "2026-05-14"
+  },
+  {
+    "name": "ACTA PHYSICA SINICA",
+    "abbr": "ACTA PHYS SIN-CH ED",
+    "issn": "1000-3290",
+    "eissn": "",
+    "if_2024": 0.8,
+    "if_5year": 0.8,
+    "cas_2025": {
+      "major": "物理与天体物理",
+      "tier": 2,
+      "top": false,
+      "review": false
+    },
+    "jcr": "Q3",
+    "review_weeks": 9.12,
+    "acceptance_rate": 0.88,
+    "apc_usd": null,
+    "open_access": "Closed",
+    "articles_per_year": 768,
+    "chinese_ratio": null,
+    "self_cite_rate": 0.25,
+    "subject_areas": [
+      "物理",
+      "物理：综合"
+    ],
+    "letpub_url": "https://www.letpub.com.cn/index.php?journalid=159&page=journalapp&view=detail",
+    "scraped_at": "2026-05-14"
+  },
+  {
+    "name": "ACTA SCIENTIARUM-TECHNOLOGY",
+    "abbr": "ACTA SCI-TECHNOL",
+    "issn": "1806-2563",
+    "eissn": "",
+    "if_2024": 0.6,
+    "if_5year": 0.7,
+    "cas_2025": {
+      "major": "综合性期刊",
+      "tier": 3,
+      "top": false,
+      "review": false
+    },
+    "jcr": "Q3",
+    "review_weeks": null,
+    "acceptance_rate": null,
+    "apc_usd": null,
+    "open_access": "OA",
+    "articles_per_year": 60,
+    "chinese_ratio": null,
+    "self_cite_rate": 0.0,
+    "subject_areas": [
+      "综合性期刊",
+      "综合性期刊"
+    ],
+    "letpub_url": "https://www.letpub.com.cn/index.php?journalid=176&page=journalapp&view=detail",
+    "scraped_at": "2026-05-14"
+  },
+  {
+    "name": "AIDS",
+    "abbr": "AIDS",
+    "issn": "0269-9370",
+    "eissn": "",
+    "if_2024": 3.1,
+    "if_5year": 3.3,
+    "cas_2025": {
+      "major": "医学",
+      "tier": 1,
+      "top": false,
+      "review": false
+    },
+    "jcr": "Q2",
+    "review_weeks": null,
+    "acceptance_rate": 0.5,
+    "apc_usd": null,
+    "open_access": "Closed",
+    "articles_per_year": 231,
+    "chinese_ratio": null,
+    "self_cite_rate": 0.065,
+    "subject_areas": [
+      "医学",
+      "病毒学"
+    ],
+    "letpub_url": "https://www.letpub.com.cn/index.php?journalid=349&page=journalapp&view=detail",
+    "scraped_at": "2026-05-14"
+  },
+  {
+    "name": "Algebra and Logic",
+    "abbr": "ALGEBR LOG+",
+    "issn": "0002-5232",
+    "eissn": "",
+    "if_2024": 0.6,
+    "if_5year": 0.6,
+    "cas_2025": {
+      "major": "数学",
+      "tier": 3,
+      "top": false,
+      "review": false
+    },
+    "jcr": "Q2",
+    "review_weeks": null,
+    "acceptance_rate": null,
+    "apc_usd": null,
+    "open_access": "Closed",
+    "articles_per_year": 44,
+    "chinese_ratio": null,
+    "self_cite_rate": 0.167,
+    "subject_areas": [
+      "数学",
+      "数学"
+    ],
+    "letpub_url": "https://www.letpub.com.cn/index.php?journalid=365&page=journalapp&view=detail",
+    "scraped_at": "2026-05-14"
+  },
+  {
+    "name": "ALGEBRA COLLOQUIUM",
+    "abbr": "ALGEBR COLLOQ",
+    "issn": "1005-3867",
+    "eissn": "",
+    "if_2024": 0.4,
+    "if_5year": 0.4,
+    "cas_2025": {
+      "major": "数学",
+      "tier": 2,
+      "top": false,
+      "review": false
+    },
+    "jcr": "Q4",
+    "review_weeks": 60.83,
+    "acceptance_rate": null,
+    "apc_usd": null,
+    "open_access": "Closed",
+    "articles_per_year": 40,
+    "chinese_ratio": null,
+    "self_cite_rate": 0.0,
+    "subject_areas": [
+      "数学",
+      "数学"
+    ],
+    "letpub_url": "https://www.letpub.com.cn/index.php?journalid=366&page=journalapp&view=detail",
+    "scraped_at": "2026-05-14"
+  },
+  {
+    "name": "AMBIO",
+    "abbr": "AMBIO",
+    "issn": "0044-7447",
+    "eissn": "",
+    "if_2024": 5.1,
+    "if_5year": 6.5,
+    "cas_2025": {
+      "major": "环境科学与生态学",
+      "tier": 4,
+      "top": false,
+      "review": false
+    },
+    "jcr": "Q2",
+    "review_weeks": 26.07,
+    "acceptance_rate": null,
+    "apc_usd": null,
+    "open_access": "Closed",
+    "articles_per_year": 137,
+    "chinese_ratio": null,
+    "self_cite_rate": 0.039,
+    "subject_areas": [
+      "环境科学",
+      "工程：环境"
+    ],
+    "letpub_url": "https://www.letpub.com.cn/index.php?journalid=387&page=journalapp&view=detail",
+    "scraped_at": "2026-05-14"
+  },
+  {
+    "name": "Ambix",
+    "abbr": "AMBIX",
+    "issn": "0002-6980",
+    "eissn": "",
+    "if_2024": 0.6,
+    "if_5year": 0.6,
+    "cas_2025": {
+      "major": "哲学",
+      "tier": 2,
+      "top": false,
+      "review": false
+    },
+    "jcr": "Q2",
+    "review_weeks": null,
+    "acceptance_rate": null,
+    "apc_usd": null,
+    "open_access": "Closed",
+    "articles_per_year": 20,
+    "chinese_ratio": null,
+    "self_cite_rate": 0.333,
+    "subject_areas": [
+      "HISTORY & PHILOSOPHY OF SCIENCE"
+    ],
+    "letpub_url": "https://www.letpub.com.cn/index.php?journalid=388&page=journalapp&view=detail",
+    "scraped_at": "2026-05-14"
+  },
+  {
+    "name": "AMERICAN JOURNAL OF BIOETHICS",
+    "abbr": "AM J BIOETHICS",
+    "issn": "1526-5161",
+    "eissn": "",
+    "if_2024": 20.8,
+    "if_5year": 14.7,
+    "cas_2025": {
+      "major": "哲学",
+      "tier": 3,
+      "top": true,
+      "review": false
+    },
+    "jcr": "Q1",
+    "review_weeks": null,
+    "acceptance_rate": null,
+    "apc_usd": null,
+    "open_access": "Closed",
+    "articles_per_year": 37,
+    "chinese_ratio": null,
+    "self_cite_rate": 0.341,
+    "subject_areas": [
+      "社会科学",
+      "科学史与科学哲学"
+    ],
+    "letpub_url": "https://www.letpub.com.cn/index.php?journalid=399&page=journalapp&view=detail",
+    "scraped_at": "2026-05-14"
+  },
+  {
+    "name": "AMERICAN JOURNAL OF PHYSICS",
+    "abbr": "AM J PHYS",
+    "issn": "0002-9505",
+    "eissn": "",
+    "if_2024": 0.9,
+    "if_5year": 0.9,
+    "cas_2025": {
+      "major": "教育学",
+      "tier": 4,
+      "top": false,
+      "review": false
+    },
+    "jcr": "Q3",
+    "review_weeks": 13.04,
+    "acceptance_rate": null,
+    "apc_usd": null,
+    "open_access": "Closed",
+    "articles_per_year": 127,
+    "chinese_ratio": null,
+    "self_cite_rate": 0.111,
+    "subject_areas": [
+      "物理",
+      "物理：综合"
+    ],
+    "letpub_url": "https://www.letpub.com.cn/index.php?journalid=451&page=journalapp&view=detail",
+    "scraped_at": "2026-05-14"
+  },
+  {
+    "name": "AMERICAN SCIENTIST",
+    "abbr": "AM SCI",
+    "issn": "0003-0996",
+    "eissn": "",
+    "if_2024": 0.6,
+    "if_5year": 0.6,
+    "cas_2025": {
+      "major": "综合性期刊",
+      "tier": 4,
+      "top": false,
+      "review": false
+    },
+    "jcr": "Q3",
+    "review_weeks": null,
+    "acceptance_rate": null,
+    "apc_usd": null,
+    "open_access": "Closed",
+    "articles_per_year": 26,
+    "chinese_ratio": null,
+    "self_cite_rate": 0.0,
+    "subject_areas": [
+      "综合性期刊",
+      "综合性期刊"
+    ],
+    "letpub_url": "https://www.letpub.com.cn/index.php?journalid=487&page=journalapp&view=detail",
+    "scraped_at": "2026-05-14"
+  },
+  {
+    "name": "ANGEWANDTE CHEMIE-INTERNATIONAL EDITION",
+    "abbr": "ANGEW CHEM INT EDIT",
+    "issn": "1433-7851",
+    "eissn": "",
+    "if_2024": 17.0,
+    "if_5year": 16.4,
+    "cas_2025": {
+      "major": "化学",
+      "tier": 4,
+      "top": true,
+      "review": false
+    },
+    "jcr": "Q1",
+    "review_weeks": 7.39,
+    "acceptance_rate": 0.28,
+    "apc_usd": null,
+    "open_access": "Closed",
+    "articles_per_year": 4739,
+    "chinese_ratio": null,
+    "self_cite_rate": 0.088,
+    "subject_areas": [
+      "化学",
+      "化学综合"
+    ],
+    "letpub_url": "https://www.letpub.com.cn/index.php?journalid=534&page=journalapp&view=detail",
+    "scraped_at": "2026-05-14"
+  },
+  {
+    "name": "Animal",
+    "abbr": "ANIMAL",
+    "issn": "1751-7311",
+    "eissn": "",
+    "if_2024": 4.2,
+    "if_5year": 4.2,
+    "cas_2025": {
+      "major": "农林科学",
+      "tier": 1,
+      "top": true,
+      "review": false
+    },
+    "jcr": "Q1",
+    "review_weeks": 13.04,
+    "acceptance_rate": null,
+    "apc_usd": null,
+    "open_access": "Closed",
+    "articles_per_year": 294,
+    "chinese_ratio": null,
+    "self_cite_rate": 0.071,
+    "subject_areas": [
+      "农林科学",
+      "奶制品与动物科学"
+    ],
+    "letpub_url": "https://www.letpub.com.cn/index.php?journalid=538&page=journalapp&view=detail",
+    "scraped_at": "2026-05-14"
+  },
+  {
+    "name": "ANNALI DI MATEMATICA PURA ED APPLICATA",
+    "abbr": "ANN MAT PUR APPL",
+    "issn": "0373-3114",
+    "eissn": "",
+    "if_2024": 0.9,
+    "if_5year": 1.1,
+    "cas_2025": {
+      "major": "数学",
+      "tier": 3,
+      "top": false,
+      "review": false
+    },
+    "jcr": "Q2",
+    "review_weeks": null,
+    "acceptance_rate": null,
+    "apc_usd": null,
+    "open_access": "Closed",
+    "articles_per_year": 126,
+    "chinese_ratio": null,
+    "self_cite_rate": 0.0,
+    "subject_areas": [
+      "数学",
+      "数学"
+    ],
+    "letpub_url": "https://www.letpub.com.cn/index.php?journalid=584&page=journalapp&view=detail",
+    "scraped_at": "2026-05-14"
+  },
+  {
+    "name": "ANNALS OF GLOBAL ANALYSIS AND GEOMETRY",
+    "abbr": "ANN GLOB ANAL GEOM",
+    "issn": "0232-704X",
+    "eissn": "",
+    "if_2024": 0.7,
+    "if_5year": 0.8,
+    "cas_2025": {
+      "major": "数学",
+      "tier": 2,
+      "top": false,
+      "review": false
+    },
+    "jcr": "Q2",
+    "review_weeks": null,
+    "acceptance_rate": null,
+    "apc_usd": null,
+    "open_access": "Closed",
+    "articles_per_year": 44,
+    "chinese_ratio": null,
+    "self_cite_rate": 0.0,
+    "subject_areas": [
+      "数学",
+      "数学"
+    ],
+    "letpub_url": "https://www.letpub.com.cn/index.php?journalid=608&page=journalapp&view=detail",
+    "scraped_at": "2026-05-14"
+  },
+  {
+    "name": "ANNALS OF MATHEMATICS",
+    "abbr": "ANN MATH",
+    "issn": "0003-486X",
+    "eissn": "",
+    "if_2024": 5.3,
+    "if_5year": 6.3,
+    "cas_2025": {
+      "major": "数学",
+      "tier": 4,
+      "top": true,
+      "review": false
+    },
+    "jcr": "Q1",
+    "review_weeks": null,
+    "acceptance_rate": null,
+    "apc_usd": null,
+    "open_access": "Closed",
+    "articles_per_year": 38,
+    "chinese_ratio": null,
+    "self_cite_rate": 0.019,
+    "subject_areas": [
+      "数学",
+      "数学"
+    ],
+    "letpub_url": "https://www.letpub.com.cn/index.php?journalid=616&page=journalapp&view=detail",
+    "scraped_at": "2026-05-14"
+  },
+  {
+    "name": "ANNALS OF OPERATIONS RESEARCH",
+    "abbr": "ANN OPER RES",
+    "issn": "0254-5330",
+    "eissn": "",
+    "if_2024": 4.5,
+    "if_5year": 4.6,
+    "cas_2025": {
+      "major": "管理学",
+      "tier": 2,
+      "top": false,
+      "review": false
+    },
+    "jcr": "Q1",
+    "review_weeks": 26.07,
+    "acceptance_rate": null,
+    "apc_usd": null,
+    "open_access": "Closed",
+    "articles_per_year": 626,
+    "chinese_ratio": null,
+    "self_cite_rate": 0.111,
+    "subject_areas": [
+      "管理科学",
+      "运筹学与管理科学"
+    ],
+    "letpub_url": "https://www.letpub.com.cn/index.php?journalid=627&page=journalapp&view=detail",
+    "scraped_at": "2026-05-14"
+  },
+  {
+    "name": "ANNALS OF SCIENCE",
+    "abbr": "ANN SCI",
+    "issn": "0003-3790",
+    "eissn": "",
+    "if_2024": 0.5,
+    "if_5year": 0.6,
+    "cas_2025": {
+      "major": "哲学",
+      "tier": 4,
+      "top": true,
+      "review": false
+    },
+    "jcr": "Q2",
+    "review_weeks": 4.34,
+    "acceptance_rate": null,
+    "apc_usd": null,
+    "open_access": "Closed",
+    "articles_per_year": 26,
+    "chinese_ratio": null,
+    "self_cite_rate": 0.0,
+    "subject_areas": [
+      "综合性期刊",
+      "科学史与科学哲学"
+    ],
+    "letpub_url": "https://www.letpub.com.cn/index.php?journalid=636&page=journalapp&view=detail",
+    "scraped_at": "2026-05-14"
+  },
+  {
+    "name": "Annual Review of Astronomy and Astrophysics",
+    "abbr": "ANNU REV ASTRON ASTR",
+    "issn": "0066-4146",
+    "eissn": "",
+    "if_2024": 32.5,
+    "if_5year": 41.2,
+    "cas_2025": {
+      "major": "物理与天体物理",
+      "tier": 1,
+      "top": true,
+      "review": true
+    },
+    "jcr": "Q1",
+    "review_weeks": null,
+    "acceptance_rate": null,
+    "apc_usd": null,
+    "open_access": "Closed",
+    "articles_per_year": 15,
+    "chinese_ratio": null,
+    "self_cite_rate": 0.015,
+    "subject_areas": [
+      "地学天文",
+      "天文与天体物理"
+    ],
+    "letpub_url": "https://www.letpub.com.cn/index.php?journalid=657&page=journalapp&view=detail",
+    "scraped_at": "2026-05-14"
+  },
+  {
+    "name": "Annual Review of Clinical Psychology",
+    "abbr": "ANNU REV CLIN PSYCHO",
+    "issn": "1548-5943",
+    "eissn": "",
+    "if_2024": 16.5,
+    "if_5year": 24.3,
+    "cas_2025": {
+      "major": "心理学",
+      "tier": 2,
+      "top": true,
+      "review": true
+    },
+    "jcr": "Q1",
+    "review_weeks": null,
+    "acceptance_rate": null,
+    "apc_usd": null,
+    "open_access": "Closed",
+    "articles_per_year": 19,
+    "chinese_ratio": null,
+    "self_cite_rate": 0.012,
+    "subject_areas": [
+      "医学",
+      "心理学"
+    ],
+    "letpub_url": "https://www.letpub.com.cn/index.php?journalid=662&page=journalapp&view=detail",
+    "scraped_at": "2026-05-14"
+  },
+  {
+    "name": "Annual Review of Entomology",
+    "abbr": "ANNU REV ENTOMOL",
+    "issn": "0066-4170",
+    "eissn": "",
+    "if_2024": 16.7,
+    "if_5year": 20.7,
+    "cas_2025": {
+      "major": "农林科学",
+      "tier": 1,
+      "top": true,
+      "review": true
+    },
+    "jcr": "Q1",
+    "review_weeks": null,
+    "acceptance_rate": null,
+    "apc_usd": null,
+    "open_access": "Closed",
+    "articles_per_year": 27,
+    "chinese_ratio": null,
+    "self_cite_rate": 0.006,
+    "subject_areas": [
+      "生物",
+      "昆虫学"
+    ],
+    "letpub_url": "https://www.letpub.com.cn/index.php?journalid=665&page=journalapp&view=detail",
+    "scraped_at": "2026-05-14"
+  },
+  {
+    "name": "Annual Review of Environment and Resources",
+    "abbr": "ANNU REV ENV RESOUR",
+    "issn": "1543-5938",
+    "eissn": "",
+    "if_2024": 16.0,
+    "if_5year": 22.2,
+    "cas_2025": {
+      "major": "环境科学与生态学",
+      "tier": 4,
+      "top": true,
+      "review": true
+    },
+    "jcr": "Q1",
+    "review_weeks": null,
+    "acceptance_rate": null,
+    "apc_usd": null,
+    "open_access": "Closed",
+    "articles_per_year": 25,
+    "chinese_ratio": null,
+    "self_cite_rate": 0.006,
+    "subject_areas": [
+      "环境科学",
+      "环境科学"
+    ],
+    "letpub_url": "https://www.letpub.com.cn/index.php?journalid=666&page=journalapp&view=detail",
+    "scraped_at": "2026-05-14"
+  },
+  {
+    "name": "Annual Review of Fluid Mechanics",
+    "abbr": "ANNU REV FLUID MECH",
+    "issn": "0066-4189",
+    "eissn": "",
+    "if_2024": 30.2,
+    "if_5year": 32.6,
+    "cas_2025": {
+      "major": "工程技术",
+      "tier": 2,
+      "top": true,
+      "review": true
+    },
+    "jcr": "Q1",
+    "review_weeks": null,
+    "acceptance_rate": null,
+    "apc_usd": null,
+    "open_access": "Closed",
+    "articles_per_year": 23,
+    "chinese_ratio": null,
+    "self_cite_rate": 0.007,
+    "subject_areas": [
+      "物理",
+      "力学"
+    ],
+    "letpub_url": "https://www.letpub.com.cn/index.php?journalid=667&page=journalapp&view=detail",
+    "scraped_at": "2026-05-14"
+  },
+  {
+    "name": "Annual Review of Phytopathology",
+    "abbr": "ANNU REV PHYTOPATHOL",
+    "issn": "0066-4286",
+    "eissn": "",
+    "if_2024": 11.9,
+    "if_5year": 12.4,
+    "cas_2025": {
+      "major": "农林科学",
+      "tier": 4,
+      "top": true,
+      "review": true
+    },
+    "jcr": "Q1",
+    "review_weeks": null,
+    "acceptance_rate": null,
+    "apc_usd": null,
+    "open_access": "Closed",
+    "articles_per_year": 18,
+    "chinese_ratio": null,
+    "self_cite_rate": 0.017,
+    "subject_areas": [
+      "生物",
+      "植物科学"
+    ],
+    "letpub_url": "https://www.letpub.com.cn/index.php?journalid=683&page=journalapp&view=detail",
+    "scraped_at": "2026-05-14"
+  },
+  {
+    "name": "Annual Review of Psychology",
+    "abbr": "ANNU REV PSYCHOL",
+    "issn": "0066-4308",
+    "eissn": "",
+    "if_2024": 29.4,
+    "if_5year": 34.4,
+    "cas_2025": {
+      "major": "心理学",
+      "tier": 2,
+      "top": true,
+      "review": true
+    },
+    "jcr": "Q1",
+    "review_weeks": null,
+    "acceptance_rate": null,
+    "apc_usd": null,
+    "open_access": "Closed",
+    "articles_per_year": 24,
+    "chinese_ratio": null,
+    "self_cite_rate": 0.007,
+    "subject_areas": [
+      "医学",
+      "心理学"
+    ],
+    "letpub_url": "https://www.letpub.com.cn/index.php?journalid=685&page=journalapp&view=detail",
+    "scraped_at": "2026-05-14"
+  },
+  {
+    "name": "ANZIAM JOURNAL",
+    "abbr": "ANZIAM J",
+    "issn": "1446-1811",
+    "eissn": "",
+    "if_2024": 0.9,
+    "if_5year": 0.7,
+    "cas_2025": {
+      "major": "数学",
+      "tier": 4,
+      "top": false,
+      "review": false
+    },
+    "jcr": "Q3",
+    "review_weeks": null,
+    "acceptance_rate": 0.25,
+    "apc_usd": null,
+    "open_access": "Closed",
+    "articles_per_year": 26,
+    "chinese_ratio": null,
+    "self_cite_rate": 0.0,
+    "subject_areas": [
+      "数学",
+      "应用数学"
+    ],
+    "letpub_url": "https://www.letpub.com.cn/index.php?journalid=703&page=journalapp&view=detail",
+    "scraped_at": "2026-05-14"
+  },
+  {
+    "name": "APPLIED ACOUSTICS",
+    "abbr": "APPL ACOUST",
+    "issn": "0003-682X",
+    "eissn": "",
+    "if_2024": 3.6,
+    "if_5year": 3.7,
+    "cas_2025": {
+      "major": "物理与天体物理",
+      "tier": 3,
+      "top": false,
+      "review": false
+    },
+    "jcr": "Q1",
+    "review_weeks": 15.21,
+    "acceptance_rate": null,
+    "apc_usd": null,
+    "open_access": "Closed",
+    "articles_per_year": 551,
+    "chinese_ratio": null,
+    "self_cite_rate": 0.167,
+    "subject_areas": [
+      "物理",
+      "声学"
+    ],
+    "letpub_url": "https://www.letpub.com.cn/index.php?journalid=713&page=journalapp&view=detail",
+    "scraped_at": "2026-05-14"
+  },
+  {
+    "name": "Applied and Computational Mathematics",
+    "abbr": "APPL COMPUT MATH-BAK",
+    "issn": "1683-3511",
+    "eissn": "",
+    "if_2024": 4.3,
+    "if_5year": 2.9,
+    "cas_2025": {
+      "major": "数学",
+      "tier": 4,
+      "top": false,
+      "review": false
+    },
+    "jcr": "Q1",
+    "review_weeks": null,
+    "acceptance_rate": 0.5,
+    "apc_usd": null,
+    "open_access": "Closed",
+    "articles_per_year": 30,
+    "chinese_ratio": null,
+    "self_cite_rate": 0.163,
+    "subject_areas": [
+      "数学",
+      "应用数学"
+    ],
+    "letpub_url": "https://www.letpub.com.cn/index.php?journalid=715&page=journalapp&view=detail",
+    "scraped_at": "2026-05-14"
+  },
+  {
+    "name": "Applied Catalysis B-Environment and Energy",
+    "abbr": "APPL CATAL B-ENVIRON ENERGY",
+    "issn": "0926-3373",
+    "eissn": "",
+    "if_2024": 21.1,
+    "if_5year": 20.2,
+    "cas_2025": {
+      "major": "化学",
+      "tier": 4,
+      "top": true,
+      "review": false
+    },
+    "jcr": "Q1",
+    "review_weeks": 8.26,
+    "acceptance_rate": 0.61,
+    "apc_usd": null,
+    "open_access": "Closed",
+    "articles_per_year": 1133,
+    "chinese_ratio": null,
+    "self_cite_rate": 0.057,
+    "subject_areas": [
+      "环境科学",
+      "工程：化工"
+    ],
+    "letpub_url": "https://www.letpub.com.cn/index.php?journalid=722&page=journalapp&view=detail",
+    "scraped_at": "2026-05-14"
+  },
+  {
+    "name": "APPLIED ENERGY",
+    "abbr": "APPL ENERG",
+    "issn": "0306-2619",
+    "eissn": "",
+    "if_2024": 11.0,
+    "if_5year": 11.2,
+    "cas_2025": {
+      "major": "工程技术",
+      "tier": 2,
+      "top": true,
+      "review": false
+    },
+    "jcr": "Q1",
+    "review_weeks": 16.95,
+    "acceptance_rate": null,
+    "apc_usd": null,
+    "open_access": "Closed",
+    "articles_per_year": 2365,
+    "chinese_ratio": null,
+    "self_cite_rate": 0.109,
+    "subject_areas": [
+      "工程技术",
+      "工程：化工"
+    ],
+    "letpub_url": "https://www.letpub.com.cn/index.php?journalid=729&page=journalapp&view=detail",
+    "scraped_at": "2026-05-14"
+  },
+  {
+    "name": "APPLIED INTELLIGENCE",
+    "abbr": "APPL INTELL",
+    "issn": "0924-669X",
+    "eissn": "",
+    "if_2024": 3.5,
+    "if_5year": 3.8,
+    "cas_2025": {
+      "major": "计算机科学",
+      "tier": 1,
+      "top": false,
+      "review": false
+    },
+    "jcr": "Q2",
+    "review_weeks": null,
+    "acceptance_rate": null,
+    "apc_usd": null,
+    "open_access": "Closed",
+    "articles_per_year": 635,
+    "chinese_ratio": null,
+    "self_cite_rate": 0.086,
+    "subject_areas": [
+      "工程技术",
+      "计算机：人工智能"
+    ],
+    "letpub_url": "https://www.letpub.com.cn/index.php?journalid=737&page=journalapp&view=detail",
+    "scraped_at": "2026-05-14"
+  },
+  {
+    "name": "APPLIED MATHEMATICS AND COMPUTATION",
+    "abbr": "APPL MATH COMPUT",
+    "issn": "0096-3003",
+    "eissn": "",
+    "if_2024": 3.4,
+    "if_5year": 3.2,
+    "cas_2025": {
+      "major": "数学",
+      "tier": 1,
+      "top": false,
+      "review": false
+    },
+    "jcr": "Q1",
+    "review_weeks": 42.58,
+    "acceptance_rate": 0.6,
+    "apc_usd": null,
+    "open_access": "Closed",
+    "articles_per_year": 534,
+    "chinese_ratio": null,
+    "self_cite_rate": 0.059,
+    "subject_areas": [
+      "数学",
+      "应用数学"
+    ],
+    "letpub_url": "https://www.letpub.com.cn/index.php?journalid=740&page=journalapp&view=detail",
+    "scraped_at": "2026-05-14"
+  },
+  {
+    "name": "Applied Mathematics Letters",
+    "abbr": "APPL MATH LETT",
+    "issn": "0893-9659",
+    "eissn": "",
+    "if_2024": 2.8,
+    "if_5year": 2.6,
+    "cas_2025": {
+      "major": "数学",
+      "tier": 4,
+      "top": false,
+      "review": false
+    },
+    "jcr": "Q1",
+    "review_weeks": 8.69,
+    "acceptance_rate": 0.95,
+    "apc_usd": null,
+    "open_access": "Closed",
+    "articles_per_year": 361,
+    "chinese_ratio": null,
+    "self_cite_rate": 0.071,
+    "subject_areas": [
+      "数学",
+      "应用数学"
+    ],
+    "letpub_url": "https://www.letpub.com.cn/index.php?journalid=743&page=journalapp&view=detail",
+    "scraped_at": "2026-05-14"
+  },
+  {
+    "name": "Applied Mechanics Reviews",
+    "abbr": "APPL MECH REV",
+    "issn": "0003-6900",
+    "eissn": "",
+    "if_2024": 16.1,
+    "if_5year": 15.1,
+    "cas_2025": {
+      "major": "工程技术",
+      "tier": 3,
+      "top": true,
+      "review": true
+    },
+    "jcr": "Q1",
+    "review_weeks": null,
+    "acceptance_rate": null,
+    "apc_usd": null,
+    "open_access": "Closed",
+    "articles_per_year": 9,
+    "chinese_ratio": null,
+    "self_cite_rate": 0.006,
+    "subject_areas": [
+      "物理",
+      "力学"
+    ],
+    "letpub_url": "https://www.letpub.com.cn/index.php?journalid=745&page=journalapp&view=detail",
+    "scraped_at": "2026-05-14"
+  },
+  {
+    "name": "APPLIED PHYSICS LETTERS",
+    "abbr": "APPL PHYS LETT",
+    "issn": "0003-6951",
+    "eissn": "",
+    "if_2024": 3.6,
+    "if_5year": 3.6,
+    "cas_2025": {
+      "major": "物理与天体物理",
+      "tier": 4,
+      "top": false,
+      "review": false
+    },
+    "jcr": "Q2",
+    "review_weeks": 6.08,
+    "acceptance_rate": 0.88,
+    "apc_usd": null,
+    "open_access": "Closed",
+    "articles_per_year": 2703,
+    "chinese_ratio": null,
+    "self_cite_rate": 0.111,
+    "subject_areas": [
+      "物理",
+      "物理：应用"
+    ],
+    "letpub_url": "https://www.letpub.com.cn/index.php?journalid=756&page=journalapp&view=detail",
+    "scraped_at": "2026-05-14"
+  },
+  {
+    "name": "APPLIED SOFT COMPUTING",
+    "abbr": "APPL SOFT COMPUT",
+    "issn": "1568-4946",
+    "eissn": "",
+    "if_2024": 6.6,
+    "if_5year": 6.9,
+    "cas_2025": {
+      "major": "计算机科学",
+      "tier": 4,
+      "top": true,
+      "review": false
+    },
+    "jcr": "Q1",
+    "review_weeks": 104.28,
+    "acceptance_rate": null,
+    "apc_usd": null,
+    "open_access": "Closed",
+    "articles_per_year": 1269,
+    "chinese_ratio": null,
+    "self_cite_rate": 0.091,
+    "subject_areas": [
+      "工程技术",
+      "计算机：跨学科应用"
+    ],
+    "letpub_url": "https://www.letpub.com.cn/index.php?journalid=760&page=journalapp&view=detail",
+    "scraped_at": "2026-05-14"
+  },
+  {
+    "name": "ARCTIC",
+    "abbr": "ARCTIC",
+    "issn": "0004-0843",
+    "eissn": "",
+    "if_2024": 0.8,
+    "if_5year": 1.3,
+    "cas_2025": {
+      "major": "地球科学",
+      "tier": 4,
+      "top": false,
+      "review": false
+    },
+    "jcr": "Q4",
+    "review_weeks": null,
+    "acceptance_rate": null,
+    "apc_usd": null,
+    "open_access": "Closed",
+    "articles_per_year": 19,
+    "chinese_ratio": null,
+    "self_cite_rate": 0.0,
+    "subject_areas": [
+      "地学",
+      "环境科学"
+    ],
+    "letpub_url": "https://www.letpub.com.cn/index.php?journalid=870&page=journalapp&view=detail",
+    "scraped_at": "2026-05-14"
+  },
+  {
+    "name": "ARDEA",
+    "abbr": "ARDEA",
+    "issn": "0373-2266",
+    "eissn": "",
+    "if_2024": 1.3,
+    "if_5year": 1.0,
+    "cas_2025": {
+      "major": "生物学",
+      "tier": 4,
+      "top": false,
+      "review": false
+    },
+    "jcr": "Q2",
+    "review_weeks": null,
+    "acceptance_rate": null,
+    "apc_usd": null,
+    "open_access": "Closed",
+    "articles_per_year": 26,
+    "chinese_ratio": null,
+    "self_cite_rate": 0.077,
+    "subject_areas": [
+      "生物",
+      "鸟类学"
+    ],
+    "letpub_url": "https://www.letpub.com.cn/index.php?journalid=872&page=journalapp&view=detail",
+    "scraped_at": "2026-05-14"
+  },
+  {
+    "name": "ARKIVOC",
+    "abbr": "ARKIVOC",
+    "issn": "1551-7004",
+    "eissn": "",
+    "if_2024": 0.6,
+    "if_5year": 0.7,
+    "cas_2025": {
+      "major": "化学",
+      "tier": 1,
+      "top": false,
+      "review": false
+    },
+    "jcr": "Q4",
+    "review_weeks": 17.38,
+    "acceptance_rate": null,
+    "apc_usd": null,
+    "open_access": "OA",
+    "articles_per_year": 133,
+    "chinese_ratio": null,
+    "self_cite_rate": 0.0,
+    "subject_areas": [
+      "化学",
+      "有机化学"
+    ],
+    "letpub_url": "https://www.letpub.com.cn/index.php?journalid=877&page=journalapp&view=detail",
+    "scraped_at": "2026-05-14"
+  },
+  {
+    "name": "ASTERISQUE",
+    "abbr": "ASTERISQUE",
+    "issn": "0303-1179",
+    "eissn": "",
+    "if_2024": 0.5,
+    "if_5year": 0.7,
+    "cas_2025": {
+      "major": "数学",
+      "tier": 2,
+      "top": false,
+      "review": false
+    },
+    "jcr": "Q3",
+    "review_weeks": null,
+    "acceptance_rate": null,
+    "apc_usd": null,
+    "open_access": "Closed",
+    "articles_per_year": 23,
+    "chinese_ratio": null,
+    "self_cite_rate": 0.0,
+    "subject_areas": [
+      "MATHEMATICS"
+    ],
+    "letpub_url": "https://www.letpub.com.cn/index.php?journalid=925&page=journalapp&view=detail",
+    "scraped_at": "2026-05-14"
+  },
+  {
+    "name": "ASTROBIOLOGY",
+    "abbr": "ASTROBIOLOGY",
+    "issn": "1531-1074",
+    "eissn": "",
+    "if_2024": 2.6,
+    "if_5year": 3.4,
+    "cas_2025": {
+      "major": "物理与天体物理",
+      "tier": 1,
+      "top": false,
+      "review": false
+    },
+    "jcr": "Q2",
+    "review_weeks": 13.04,
+    "acceptance_rate": null,
+    "apc_usd": null,
+    "open_access": "Closed",
+    "articles_per_year": 73,
+    "chinese_ratio": null,
+    "self_cite_rate": 0.154,
+    "subject_areas": [
+      "生物",
+      "地球科学综合"
+    ],
+    "letpub_url": "https://www.letpub.com.cn/index.php?journalid=927&page=journalapp&view=detail",
+    "scraped_at": "2026-05-14"
+  },
+  {
+    "name": "ASTRONOMY LETTERS-A JOURNAL OF ASTRONOMY AND SPACE ASTROPHYSICS",
+    "abbr": "ASTRON LETT+",
+    "issn": "1063-7737",
+    "eissn": "",
+    "if_2024": 0.8,
+    "if_5year": 0.9,
+    "cas_2025": {
+      "major": "物理与天体物理",
+      "tier": 3,
+      "top": false,
+      "review": false
+    },
+    "jcr": "Q4",
+    "review_weeks": null,
+    "acceptance_rate": null,
+    "apc_usd": null,
+    "open_access": "Closed",
+    "articles_per_year": 58,
+    "chinese_ratio": null,
+    "self_cite_rate": 0.125,
+    "subject_areas": [
+      "地学天文",
+      "天文与天体物理"
+    ],
+    "letpub_url": "https://www.letpub.com.cn/index.php?journalid=933&page=journalapp&view=detail",
+    "scraped_at": "2026-05-14"
+  },
+  {
+    "name": "ASTROPHYSICS",
+    "abbr": "ASTROPHYSICS+",
+    "issn": "0571-7256",
+    "eissn": "",
+    "if_2024": 0.7,
+    "if_5year": 0.6,
+    "cas_2025": {
+      "major": "物理与天体物理",
+      "tier": 4,
+      "top": false,
+      "review": false
+    },
+    "jcr": "Q4",
+    "review_weeks": null,
+    "acceptance_rate": null,
+    "apc_usd": null,
+    "open_access": "Closed",
+    "articles_per_year": 40,
+    "chinese_ratio": null,
+    "self_cite_rate": 0.143,
+    "subject_areas": [
+      "地学天文",
+      "天文与天体物理"
+    ],
+    "letpub_url": "https://www.letpub.com.cn/index.php?journalid=940&page=journalapp&view=detail",
+    "scraped_at": "2026-05-14"
+  },
+  {
+    "name": "AUK",
+    "abbr": "AUK",
+    "issn": "0004-8038",
+    "eissn": "",
+    "if_2024": 0.0,
+    "if_5year": 0.0,
+    "cas_2025": {
+      "major": "生物学",
+      "tier": 4,
+      "top": false,
+      "review": false
+    },
+    "jcr": "",
+    "review_weeks": null,
+    "acceptance_rate": 0.95,
+    "apc_usd": null,
+    "open_access": "Closed",
+    "articles_per_year": 0,
+    "chinese_ratio": null,
+    "self_cite_rate": null,
+    "subject_areas": [
+      "生物",
+      "鸟类学"
+    ],
+    "letpub_url": "https://www.letpub.com.cn/index.php?journalid=964&page=journalapp&view=detail",
+    "scraped_at": "2026-05-14"
+  },
+  {
+    "name": "Bayesian Analysis",
+    "abbr": "BAYESIAN ANAL",
+    "issn": "1931-6690",
+    "eissn": "",
+    "if_2024": 2.5,
+    "if_5year": 3.8,
+    "cas_2025": {
+      "major": "数学",
+      "tier": 2,
+      "top": true,
+      "review": false
+    },
+    "jcr": "Q1",
+    "review_weeks": null,
+    "acceptance_rate": null,
+    "apc_usd": null,
+    "open_access": "Closed",
+    "articles_per_year": 45,
+    "chinese_ratio": null,
+    "self_cite_rate": 0.2,
+    "subject_areas": [
+      "数学",
+      "数学跨学科应用"
+    ],
+    "letpub_url": "https://www.letpub.com.cn/index.php?journalid=1041&page=journalapp&view=detail",
+    "scraped_at": "2026-05-14"
+  },
+  {
+    "name": "BEHAVIORAL AND BRAIN SCIENCES",
+    "abbr": "BEHAV BRAIN SCI",
+    "issn": "0140-525X",
+    "eissn": "",
+    "if_2024": 13.7,
+    "if_5year": 16.4,
+    "cas_2025": {
+      "major": "心理学",
+      "tier": 1,
+      "top": true,
+      "review": false
+    },
+    "jcr": "Q1",
+    "review_weeks": null,
+    "acceptance_rate": null,
+    "apc_usd": null,
+    "open_access": "Closed",
+    "articles_per_year": 30,
+    "chinese_ratio": null,
+    "self_cite_rate": 0.022,
+    "subject_areas": [
+      "医学",
+      "行为科学"
+    ],
+    "letpub_url": "https://www.letpub.com.cn/index.php?journalid=1044&page=journalapp&view=detail",
+    "scraped_at": "2026-05-14"
+  },
+  {
+    "name": "BEHAVIOUR & INFORMATION TECHNOLOGY",
+    "abbr": "BEHAV INFORM TECHNOL",
+    "issn": "0144-929X",
+    "eissn": "",
+    "if_2024": 3.1,
+    "if_5year": 4.1,
+    "cas_2025": {
+      "major": "管理学",
+      "tier": 1,
+      "top": false,
+      "review": false
+    },
+    "jcr": "Q2",
+    "review_weeks": 26.07,
+    "acceptance_rate": null,
+    "apc_usd": null,
+    "open_access": "Closed",
+    "articles_per_year": 202,
+    "chinese_ratio": null,
+    "self_cite_rate": 0.065,
+    "subject_areas": [
+      "工程技术",
+      "计算机：控制论"
+    ],
+    "letpub_url": "https://www.letpub.com.cn/index.php?journalid=1051&page=journalapp&view=detail",
+    "scraped_at": "2026-05-14"
+  },
+  {
+    "name": "BEHAVIOURAL BRAIN RESEARCH",
+    "abbr": "BEHAV BRAIN RES",
+    "issn": "0166-4328",
+    "eissn": "",
+    "if_2024": 2.3,
+    "if_5year": 2.7,
+    "cas_2025": {
+      "major": "心理学",
+      "tier": 1,
+      "top": false,
+      "review": false
+    },
+    "jcr": "Q2",
+    "review_weeks": 7.0,
+    "acceptance_rate": 0.25,
+    "apc_usd": null,
+    "open_access": "Closed",
+    "articles_per_year": 421,
+    "chinese_ratio": null,
+    "self_cite_rate": 0.043,
+    "subject_areas": [
+      "医学",
+      "行为科学"
+    ],
+    "letpub_url": "https://www.letpub.com.cn/index.php?journalid=1052&page=journalapp&view=detail",
+    "scraped_at": "2026-05-14"
+  },
+  {
+    "name": "BERNOULLI",
+    "abbr": "BERNOULLI",
+    "issn": "1350-7265",
+    "eissn": "",
+    "if_2024": 1.7,
+    "if_5year": 1.9,
+    "cas_2025": {
+      "major": "数学",
+      "tier": 2,
+      "top": false,
+      "review": false
+    },
+    "jcr": "Q2",
+    "review_weeks": null,
+    "acceptance_rate": null,
+    "apc_usd": null,
+    "open_access": "Closed",
+    "articles_per_year": 131,
+    "chinese_ratio": null,
+    "self_cite_rate": 0.0,
+    "subject_areas": [
+      "数学",
+      "统计学与概率论"
+    ],
+    "letpub_url": "https://www.letpub.com.cn/index.php?journalid=1066&page=journalapp&view=detail",
+    "scraped_at": "2026-05-14"
+  },
+  {
+    "name": "BIOMATERIALS",
+    "abbr": "BIOMATERIALS",
+    "issn": "0142-9612",
+    "eissn": "",
+    "if_2024": 12.9,
+    "if_5year": 13.4,
+    "cas_2025": {
+      "major": "医学",
+      "tier": 3,
+      "top": true,
+      "review": false
+    },
+    "jcr": "Q1",
+    "review_weeks": 4.34,
+    "acceptance_rate": 0.2958,
+    "apc_usd": null,
+    "open_access": "Closed",
+    "articles_per_year": 477,
+    "chinese_ratio": null,
+    "self_cite_rate": 0.023,
+    "subject_areas": [
+      "工程技术",
+      "材料科学：生物材料"
+    ],
+    "letpub_url": "https://www.letpub.com.cn/index.php?journalid=1163&page=journalapp&view=detail",
+    "scraped_at": "2026-05-14"
+  },
+  {
+    "name": "Biomedical Signal Processing and Control",
+    "abbr": "BIOMED SIGNAL PROCES",
+    "issn": "1746-8094",
+    "eissn": "",
+    "if_2024": 4.9,
+    "if_5year": 5.0,
+    "cas_2025": {
+      "major": "医学",
+      "tier": 1,
+      "top": false,
+      "review": false
+    },
+    "jcr": "Q2",
+    "review_weeks": 13.04,
+    "acceptance_rate": null,
+    "apc_usd": null,
+    "open_access": "Closed",
+    "articles_per_year": 1370,
+    "chinese_ratio": null,
+    "self_cite_rate": 0.122,
+    "subject_areas": [
+      "工程技术",
+      "工程：生物医学"
+    ],
+    "letpub_url": "https://www.letpub.com.cn/index.php?journalid=1175&page=journalapp&view=detail",
+    "scraped_at": "2026-05-14"
+  },
+  {
+    "name": "BIOMETRICS",
+    "abbr": "BIOMETRICS",
+    "issn": "0006-341X",
+    "eissn": "",
+    "if_2024": 1.7,
+    "if_5year": 2.3,
+    "cas_2025": {
+      "major": "数学",
+      "tier": 2,
+      "top": false,
+      "review": false
+    },
+    "jcr": "Q2",
+    "review_weeks": null,
+    "acceptance_rate": null,
+    "apc_usd": null,
+    "open_access": "Closed",
+    "articles_per_year": 177,
+    "chinese_ratio": null,
+    "self_cite_rate": 0.059,
+    "subject_areas": [
+      "生物",
+      "生物学"
+    ],
+    "letpub_url": "https://www.letpub.com.cn/index.php?journalid=1180&page=journalapp&view=detail",
+    "scraped_at": "2026-05-14"
+  },
+  {
+    "name": "BIOMETRIKA",
+    "abbr": "BIOMETRIKA",
+    "issn": "0006-3444",
+    "eissn": "",
+    "if_2024": 2.8,
+    "if_5year": 3.9,
+    "cas_2025": {
+      "major": "数学",
+      "tier": 4,
+      "top": true,
+      "review": false
+    },
+    "jcr": "Q2",
+    "review_weeks": null,
+    "acceptance_rate": null,
+    "apc_usd": null,
+    "open_access": "Closed",
+    "articles_per_year": 67,
+    "chinese_ratio": null,
+    "self_cite_rate": 0.036,
+    "subject_areas": [
+      "生物",
+      "生物学"
+    ],
+    "letpub_url": "https://www.letpub.com.cn/index.php?journalid=1181&page=journalapp&view=detail",
+    "scraped_at": "2026-05-14"
+  },
+  {
+    "name": "BIORESOURCE TECHNOLOGY",
+    "abbr": "BIORESOURCE TECHNOL",
+    "issn": "0960-8524",
+    "eissn": "",
+    "if_2024": 9.0,
+    "if_5year": 9.5,
+    "cas_2025": {
+      "major": "环境科学与生态学",
+      "tier": 3,
+      "top": true,
+      "review": false
+    },
+    "jcr": "Q1",
+    "review_weeks": 9.99,
+    "acceptance_rate": 0.91,
+    "apc_usd": null,
+    "open_access": "Closed",
+    "articles_per_year": 1472,
+    "chinese_ratio": null,
+    "self_cite_rate": 0.089,
+    "subject_areas": [
+      "工程技术",
+      "能源与燃料"
+    ],
+    "letpub_url": "https://www.letpub.com.cn/index.php?journalid=1196&page=journalapp&view=detail",
+    "scraped_at": "2026-05-14"
+  },
+  {
+    "name": "BIOSTATISTICS",
+    "abbr": "BIOSTATISTICS",
+    "issn": "1465-4644",
+    "eissn": "",
+    "if_2024": 2.0,
+    "if_5year": 2.9,
+    "cas_2025": {
+      "major": "数学",
+      "tier": 3,
+      "top": false,
+      "review": false
+    },
+    "jcr": "Q3",
+    "review_weeks": null,
+    "acceptance_rate": null,
+    "apc_usd": null,
+    "open_access": "Closed",
+    "articles_per_year": 53,
+    "chinese_ratio": null,
+    "self_cite_rate": 0.15,
+    "subject_areas": [
+      "生物",
+      "数学与计算生物学"
+    ],
+    "letpub_url": "https://www.letpub.com.cn/index.php?journalid=1204&page=journalapp&view=detail",
+    "scraped_at": "2026-05-14"
+  },
+  {
+    "name": "BONE",
+    "abbr": "BONE",
+    "issn": "8756-3282",
+    "eissn": "",
+    "if_2024": 3.6,
+    "if_5year": 3.9,
+    "cas_2025": {
+      "major": "医学",
+      "tier": 2,
+      "top": false,
+      "review": false
+    },
+    "jcr": "Q2",
+    "review_weeks": null,
+    "acceptance_rate": null,
+    "apc_usd": null,
+    "open_access": "Closed",
+    "articles_per_year": 255,
+    "chinese_ratio": null,
+    "self_cite_rate": 0.056,
+    "subject_areas": [
+      "医学",
+      "内分泌学与代谢"
+    ],
+    "letpub_url": "https://www.letpub.com.cn/index.php?journalid=1289&page=journalapp&view=detail",
+    "scraped_at": "2026-05-14"
+  },
+  {
+    "name": "BOSQUE",
+    "abbr": "BOSQUE",
+    "issn": "0304-8799",
+    "eissn": "",
+    "if_2024": 0.4,
+    "if_5year": 0.6,
+    "cas_2025": {
+      "major": "农林科学",
+      "tier": 1,
+      "top": false,
+      "review": false
+    },
+    "jcr": "Q4",
+    "review_weeks": null,
+    "acceptance_rate": null,
+    "apc_usd": null,
+    "open_access": "OA",
+    "articles_per_year": 42,
+    "chinese_ratio": null,
+    "self_cite_rate": 0.0,
+    "subject_areas": [
+      "Agricultural and Biological Sciences",
+      "Forestry"
+    ],
+    "letpub_url": "https://www.letpub.com.cn/index.php?journalid=1295&page=journalapp&view=detail",
+    "scraped_at": "2026-05-14"
+  },
+  {
+    "name": "CALCOLO",
+    "abbr": "CALCOLO",
+    "issn": "0008-0624",
+    "eissn": "",
+    "if_2024": 1.3,
+    "if_5year": 1.4,
+    "cas_2025": {
+      "major": "数学",
+      "tier": 4,
+      "top": false,
+      "review": false
+    },
+    "jcr": "Q1",
+    "review_weeks": null,
+    "acceptance_rate": null,
+    "apc_usd": null,
+    "open_access": "Closed",
+    "articles_per_year": 70,
+    "chinese_ratio": null,
+    "self_cite_rate": 0.077,
+    "subject_areas": [
+      "数学",
+      "数学"
+    ],
+    "letpub_url": "https://www.letpub.com.cn/index.php?journalid=1444&page=journalapp&view=detail",
+    "scraped_at": "2026-05-14"
+  },
+  {
+    "name": "CARBON",
+    "abbr": "CARBON",
+    "issn": "0008-6223",
+    "eissn": "",
+    "if_2024": 11.6,
+    "if_5year": 10.0,
+    "cas_2025": {
+      "major": "材料科学",
+      "tier": 1,
+      "top": true,
+      "review": false
+    },
+    "jcr": "Q1",
+    "review_weeks": 8.26,
+    "acceptance_rate": 0.8,
+    "apc_usd": null,
+    "open_access": "Closed",
+    "articles_per_year": 901,
+    "chinese_ratio": null,
+    "self_cite_rate": 0.069,
+    "subject_areas": [
+      "工程技术",
+      "材料科学：综合"
+    ],
+    "letpub_url": "https://www.letpub.com.cn/index.php?journalid=1525&page=journalapp&view=detail",
+    "scraped_at": "2026-05-14"
+  },
+  {
+    "name": "CATENA",
+    "abbr": "CATENA",
+    "issn": "0341-8162",
+    "eissn": "",
+    "if_2024": 5.7,
+    "if_5year": 6.3,
+    "cas_2025": {
+      "major": "农林科学",
+      "tier": 2,
+      "top": true,
+      "review": false
+    },
+    "jcr": "Q1",
+    "review_weeks": 20.86,
+    "acceptance_rate": 0.25,
+    "apc_usd": null,
+    "open_access": "Closed",
+    "articles_per_year": 786,
+    "chinese_ratio": null,
+    "self_cite_rate": 0.088,
+    "subject_areas": [
+      "环境科学",
+      "地球科学综合"
+    ],
+    "letpub_url": "https://www.letpub.com.cn/index.php?journalid=1556&page=journalapp&view=detail",
+    "scraped_at": "2026-05-14"
+  },
+  {
+    "name": "CELL",
+    "abbr": "CELL",
+    "issn": "0092-8674",
+    "eissn": "",
+    "if_2024": 42.5,
+    "if_5year": 48.8,
+    "cas_2025": {
+      "major": "生物学",
+      "tier": 3,
+      "top": true,
+      "review": false
+    },
+    "jcr": "Q1",
+    "review_weeks": null,
+    "acceptance_rate": 0.05,
+    "apc_usd": null,
+    "open_access": "Closed",
+    "articles_per_year": 409,
+    "chinese_ratio": null,
+    "self_cite_rate": 0.016,
+    "subject_areas": [
+      "生物",
+      "生化与分子生物学"
+    ],
+    "letpub_url": "https://www.letpub.com.cn/index.php?journalid=1562&page=journalapp&view=detail",
+    "scraped_at": "2026-05-14"
+  },
+  {
+    "name": "Cerne",
+    "abbr": "CERNE",
+    "issn": "0104-7760",
+    "eissn": "",
+    "if_2024": 0.7,
+    "if_5year": 1.1,
+    "cas_2025": {
+      "major": "农林科学",
+      "tier": 2,
+      "top": false,
+      "review": false
+    },
+    "jcr": "Q3",
+    "review_weeks": null,
+    "acceptance_rate": null,
+    "apc_usd": null,
+    "open_access": "OA",
+    "articles_per_year": 25,
+    "chinese_ratio": null,
+    "self_cite_rate": 0.143,
+    "subject_areas": [
+      "农林科学",
+      "林学"
+    ],
+    "letpub_url": "https://www.letpub.com.cn/index.php?journalid=1618&page=journalapp&view=detail",
+    "scraped_at": "2026-05-14"
+  },
+  {
+    "name": "CHAOS",
+    "abbr": "CHAOS",
+    "issn": "1054-1500",
+    "eissn": "",
+    "if_2024": 3.2,
+    "if_5year": 2.9,
+    "cas_2025": {
+      "major": "数学",
+      "tier": 1,
+      "top": false,
+      "review": false
+    },
+    "jcr": "Q1",
+    "review_weeks": 13.04,
+    "acceptance_rate": null,
+    "apc_usd": null,
+    "open_access": "Closed",
+    "articles_per_year": 642,
+    "chinese_ratio": null,
+    "self_cite_rate": 0.219,
+    "subject_areas": [
+      "物理",
+      "物理：数学物理"
+    ],
+    "letpub_url": "https://www.letpub.com.cn/index.php?journalid=1623&page=journalapp&view=detail",
+    "scraped_at": "2026-05-14"
+  },
+  {
+    "name": "CHAOS SOLITONS & FRACTALS",
+    "abbr": "CHAOS SOLITON FRACT",
+    "issn": "0960-0779",
+    "eissn": "",
+    "if_2024": 5.6,
+    "if_5year": 5.4,
+    "cas_2025": {
+      "major": "数学",
+      "tier": 1,
+      "top": true,
+      "review": false
+    },
+    "jcr": "Q1",
+    "review_weeks": 45.62,
+    "acceptance_rate": 0.27,
+    "apc_usd": null,
+    "open_access": "Closed",
+    "articles_per_year": 1387,
+    "chinese_ratio": null,
+    "self_cite_rate": 0.143,
+    "subject_areas": [
+      "物理",
+      "数学跨学科应用"
+    ],
+    "letpub_url": "https://www.letpub.com.cn/index.php?journalid=1624&page=journalapp&view=detail",
+    "scraped_at": "2026-05-14"
+  },
+  {
+    "name": "CHEMICAL COMMUNICATIONS",
+    "abbr": "CHEM COMMUN",
+    "issn": "1359-7345",
+    "eissn": "",
+    "if_2024": 4.2,
+    "if_5year": 4.1,
+    "cas_2025": {
+      "major": "化学",
+      "tier": 4,
+      "top": false,
+      "review": false
+    },
+    "jcr": "Q2",
+    "review_weeks": 7.39,
+    "acceptance_rate": 0.82,
+    "apc_usd": null,
+    "open_access": "Closed",
+    "articles_per_year": 2605,
+    "chinese_ratio": null,
+    "self_cite_rate": 0.048,
+    "subject_areas": [
+      "化学",
+      "化学综合"
+    ],
+    "letpub_url": "https://www.letpub.com.cn/index.php?journalid=1634&page=journalapp&view=detail",
+    "scraped_at": "2026-05-14"
+  },
+  {
+    "name": "CHEMICAL SENSES",
+    "abbr": "CHEM SENSES",
+    "issn": "0379-864X",
+    "eissn": "",
+    "if_2024": 1.9,
+    "if_5year": 2.8,
+    "cas_2025": {
+      "major": "心理学",
+      "tier": 2,
+      "top": false,
+      "review": false
+    },
+    "jcr": "Q3",
+    "review_weeks": null,
+    "acceptance_rate": 0.95,
+    "apc_usd": null,
+    "open_access": "Closed",
+    "articles_per_year": 44,
+    "chinese_ratio": null,
+    "self_cite_rate": 0.158,
+    "subject_areas": [
+      "医学",
+      "行为科学"
+    ],
+    "letpub_url": "https://www.letpub.com.cn/index.php?journalid=1654&page=journalapp&view=detail",
+    "scraped_at": "2026-05-14"
+  },
+  {
+    "name": "CHEMICAL SOCIETY REVIEWS",
+    "abbr": "CHEM SOC REV",
+    "issn": "0306-0012",
+    "eissn": "",
+    "if_2024": 39.3,
+    "if_5year": 50.2,
+    "cas_2025": {
+      "major": "化学",
+      "tier": 4,
+      "top": true,
+      "review": true
+    },
+    "jcr": "Q1",
+    "review_weeks": 26.07,
+    "acceptance_rate": null,
+    "apc_usd": null,
+    "open_access": "Closed",
+    "articles_per_year": 309,
+    "chinese_ratio": null,
+    "self_cite_rate": 0.013,
+    "subject_areas": [
+      "化学",
+      "化学综合"
+    ],
+    "letpub_url": "https://www.letpub.com.cn/index.php?journalid=1655&page=journalapp&view=detail",
+    "scraped_at": "2026-05-14"
+  },
+  {
+    "name": "Chemija",
+    "abbr": "CHEMIJA",
+    "issn": "0235-7216",
+    "eissn": "",
+    "if_2024": 0.4,
+    "if_5year": 0.6,
+    "cas_2025": {
+      "major": "化学",
+      "tier": 1,
+      "top": false,
+      "review": false
+    },
+    "jcr": "Q4",
+    "review_weeks": null,
+    "acceptance_rate": null,
+    "apc_usd": null,
+    "open_access": "Closed",
+    "articles_per_year": 7,
+    "chinese_ratio": null,
+    "self_cite_rate": 0.0,
+    "subject_areas": [
+      "化学",
+      "化学综合"
+    ],
+    "letpub_url": "https://www.letpub.com.cn/index.php?journalid=1663&page=journalapp&view=detail",
+    "scraped_at": "2026-05-14"
+  },
+  {
+    "name": "Chiang Mai Journal of Science",
+    "abbr": "CHIANG MAI J SCI",
+    "issn": "0125-2526",
+    "eissn": "",
+    "if_2024": 0.8,
+    "if_5year": 0.7,
+    "cas_2025": {
+      "major": "综合性期刊",
+      "tier": 4,
+      "top": false,
+      "review": false
+    },
+    "jcr": "Q3",
+    "review_weeks": null,
+    "acceptance_rate": null,
+    "apc_usd": null,
+    "open_access": "Closed",
+    "articles_per_year": 106,
+    "chinese_ratio": null,
+    "self_cite_rate": 0.25,
+    "subject_areas": [
+      "MULTIDISCIPLINARY SCIENCES"
+    ],
+    "letpub_url": "https://www.letpub.com.cn/index.php?journalid=1689&page=journalapp&view=detail",
+    "scraped_at": "2026-05-14"
+  },
+  {
+    "name": "CHINESE ANNALS OF MATHEMATICS SERIES B",
+    "abbr": "CHINESE ANN MATH B",
+    "issn": "0252-9599",
+    "eissn": "",
+    "if_2024": 0.5,
+    "if_5year": 0.6,
+    "cas_2025": {
+      "major": "数学",
+      "tier": 3,
+      "top": false,
+      "review": false
+    },
+    "jcr": "Q3",
+    "review_weeks": null,
+    "acceptance_rate": null,
+    "apc_usd": null,
+    "open_access": "Closed",
+    "articles_per_year": 48,
+    "chinese_ratio": null,
+    "self_cite_rate": 0.0,
+    "subject_areas": [
+      "数学",
+      "数学"
+    ],
+    "letpub_url": "https://www.letpub.com.cn/index.php?journalid=1700&page=journalapp&view=detail",
+    "scraped_at": "2026-05-14"
+  },
+  {
+    "name": "Chinese Optics Letters",
+    "abbr": "CHIN OPT LETT",
+    "issn": "1671-7694",
+    "eissn": "",
+    "if_2024": 2.8,
+    "if_5year": 2.2,
+    "cas_2025": {
+      "major": "物理与天体物理",
+      "tier": 4,
+      "top": false,
+      "review": false
+    },
+    "jcr": "Q2",
+    "review_weeks": 7.82,
+    "acceptance_rate": 0.6,
+    "apc_usd": null,
+    "open_access": "OA",
+    "articles_per_year": 281,
+    "chinese_ratio": null,
+    "self_cite_rate": 0.036,
+    "subject_areas": [
+      "物理",
+      "光学"
+    ],
+    "letpub_url": "https://www.letpub.com.cn/index.php?journalid=1722&page=journalapp&view=detail",
+    "scraped_at": "2026-05-14"
+  },
+  {
+    "name": "Chinese Physics B",
+    "abbr": "CHINESE PHYS B",
+    "issn": "1674-1056",
+    "eissn": "",
+    "if_2024": 1.5,
+    "if_5year": 1.4,
+    "cas_2025": {
+      "major": "物理与天体物理",
+      "tier": 4,
+      "top": false,
+      "review": false
+    },
+    "jcr": "Q3",
+    "review_weeks": 9.99,
+    "acceptance_rate": 0.91,
+    "apc_usd": null,
+    "open_access": "Closed",
+    "articles_per_year": 826,
+    "chinese_ratio": null,
+    "self_cite_rate": 0.133,
+    "subject_areas": [
+      "物理",
+      "物理：综合"
+    ],
+    "letpub_url": "https://www.letpub.com.cn/index.php?journalid=1723&page=journalapp&view=detail",
+    "scraped_at": "2026-05-14"
+  },
+  {
+    "name": "CHINESE PHYSICS LETTERS",
+    "abbr": "CHINESE PHYS LETT",
+    "issn": "0256-307X",
+    "eissn": "",
+    "if_2024": 4.2,
+    "if_5year": 2.8,
+    "cas_2025": {
+      "major": "物理与天体物理",
+      "tier": 3,
+      "top": true,
+      "review": false
+    },
+    "jcr": "Q1",
+    "review_weeks": 22.16,
+    "acceptance_rate": 0.87,
+    "apc_usd": null,
+    "open_access": "Closed",
+    "articles_per_year": 222,
+    "chinese_ratio": null,
+    "self_cite_rate": 0.143,
+    "subject_areas": [
+      "物理",
+      "物理：综合"
+    ],
+    "letpub_url": "https://www.letpub.com.cn/index.php?journalid=1725&page=journalapp&view=detail",
+    "scraped_at": "2026-05-14"
+  },
+  {
+    "name": "CHINESE SCIENCE BULLETIN",
+    "abbr": "CHINESE SCI BULL",
+    "issn": "1001-6538",
+    "eissn": "",
+    "if_2024": 0.0,
+    "if_5year": 0.0,
+    "cas_2025": {
+      "major": "综合性期刊",
+      "tier": 4,
+      "top": true,
+      "review": false
+    },
+    "jcr": "",
+    "review_weeks": 11.73,
+    "acceptance_rate": 0.83,
+    "apc_usd": null,
+    "open_access": "Closed",
+    "articles_per_year": 0,
+    "chinese_ratio": null,
+    "self_cite_rate": null,
+    "subject_areas": [
+      "综合性期刊",
+      "综合性期刊"
+    ],
+    "letpub_url": "https://www.letpub.com.cn/index.php?journalid=1726&page=journalapp&view=detail",
+    "scraped_at": "2026-05-14"
+  },
+  {
+    "name": "Cognitive Systems Research",
+    "abbr": "COGN SYST RES",
+    "issn": "1389-0417",
+    "eissn": "",
+    "if_2024": 2.4,
+    "if_5year": 2.8,
+    "cas_2025": {
+      "major": "心理学",
+      "tier": 2,
+      "top": false,
+      "review": false
+    },
+    "jcr": "Q3",
+    "review_weeks": null,
+    "acceptance_rate": null,
+    "apc_usd": null,
+    "open_access": "Closed",
+    "articles_per_year": 74,
+    "chinese_ratio": null,
+    "self_cite_rate": 0.083,
+    "subject_areas": [
+      "工程技术",
+      "计算机：人工智能"
+    ],
+    "letpub_url": "https://www.letpub.com.cn/index.php?journalid=1884&page=journalapp&view=detail",
+    "scraped_at": "2026-05-14"
+  },
+  {
+    "name": "Communications in Nonlinear Science and Numerical Simulation",
+    "abbr": "COMMUN NONLINEAR SCI",
+    "issn": "1007-5704",
+    "eissn": "",
+    "if_2024": 3.8,
+    "if_5year": 3.4,
+    "cas_2025": {
+      "major": "数学",
+      "tier": 2,
+      "top": false,
+      "review": false
+    },
+    "jcr": "Q1",
+    "review_weeks": 13.04,
+    "acceptance_rate": 0.25,
+    "apc_usd": null,
+    "open_access": "Closed",
+    "articles_per_year": 641,
+    "chinese_ratio": null,
+    "self_cite_rate": 0.105,
+    "subject_areas": [
+      "MATHEMATICS",
+      "APPLIED",
+      "MATHEMATICS",
+      "INTERDISCIPLINARY APPLICATIONS"
+    ],
+    "letpub_url": "https://www.letpub.com.cn/index.php?journalid=1913&page=journalapp&view=detail",
+    "scraped_at": "2026-05-14"
+  },
+  {
+    "name": "COMPUTER APPLICATIONS IN ENGINEERING EDUCATION",
+    "abbr": "COMPUT APPL ENG EDUC",
+    "issn": "1061-3773",
+    "eissn": "",
+    "if_2024": 2.2,
+    "if_5year": 2.6,
+    "cas_2025": {
+      "major": "教育学",
+      "tier": 2,
+      "top": false,
+      "review": false
+    },
+    "jcr": "Q3",
+    "review_weeks": null,
+    "acceptance_rate": null,
+    "apc_usd": null,
+    "open_access": "Closed",
+    "articles_per_year": 95,
+    "chinese_ratio": null,
+    "self_cite_rate": 0.091,
+    "subject_areas": [
+      "工程技术",
+      "工程：综合"
+    ],
+    "letpub_url": "https://www.letpub.com.cn/index.php?journalid=1980&page=journalapp&view=detail",
+    "scraped_at": "2026-05-14"
+  },
+  {
+    "name": "COMPUTER MUSIC JOURNAL",
+    "abbr": "COMPUT MUSIC J",
+    "issn": "0148-9267",
+    "eissn": "",
+    "if_2024": 0.2,
+    "if_5year": 0.5,
+    "cas_2025": {
+      "major": "艺术学",
+      "tier": 2,
+      "top": false,
+      "review": false
+    },
+    "jcr": "Q4",
+    "review_weeks": null,
+    "acceptance_rate": null,
+    "apc_usd": null,
+    "open_access": "Closed",
+    "articles_per_year": 0,
+    "chinese_ratio": null,
+    "self_cite_rate": 0.0,
+    "subject_areas": [
+      "工程技术",
+      "计算机：跨学科应用"
+    ],
+    "letpub_url": "https://www.letpub.com.cn/index.php?journalid=1990&page=journalapp&view=detail",
+    "scraped_at": "2026-05-14"
+  },
+  {
+    "name": "COMPUTERS & EDUCATION",
+    "abbr": "COMPUT EDUC",
+    "issn": "0360-1315",
+    "eissn": "",
+    "if_2024": 10.5,
+    "if_5year": 13.0,
+    "cas_2025": {
+      "major": "教育学",
+      "tier": 2,
+      "top": true,
+      "review": false
+    },
+    "jcr": "Q1",
+    "review_weeks": 11.9,
+    "acceptance_rate": null,
+    "apc_usd": null,
+    "open_access": "Closed",
+    "articles_per_year": 126,
+    "chinese_ratio": null,
+    "self_cite_rate": 0.057,
+    "subject_areas": [
+      "工程技术",
+      "计算机：跨学科应用"
+    ],
+    "letpub_url": "https://www.letpub.com.cn/index.php?journalid=2003&page=journalapp&view=detail",
+    "scraped_at": "2026-05-14"
+  },
+  {
+    "name": "COMPUTERS & MATHEMATICS WITH APPLICATIONS",
+    "abbr": "COMPUT MATH APPL",
+    "issn": "0898-1221",
+    "eissn": "",
+    "if_2024": 2.5,
+    "if_5year": 2.5,
+    "cas_2025": {
+      "major": "数学",
+      "tier": 2,
+      "top": false,
+      "review": false
+    },
+    "jcr": "Q1",
+    "review_weeks": 28.68,
+    "acceptance_rate": 0.5,
+    "apc_usd": null,
+    "open_access": "Closed",
+    "articles_per_year": 425,
+    "chinese_ratio": null,
+    "self_cite_rate": 0.08,
+    "subject_areas": [
+      "工程技术",
+      "计算机：跨学科应用"
+    ],
+    "letpub_url": "https://www.letpub.com.cn/index.php?journalid=2009&page=journalapp&view=detail",
+    "scraped_at": "2026-05-14"
+  },
+  {
+    "name": "COMPUTERS AND ELECTRONICS IN AGRICULTURE",
+    "abbr": "COMPUT ELECTRON AGR",
+    "issn": "0168-1699",
+    "eissn": "",
+    "if_2024": 8.9,
+    "if_5year": 9.3,
+    "cas_2025": {
+      "major": "农林科学",
+      "tier": 1,
+      "top": true,
+      "review": false
+    },
+    "jcr": "Q1",
+    "review_weeks": 52.14,
+    "acceptance_rate": 0.25,
+    "apc_usd": null,
+    "open_access": "Closed",
+    "articles_per_year": 1166,
+    "chinese_ratio": null,
+    "self_cite_rate": 0.169,
+    "subject_areas": [
+      "工程技术",
+      "计算机：跨学科应用"
+    ],
+    "letpub_url": "https://www.letpub.com.cn/index.php?journalid=2014&page=journalapp&view=detail",
+    "scraped_at": "2026-05-14"
+  },
+  {
+    "name": "Configurations",
+    "abbr": "CONFIGURATIONS",
+    "issn": "1063-1801",
+    "eissn": "",
+    "if_2024": 0.3,
+    "if_5year": 0.5,
+    "cas_2025": {
+      "major": "文学",
+      "tier": 3,
+      "top": false,
+      "review": false
+    },
+    "jcr": "Q4",
+    "review_weeks": null,
+    "acceptance_rate": null,
+    "apc_usd": null,
+    "open_access": "Closed",
+    "articles_per_year": 8,
+    "chinese_ratio": null,
+    "self_cite_rate": 0.0,
+    "subject_areas": [
+      "Arts and Humanities",
+      "Literature and Literary Theory"
+    ],
+    "letpub_url": "https://www.letpub.com.cn/index.php?journalid=2027&page=journalapp&view=detail",
+    "scraped_at": "2026-05-14"
+  },
+  {
+    "name": "Construction and Building Materials",
+    "abbr": "CONSTR BUILD MATER",
+    "issn": "0950-0618",
+    "eissn": "",
+    "if_2024": 8.0,
+    "if_5year": 8.6,
+    "cas_2025": {
+      "major": "工程技术",
+      "tier": 1,
+      "top": true,
+      "review": false
+    },
+    "jcr": "Q1",
+    "review_weeks": 13.04,
+    "acceptance_rate": 0.66,
+    "apc_usd": null,
+    "open_access": "Closed",
+    "articles_per_year": 4811,
+    "chinese_ratio": null,
+    "self_cite_rate": 0.238,
+    "subject_areas": [
+      "工程技术",
+      "材料科学：综合"
+    ],
+    "letpub_url": "https://www.letpub.com.cn/index.php?journalid=2035&page=journalapp&view=detail",
+    "scraped_at": "2026-05-14"
+  },
+  {
+    "name": "CORTEX",
+    "abbr": "CORTEX",
+    "issn": "0010-9452",
+    "eissn": "",
+    "if_2024": 3.3,
+    "if_5year": 3.5,
+    "cas_2025": {
+      "major": "心理学",
+      "tier": 2,
+      "top": false,
+      "review": false
+    },
+    "jcr": "Q1",
+    "review_weeks": 9.7,
+    "acceptance_rate": 0.25,
+    "apc_usd": null,
+    "open_access": "Closed",
+    "articles_per_year": 196,
+    "chinese_ratio": null,
+    "self_cite_rate": 0.03,
+    "subject_areas": [
+      "医学",
+      "行为科学"
+    ],
+    "letpub_url": "https://www.letpub.com.cn/index.php?journalid=2066&page=journalapp&view=detail",
+    "scraped_at": "2026-05-14"
+  },
+  {
+    "name": "COSMIC RESEARCH",
+    "abbr": "COSMIC RES+",
+    "issn": "0010-9525",
+    "eissn": "",
+    "if_2024": 0.6,
+    "if_5year": 0.5,
+    "cas_2025": {
+      "major": "物理与天体物理",
+      "tier": 4,
+      "top": false,
+      "review": false
+    },
+    "jcr": "Q4",
+    "review_weeks": null,
+    "acceptance_rate": null,
+    "apc_usd": null,
+    "open_access": "Closed",
+    "articles_per_year": 84,
+    "chinese_ratio": null,
+    "self_cite_rate": 0.333,
+    "subject_areas": [
+      "地学天文",
+      "工程：宇航"
+    ],
+    "letpub_url": "https://www.letpub.com.cn/index.php?journalid=2067&page=journalapp&view=detail",
+    "scraped_at": "2026-05-14"
+  },
+  {
+    "name": "CRITICAL REVIEWS IN ENVIRONMENTAL SCIENCE AND TECHNOLOGY",
+    "abbr": "CRIT REV ENV SCI TEC",
+    "issn": "1064-3389",
+    "eissn": "",
+    "if_2024": 13.2,
+    "if_5year": 14.6,
+    "cas_2025": {
+      "major": "环境科学与生态学",
+      "tier": 1,
+      "top": true,
+      "review": true
+    },
+    "jcr": "Q1",
+    "review_weeks": null,
+    "acceptance_rate": 0.2,
+    "apc_usd": null,
+    "open_access": "Closed",
+    "articles_per_year": 65,
+    "chinese_ratio": null,
+    "self_cite_rate": 0.008,
+    "subject_areas": [
+      "环境科学",
+      "环境科学"
+    ],
+    "letpub_url": "https://www.letpub.com.cn/index.php?journalid=2078&page=journalapp&view=detail",
+    "scraped_at": "2026-05-14"
+  },
+  {
+    "name": "CURRENT SCIENCE",
+    "abbr": "CURR SCI INDIA",
+    "issn": "0011-3891",
+    "eissn": "",
+    "if_2024": 1.0,
+    "if_5year": 1.2,
+    "cas_2025": {
+      "major": "综合性期刊",
+      "tier": 3,
+      "top": false,
+      "review": false
+    },
+    "jcr": "Q3",
+    "review_weeks": null,
+    "acceptance_rate": null,
+    "apc_usd": null,
+    "open_access": "Closed",
+    "articles_per_year": 307,
+    "chinese_ratio": null,
+    "self_cite_rate": 0.0,
+    "subject_areas": [
+      "综合性期刊",
+      "综合性期刊"
+    ],
+    "letpub_url": "https://www.letpub.com.cn/index.php?journalid=2190&page=journalapp&view=detail",
+    "scraped_at": "2026-05-14"
+  },
+  {
+    "name": "DECISION SUPPORT SYSTEMS",
+    "abbr": "DECIS SUPPORT SYST",
+    "issn": "0167-9236",
+    "eissn": "",
+    "if_2024": 6.8,
+    "if_5year": 8.2,
+    "cas_2025": {
+      "major": "管理学",
+      "tier": 4,
+      "top": true,
+      "review": false
+    },
+    "jcr": "Q1",
+    "review_weeks": 78.21,
+    "acceptance_rate": null,
+    "apc_usd": null,
+    "open_access": "Closed",
+    "articles_per_year": 151,
+    "chinese_ratio": null,
+    "self_cite_rate": 0.147,
+    "subject_areas": [
+      "工程技术",
+      "计算机：人工智能"
+    ],
+    "letpub_url": "https://www.letpub.com.cn/index.php?journalid=2230&page=journalapp&view=detail",
+    "scraped_at": "2026-05-14"
+  },
+  {
+    "name": "DEVELOPMENTAL NEUROPSYCHOLOGY",
+    "abbr": "DEV NEUROPSYCHOL",
+    "issn": "8756-5641",
+    "eissn": "",
+    "if_2024": 2.2,
+    "if_5year": 2.1,
+    "cas_2025": {
+      "major": "心理学",
+      "tier": 1,
+      "top": false,
+      "review": false
+    },
+    "jcr": "Q2",
+    "review_weeks": null,
+    "acceptance_rate": null,
+    "apc_usd": null,
+    "open_access": "Closed",
+    "articles_per_year": 17,
+    "chinese_ratio": null,
+    "self_cite_rate": 0.045,
+    "subject_areas": [
+      "医学",
+      "心理学"
+    ],
+    "letpub_url": "https://www.letpub.com.cn/index.php?journalid=2271&page=journalapp&view=detail",
+    "scraped_at": "2026-05-14"
+  },
+  {
+    "name": "DOKLADY PHYSICS",
+    "abbr": "DOKL PHYS",
+    "issn": "1028-3358",
+    "eissn": "",
+    "if_2024": 0.5,
+    "if_5year": 0.4,
+    "cas_2025": {
+      "major": "物理与天体物理",
+      "tier": 3,
+      "top": false,
+      "review": false
+    },
+    "jcr": "Q4",
+    "review_weeks": null,
+    "acceptance_rate": null,
+    "apc_usd": null,
+    "open_access": "Closed",
+    "articles_per_year": 1,
+    "chinese_ratio": null,
+    "self_cite_rate": 0.0,
+    "subject_areas": [
+      "物理",
+      "力学"
+    ],
+    "letpub_url": "https://www.letpub.com.cn/index.php?journalid=2344&page=journalapp&view=detail",
+    "scraped_at": "2026-05-14"
+  },
+  {
+    "name": "Dyna",
+    "abbr": "DYNA-BILBAO",
+    "issn": "0012-7361",
+    "eissn": "",
+    "if_2024": 0.7,
+    "if_5year": 0.7,
+    "cas_2025": {
+      "major": "工程技术",
+      "tier": 1,
+      "top": false,
+      "review": false
+    },
+    "jcr": "Q3",
+    "review_weeks": null,
+    "acceptance_rate": null,
+    "apc_usd": null,
+    "open_access": "Closed",
+    "articles_per_year": 87,
+    "chinese_ratio": null,
+    "self_cite_rate": 0.286,
+    "subject_areas": [
+      "工程技术",
+      "工程：综合"
+    ],
+    "letpub_url": "https://www.letpub.com.cn/index.php?journalid=2371&page=journalapp&view=detail",
+    "scraped_at": "2026-05-14"
+  },
+  {
+    "name": "EARTHQUAKE SPECTRA",
+    "abbr": "EARTHQ SPECTRA",
+    "issn": "8755-2930",
+    "eissn": "",
+    "if_2024": 3.7,
+    "if_5year": 4.5,
+    "cas_2025": {
+      "major": "工程技术",
+      "tier": 4,
+      "top": false,
+      "review": false
+    },
+    "jcr": "Q1",
+    "review_weeks": null,
+    "acceptance_rate": null,
+    "apc_usd": null,
+    "open_access": "Closed",
+    "articles_per_year": 109,
+    "chinese_ratio": null,
+    "self_cite_rate": 0.135,
+    "subject_areas": [
+      "工程技术",
+      "工程：地质"
+    ],
+    "letpub_url": "https://www.letpub.com.cn/index.php?journalid=2396&page=journalapp&view=detail",
+    "scraped_at": "2026-05-14"
+  },
+  {
+    "name": "ECOLOGICAL ECONOMICS",
+    "abbr": "ECOL ECON",
+    "issn": "0921-8009",
+    "eissn": "",
+    "if_2024": 6.3,
+    "if_5year": 7.3,
+    "cas_2025": {
+      "major": "经济学",
+      "tier": 4,
+      "top": false,
+      "review": false
+    },
+    "jcr": "Q1",
+    "review_weeks": 14.5,
+    "acceptance_rate": null,
+    "apc_usd": null,
+    "open_access": "Closed",
+    "articles_per_year": 299,
+    "chinese_ratio": null,
+    "self_cite_rate": 0.048,
+    "subject_areas": [
+      "环境科学",
+      "环境科学"
+    ],
+    "letpub_url": "https://www.letpub.com.cn/index.php?journalid=2405&page=journalapp&view=detail",
+    "scraped_at": "2026-05-14"
+  },
+  {
+    "name": "ECOLOGY AND SOCIETY",
+    "abbr": "ECOL SOC",
+    "issn": "1708-3087",
+    "eissn": "",
+    "if_2024": 3.2,
+    "if_5year": 4.0,
+    "cas_2025": {
+      "major": "社会学",
+      "tier": 1,
+      "top": false,
+      "review": false
+    },
+    "jcr": "Q2",
+    "review_weeks": null,
+    "acceptance_rate": null,
+    "apc_usd": 975.0,
+    "open_access": "OA",
+    "articles_per_year": 134,
+    "chinese_ratio": null,
+    "self_cite_rate": 0.062,
+    "subject_areas": [
+      "环境科学",
+      "生态学"
+    ],
+    "letpub_url": "https://www.letpub.com.cn/index.php?journalid=2414&page=journalapp&view=detail",
+    "scraped_at": "2026-05-14"
+  },
+  {
+    "name": "ECOTOXICOLOGY AND ENVIRONMENTAL SAFETY",
+    "abbr": "ECOTOX ENVIRON SAFE",
+    "issn": "0147-6513",
+    "eissn": "",
+    "if_2024": 6.1,
+    "if_5year": 6.4,
+    "cas_2025": {
+      "major": "环境科学与生态学",
+      "tier": 1,
+      "top": false,
+      "review": false
+    },
+    "jcr": "Q1",
+    "review_weeks": 7.8,
+    "acceptance_rate": 0.625,
+    "apc_usd": 2700.0,
+    "open_access": "OA",
+    "articles_per_year": 1672,
+    "chinese_ratio": null,
+    "self_cite_rate": 0.066,
+    "subject_areas": [
+      "环境科学",
+      "毒理学"
+    ],
+    "letpub_url": "https://www.letpub.com.cn/index.php?journalid=2428&page=journalapp&view=detail",
+    "scraped_at": "2026-05-14"
+  },
+  {
+    "name": "EJSO",
+    "abbr": "EJSO-EUR J SURG ONC",
+    "issn": "0748-7983",
+    "eissn": "",
+    "if_2024": 2.9,
+    "if_5year": 3.3,
+    "cas_2025": {
+      "major": "医学",
+      "tier": 4,
+      "top": false,
+      "review": false
+    },
+    "jcr": "Q2",
+    "review_weeks": 7.6,
+    "acceptance_rate": 0.35,
+    "apc_usd": null,
+    "open_access": "Closed",
+    "articles_per_year": 420,
+    "chinese_ratio": null,
+    "self_cite_rate": 0.034,
+    "subject_areas": [
+      "医学",
+      "外科"
+    ],
+    "letpub_url": "https://www.letpub.com.cn/index.php?journalid=2436&page=journalapp&view=detail",
+    "scraped_at": "2026-05-14"
+  },
+  {
+    "name": "ELECTROCHIMICA ACTA",
+    "abbr": "ELECTROCHIM ACTA",
+    "issn": "0013-4686",
+    "eissn": "",
+    "if_2024": 5.6,
+    "if_5year": 5.5,
+    "cas_2025": {
+      "major": "化学",
+      "tier": 4,
+      "top": false,
+      "review": false
+    },
+    "jcr": "Q1",
+    "review_weeks": 8.26,
+    "acceptance_rate": 0.9,
+    "apc_usd": null,
+    "open_access": "Closed",
+    "articles_per_year": 1401,
+    "chinese_ratio": null,
+    "self_cite_rate": 0.054,
+    "subject_areas": [
+      "工程技术",
+      "电化学"
+    ],
+    "letpub_url": "https://www.letpub.com.cn/index.php?journalid=2449&page=journalapp&view=detail",
+    "scraped_at": "2026-05-14"
+  },
+  {
+    "name": "ENERGY JOURNAL",
+    "abbr": "ENERG J",
+    "issn": "0195-6574",
+    "eissn": "",
+    "if_2024": 2.4,
+    "if_5year": 2.6,
+    "cas_2025": {
+      "major": "经济学",
+      "tier": 4,
+      "top": false,
+      "review": false
+    },
+    "jcr": "Q2",
+    "review_weeks": null,
+    "acceptance_rate": null,
+    "apc_usd": null,
+    "open_access": "Closed",
+    "articles_per_year": 88,
+    "chinese_ratio": null,
+    "self_cite_rate": 0.125,
+    "subject_areas": [
+      "工程技术",
+      "能源与燃料"
+    ],
+    "letpub_url": "https://www.letpub.com.cn/index.php?journalid=2504&page=journalapp&view=detail",
+    "scraped_at": "2026-05-14"
+  },
+  {
+    "name": "Energy Policy",
+    "abbr": "ENERG POLICY",
+    "issn": "0301-4215",
+    "eissn": "",
+    "if_2024": 9.2,
+    "if_5year": 8.8,
+    "cas_2025": {
+      "major": "经济学",
+      "tier": 4,
+      "top": true,
+      "review": false
+    },
+    "jcr": "Q1",
+    "review_weeks": 17.38,
+    "acceptance_rate": null,
+    "apc_usd": null,
+    "open_access": "Closed",
+    "articles_per_year": 406,
+    "chinese_ratio": null,
+    "self_cite_rate": 0.043,
+    "subject_areas": [
+      "管理科学",
+      "环境科学"
+    ],
+    "letpub_url": "https://www.letpub.com.cn/index.php?journalid=2505&page=journalapp&view=detail",
+    "scraped_at": "2026-05-14"
+  },
+  {
+    "name": "ENGINEERING APPLICATIONS OF ARTIFICIAL INTELLIGENCE",
+    "abbr": "ENG APPL ARTIF INTEL",
+    "issn": "0952-1976",
+    "eissn": "",
+    "if_2024": 8.0,
+    "if_5year": 7.7,
+    "cas_2025": {
+      "major": "计算机科学",
+      "tier": 1,
+      "top": true,
+      "review": false
+    },
+    "jcr": "Q1",
+    "review_weeks": 39.1,
+    "acceptance_rate": null,
+    "apc_usd": 3040.0,
+    "open_access": "Hybrid",
+    "articles_per_year": 1909,
+    "chinese_ratio": null,
+    "self_cite_rate": 0.125,
+    "subject_areas": [
+      "工程技术",
+      "工程：电子与电气"
+    ],
+    "letpub_url": "https://www.letpub.com.cn/index.php?journalid=2513&page=journalapp&view=detail",
+    "scraped_at": "2026-05-14"
+  },
+  {
+    "name": "Entropy",
+    "abbr": "ENTROPY-SWITZ",
+    "issn": "1099-4300",
+    "eissn": "",
+    "if_2024": 2.0,
+    "if_5year": 2.2,
+    "cas_2025": {
+      "major": "物理与天体物理",
+      "tier": 3,
+      "top": false,
+      "review": false
+    },
+    "jcr": "Q2",
+    "review_weeks": 3.01,
+    "acceptance_rate": null,
+    "apc_usd": null,
+    "open_access": "OA",
+    "articles_per_year": 1115,
+    "chinese_ratio": null,
+    "self_cite_rate": 0.1,
+    "subject_areas": [
+      "PHYSICS",
+      "MULTIDISCIPLINARY"
+    ],
+    "letpub_url": "https://www.letpub.com.cn/index.php?journalid=2534&page=journalapp&view=detail",
+    "scraped_at": "2026-05-14"
+  },
+  {
+    "name": "Environmental Chemistry Letters",
+    "abbr": "ENVIRON CHEM LETT",
+    "issn": "1610-3653",
+    "eissn": "",
+    "if_2024": 20.4,
+    "if_5year": 18.9,
+    "cas_2025": {
+      "major": "环境科学与生态学",
+      "tier": 3,
+      "top": false,
+      "review": false
+    },
+    "jcr": "Q1",
+    "review_weeks": 13.04,
+    "acceptance_rate": null,
+    "apc_usd": null,
+    "open_access": "Closed",
+    "articles_per_year": 117,
+    "chinese_ratio": null,
+    "self_cite_rate": 0.044,
+    "subject_areas": [
+      "环境科学",
+      "工程：环境"
+    ],
+    "letpub_url": "https://www.letpub.com.cn/index.php?journalid=2544&page=journalapp&view=detail",
+    "scraped_at": "2026-05-14"
+  },
+  {
+    "name": "ENVIRONMENTAL POLLUTION",
+    "abbr": "ENVIRON POLLUT",
+    "issn": "0269-7491",
+    "eissn": "",
+    "if_2024": 7.3,
+    "if_5year": 8.1,
+    "cas_2025": {
+      "major": "环境科学与生态学",
+      "tier": 4,
+      "top": false,
+      "review": false
+    },
+    "jcr": "Q1",
+    "review_weeks": 12.17,
+    "acceptance_rate": null,
+    "apc_usd": null,
+    "open_access": "Closed",
+    "articles_per_year": 2067,
+    "chinese_ratio": null,
+    "self_cite_rate": 0.055,
+    "subject_areas": [
+      "环境科学",
+      "环境科学"
+    ],
+    "letpub_url": "https://www.letpub.com.cn/index.php?journalid=2560&page=journalapp&view=detail",
+    "scraped_at": "2026-05-14"
+  },
+  {
+    "name": "ENVIRONMENTAL RESEARCH",
+    "abbr": "ENVIRON RES",
+    "issn": "0013-9351",
+    "eissn": "",
+    "if_2024": 7.7,
+    "if_5year": 7.7,
+    "cas_2025": {
+      "major": "环境科学与生态学",
+      "tier": 2,
+      "top": false,
+      "review": false
+    },
+    "jcr": "Q1",
+    "review_weeks": 13.04,
+    "acceptance_rate": null,
+    "apc_usd": null,
+    "open_access": "Closed",
+    "articles_per_year": 2295,
+    "chinese_ratio": null,
+    "self_cite_rate": 0.052,
+    "subject_areas": [
+      "环境科学",
+      "公共卫生、环境卫生与职业卫生"
+    ],
+    "letpub_url": "https://www.letpub.com.cn/index.php?journalid=2562&page=journalapp&view=detail",
+    "scraped_at": "2026-05-14"
+  },
+  {
+    "name": "ENVIRONMENTAL SCIENCE & TECHNOLOGY",
+    "abbr": "Environ. Sci. Technol.",
+    "issn": "0013-936X",
+    "eissn": "",
+    "if_2024": 11.3,
+    "if_5year": 12.4,
+    "cas_2025": {
+      "major": "环境科学与生态学",
+      "tier": 1,
+      "top": true,
+      "review": false
+    },
+    "jcr": "Q1",
+    "review_weeks": 12.6,
+    "acceptance_rate": 0.8,
+    "apc_usd": null,
+    "open_access": "Hybrid",
+    "articles_per_year": 1990,
+    "chinese_ratio": null,
+    "self_cite_rate": 0.097,
+    "subject_areas": [
+      "环境科学",
+      "工程：环境"
+    ],
+    "letpub_url": "https://www.letpub.com.cn/index.php?journalid=2566&page=journalapp&view=detail",
+    "scraped_at": "2026-05-14"
+  },
+  {
+    "name": "EPL",
+    "abbr": "EPL-EUROPHYS LETT",
+    "issn": "0295-5075",
+    "eissn": "",
+    "if_2024": 1.8,
+    "if_5year": 1.6,
+    "cas_2025": {
+      "major": "物理与天体物理",
+      "tier": 2,
+      "top": false,
+      "review": false
+    },
+    "jcr": "Q2",
+    "review_weeks": 8.26,
+    "acceptance_rate": 0.85,
+    "apc_usd": null,
+    "open_access": "Closed",
+    "articles_per_year": 274,
+    "chinese_ratio": null,
+    "self_cite_rate": 0.056,
+    "subject_areas": [
+      "物理",
+      "物理：综合"
+    ],
+    "letpub_url": "https://www.letpub.com.cn/index.php?journalid=2589&page=journalapp&view=detail",
+    "scraped_at": "2026-05-14"
+  },
+  {
+    "name": "ERDE",
+    "abbr": "ERDE",
+    "issn": "0013-9998",
+    "eissn": "",
+    "if_2024": 0.6,
+    "if_5year": 1.0,
+    "cas_2025": {
+      "major": "社会学",
+      "tier": 3,
+      "top": false,
+      "review": false
+    },
+    "jcr": "Q3",
+    "review_weeks": null,
+    "acceptance_rate": null,
+    "apc_usd": null,
+    "open_access": "OA",
+    "articles_per_year": 6,
+    "chinese_ratio": null,
+    "self_cite_rate": 0.0,
+    "subject_areas": [
+      "GEOGRAPHY",
+      "PHYSICAL",
+      "GEOSCIENCES",
+      "MULTIDISCIPLINARY"
+    ],
+    "letpub_url": "https://www.letpub.com.cn/index.php?journalid=2592&page=journalapp&view=detail",
+    "scraped_at": "2026-05-14"
+  },
+  {
+    "name": "EUPHYTICA",
+    "abbr": "EUPHYTICA",
+    "issn": "0014-2336",
+    "eissn": "",
+    "if_2024": 1.7,
+    "if_5year": 1.8,
+    "cas_2025": {
+      "major": "农林科学",
+      "tier": 1,
+      "top": false,
+      "review": false
+    },
+    "jcr": "Q2",
+    "review_weeks": 21.72,
+    "acceptance_rate": 0.75,
+    "apc_usd": null,
+    "open_access": "Closed",
+    "articles_per_year": 184,
+    "chinese_ratio": null,
+    "self_cite_rate": 0.118,
+    "subject_areas": [
+      "农林科学",
+      "农艺学"
+    ],
+    "letpub_url": "https://www.letpub.com.cn/index.php?journalid=2614&page=journalapp&view=detail",
+    "scraped_at": "2026-05-14"
+  },
+  {
+    "name": "EUROPEAN JOURNAL OF OPERATIONAL RESEARCH",
+    "abbr": "EUR J OPER RES",
+    "issn": "0377-2217",
+    "eissn": "",
+    "if_2024": 6.0,
+    "if_5year": 6.2,
+    "cas_2025": {
+      "major": "管理学",
+      "tier": 1,
+      "top": false,
+      "review": false
+    },
+    "jcr": "Q1",
+    "review_weeks": 30.85,
+    "acceptance_rate": null,
+    "apc_usd": null,
+    "open_access": "Closed",
+    "articles_per_year": 511,
+    "chinese_ratio": null,
+    "self_cite_rate": 0.1,
+    "subject_areas": [
+      "管理科学",
+      "运筹学与管理科学"
+    ],
+    "letpub_url": "https://www.letpub.com.cn/index.php?journalid=2684&page=journalapp&view=detail",
+    "scraped_at": "2026-05-14"
+  },
+  {
+    "name": "EXPERT SYSTEMS WITH APPLICATIONS",
+    "abbr": "EXPERT SYST APPL",
+    "issn": "0957-4174",
+    "eissn": "",
+    "if_2024": 7.5,
+    "if_5year": 7.8,
+    "cas_2025": {
+      "major": "计算机科学",
+      "tier": 4,
+      "top": true,
+      "review": false
+    },
+    "jcr": "Q1",
+    "review_weeks": 59.96,
+    "acceptance_rate": 0.16,
+    "apc_usd": 3490.0,
+    "open_access": "Hybrid",
+    "articles_per_year": 2925,
+    "chinese_ratio": null,
+    "self_cite_rate": 0.093,
+    "subject_areas": [
+      "工程技术",
+      "工程：电子与电气"
+    ],
+    "letpub_url": "https://www.letpub.com.cn/index.php?journalid=2799&page=journalapp&view=detail",
+    "scraped_at": "2026-05-14"
+  },
+  {
+    "name": "EYE",
+    "abbr": "EYE",
+    "issn": "0950-222X",
+    "eissn": "",
+    "if_2024": 3.4,
+    "if_5year": 3.9,
+    "cas_2025": {
+      "major": "医学",
+      "tier": 2,
+      "top": false,
+      "review": false
+    },
+    "jcr": "Q1",
+    "review_weeks": null,
+    "acceptance_rate": null,
+    "apc_usd": null,
+    "open_access": "Closed",
+    "articles_per_year": 481,
+    "chinese_ratio": null,
+    "self_cite_rate": 0.059,
+    "subject_areas": [
+      "医学",
+      "眼科学"
+    ],
+    "letpub_url": "https://www.letpub.com.cn/index.php?journalid=2805&page=journalapp&view=detail",
+    "scraped_at": "2026-05-14"
+  },
+  {
+    "name": "FACIES",
+    "abbr": "FACIES",
+    "issn": "0172-9179",
+    "eissn": "",
+    "if_2024": 1.7,
+    "if_5year": 2.3,
+    "cas_2025": {
+      "major": "地球科学",
+      "tier": 3,
+      "top": false,
+      "review": false
+    },
+    "jcr": "Q2",
+    "review_weeks": null,
+    "acceptance_rate": null,
+    "apc_usd": null,
+    "open_access": "Closed",
+    "articles_per_year": 15,
+    "chinese_ratio": null,
+    "self_cite_rate": 0.059,
+    "subject_areas": [
+      "地学",
+      "地质学"
+    ],
+    "letpub_url": "https://www.letpub.com.cn/index.php?journalid=2808&page=journalapp&view=detail",
+    "scraped_at": "2026-05-14"
+  },
+  {
+    "name": "Filomat",
+    "abbr": "FILOMAT",
+    "issn": "0354-5180",
+    "eissn": "",
+    "if_2024": 0.9,
+    "if_5year": 0.9,
+    "cas_2025": {
+      "major": "数学",
+      "tier": 2,
+      "top": false,
+      "review": false
+    },
+    "jcr": "Q2",
+    "review_weeks": null,
+    "acceptance_rate": null,
+    "apc_usd": null,
+    "open_access": "OA",
+    "articles_per_year": 733,
+    "chinese_ratio": null,
+    "self_cite_rate": 0.111,
+    "subject_areas": [
+      "MATHEMATICS",
+      "APPLIED",
+      "MATHEMATICS"
+    ],
+    "letpub_url": "https://www.letpub.com.cn/index.php?journalid=2835&page=journalapp&view=detail",
+    "scraped_at": "2026-05-14"
+  },
+  {
+    "name": "FISHERIES",
+    "abbr": "FISHERIES",
+    "issn": "0363-2415",
+    "eissn": "",
+    "if_2024": 2.2,
+    "if_5year": 2.8,
+    "cas_2025": {
+      "major": "农林科学",
+      "tier": 2,
+      "top": false,
+      "review": false
+    },
+    "jcr": "Q2",
+    "review_weeks": null,
+    "acceptance_rate": null,
+    "apc_usd": null,
+    "open_access": "Closed",
+    "articles_per_year": 27,
+    "chinese_ratio": null,
+    "self_cite_rate": 0.091,
+    "subject_areas": [
+      "农林科学",
+      "渔业"
+    ],
+    "letpub_url": "https://www.letpub.com.cn/index.php?journalid=2847&page=journalapp&view=detail",
+    "scraped_at": "2026-05-14"
+  },
+  {
+    "name": "Fixed Point Theory",
+    "abbr": "FIXED POINT THEOR-RO",
+    "issn": "1583-5022",
+    "eissn": "",
+    "if_2024": 1.1,
+    "if_5year": 1.0,
+    "cas_2025": {
+      "major": "数学",
+      "tier": 1,
+      "top": false,
+      "review": false
+    },
+    "jcr": "Q1",
+    "review_weeks": null,
+    "acceptance_rate": null,
+    "apc_usd": null,
+    "open_access": "Closed",
+    "articles_per_year": 48,
+    "chinese_ratio": null,
+    "self_cite_rate": 0.091,
+    "subject_areas": [
+      "数学",
+      "数学"
+    ],
+    "letpub_url": "https://www.letpub.com.cn/index.php?journalid=2854&page=journalapp&view=detail",
+    "scraped_at": "2026-05-14"
+  },
+  {
+    "name": "FLORA",
+    "abbr": "FLORA",
+    "issn": "0367-2530",
+    "eissn": "",
+    "if_2024": 1.8,
+    "if_5year": 1.9,
+    "cas_2025": {
+      "major": "生物学",
+      "tier": 1,
+      "top": false,
+      "review": false
+    },
+    "jcr": "Q3",
+    "review_weeks": 13.04,
+    "acceptance_rate": 0.29,
+    "apc_usd": null,
+    "open_access": "Closed",
+    "articles_per_year": 122,
+    "chinese_ratio": null,
+    "self_cite_rate": 0.111,
+    "subject_areas": [
+      "生物",
+      "植物科学"
+    ],
+    "letpub_url": "https://www.letpub.com.cn/index.php?journalid=2859&page=journalapp&view=detail",
+    "scraped_at": "2026-05-14"
+  },
+  {
+    "name": "FLY",
+    "abbr": "FLY",
+    "issn": "1933-6934",
+    "eissn": "",
+    "if_2024": 2.2,
+    "if_5year": 1.8,
+    "cas_2025": {
+      "major": "生物学",
+      "tier": 4,
+      "top": false,
+      "review": false
+    },
+    "jcr": "Q4",
+    "review_weeks": null,
+    "acceptance_rate": null,
+    "apc_usd": null,
+    "open_access": "Closed",
+    "articles_per_year": 8,
+    "chinese_ratio": null,
+    "self_cite_rate": 0.045,
+    "subject_areas": [
+      "生物",
+      "生化与分子生物学"
+    ],
+    "letpub_url": "https://www.letpub.com.cn/index.php?journalid=2868&page=journalapp&view=detail",
+    "scraped_at": "2026-05-14"
+  },
+  {
+    "name": "Food Chemistry",
+    "abbr": "FOOD CHEM",
+    "issn": "0308-8146",
+    "eissn": "",
+    "if_2024": 9.8,
+    "if_5year": 9.7,
+    "cas_2025": {
+      "major": "农林科学",
+      "tier": 1,
+      "top": true,
+      "review": false
+    },
+    "jcr": "Q1",
+    "review_weeks": 23.03,
+    "acceptance_rate": 0.5,
+    "apc_usd": null,
+    "open_access": "Closed",
+    "articles_per_year": 3976,
+    "chinese_ratio": null,
+    "self_cite_rate": 0.133,
+    "subject_areas": [
+      "工程技术",
+      "食品科技"
+    ],
+    "letpub_url": "https://www.letpub.com.cn/index.php?journalid=2892&page=journalapp&view=detail",
+    "scraped_at": "2026-05-14"
+  },
+  {
+    "name": "FOOD HYDROCOLLOIDS",
+    "abbr": "FOOD HYDROCOLLOID",
+    "issn": "0268-005X",
+    "eissn": "",
+    "if_2024": 12.4,
+    "if_5year": 13.3,
+    "cas_2025": {
+      "major": "农林科学",
+      "tier": 2,
+      "top": true,
+      "review": false
+    },
+    "jcr": "Q1",
+    "review_weeks": 7.39,
+    "acceptance_rate": 0.5,
+    "apc_usd": null,
+    "open_access": "Closed",
+    "articles_per_year": 1180,
+    "chinese_ratio": null,
+    "self_cite_rate": 0.161,
+    "subject_areas": [
+      "工程技术",
+      "食品科技"
+    ],
+    "letpub_url": "https://www.letpub.com.cn/index.php?journalid=2894&page=journalapp&view=detail",
+    "scraped_at": "2026-05-14"
+  },
+  {
+    "name": "FOOD RESEARCH INTERNATIONAL",
+    "abbr": "FOOD RES INT",
+    "issn": "0963-9969",
+    "eissn": "",
+    "if_2024": 8.0,
+    "if_5year": 8.5,
+    "cas_2025": {
+      "major": "农林科学",
+      "tier": 3,
+      "top": true,
+      "review": false
+    },
+    "jcr": "Q1",
+    "review_weeks": 9.99,
+    "acceptance_rate": 0.3666,
+    "apc_usd": null,
+    "open_access": "Closed",
+    "articles_per_year": 1379,
+    "chinese_ratio": null,
+    "self_cite_rate": 0.062,
+    "subject_areas": [
+      "工程技术",
+      "食品科技"
+    ],
+    "letpub_url": "https://www.letpub.com.cn/index.php?journalid=2898&page=journalapp&view=detail",
+    "scraped_at": "2026-05-14"
+  },
+  {
+    "name": "FOOD REVIEWS INTERNATIONAL",
+    "abbr": "FOOD REV INT",
+    "issn": "8755-9129",
+    "eissn": "",
+    "if_2024": 6.0,
+    "if_5year": 7.8,
+    "cas_2025": {
+      "major": "农林科学",
+      "tier": 4,
+      "top": false,
+      "review": true
+    },
+    "jcr": "Q1",
+    "review_weeks": null,
+    "acceptance_rate": null,
+    "apc_usd": null,
+    "open_access": "Closed",
+    "articles_per_year": 93,
+    "chinese_ratio": null,
+    "self_cite_rate": 0.017,
+    "subject_areas": [
+      "工程技术",
+      "食品科技"
+    ],
+    "letpub_url": "https://www.letpub.com.cn/index.php?journalid=2899&page=journalapp&view=detail",
+    "scraped_at": "2026-05-14"
+  },
+  {
+    "name": "FORESTRY",
+    "abbr": "FORESTRY",
+    "issn": "0015-752X",
+    "eissn": "",
+    "if_2024": 3.2,
+    "if_5year": 3.2,
+    "cas_2025": {
+      "major": "农林科学",
+      "tier": 2,
+      "top": false,
+      "review": false
+    },
+    "jcr": "Q1",
+    "review_weeks": null,
+    "acceptance_rate": null,
+    "apc_usd": null,
+    "open_access": "Closed",
+    "articles_per_year": 67,
+    "chinese_ratio": null,
+    "self_cite_rate": 0.062,
+    "subject_areas": [
+      "农林科学",
+      "林学"
+    ],
+    "letpub_url": "https://www.letpub.com.cn/index.php?journalid=2917&page=journalapp&view=detail",
+    "scraped_at": "2026-05-14"
+  },
+  {
+    "name": "Fourrages",
+    "abbr": "FOURRAGES",
+    "issn": "0429-2766",
+    "eissn": "",
+    "if_2024": 0.6,
+    "if_5year": 0.4,
+    "cas_2025": {
+      "major": "农林科学",
+      "tier": 3,
+      "top": false,
+      "review": false
+    },
+    "jcr": "Q4",
+    "review_weeks": null,
+    "acceptance_rate": null,
+    "apc_usd": null,
+    "open_access": "Closed",
+    "articles_per_year": 27,
+    "chinese_ratio": null,
+    "self_cite_rate": 0.5,
+    "subject_areas": [
+      "AGRICULTURE",
+      "DAIRY & ANIMAL SCIENCE"
+    ],
+    "letpub_url": "https://www.letpub.com.cn/index.php?journalid=2933&page=journalapp&view=detail",
+    "scraped_at": "2026-05-14"
+  },
+  {
+    "name": "Fuel",
+    "abbr": "FUEL",
+    "issn": "0016-2361",
+    "eissn": "",
+    "if_2024": 7.5,
+    "if_5year": 7.1,
+    "cas_2025": {
+      "major": "工程技术",
+      "tier": 1,
+      "top": true,
+      "review": false
+    },
+    "jcr": "Q1",
+    "review_weeks": 23.9,
+    "acceptance_rate": 0.83,
+    "apc_usd": null,
+    "open_access": "Closed",
+    "articles_per_year": 3132,
+    "chinese_ratio": null,
+    "self_cite_rate": 0.107,
+    "subject_areas": [
+      "工程技术",
+      "工程：化工"
+    ],
+    "letpub_url": "https://www.letpub.com.cn/index.php?journalid=2950&page=journalapp&view=detail",
+    "scraped_at": "2026-05-14"
+  },
+  {
+    "name": "FUZZY SETS AND SYSTEMS",
+    "abbr": "FUZZY SET SYST",
+    "issn": "0165-0114",
+    "eissn": "",
+    "if_2024": 2.7,
+    "if_5year": 2.6,
+    "cas_2025": {
+      "major": "数学",
+      "tier": 3,
+      "top": true,
+      "review": false
+    },
+    "jcr": "Q2",
+    "review_weeks": 23.03,
+    "acceptance_rate": null,
+    "apc_usd": null,
+    "open_access": "Closed",
+    "articles_per_year": 229,
+    "chinese_ratio": null,
+    "self_cite_rate": 0.185,
+    "subject_areas": [
+      "数学",
+      "计算机：理论方法"
+    ],
+    "letpub_url": "https://www.letpub.com.cn/index.php?journalid=2978&page=journalapp&view=detail",
+    "scraped_at": "2026-05-14"
+  },
+  {
+    "name": "GENE",
+    "abbr": "GENE",
+    "issn": "0378-1119",
+    "eissn": "",
+    "if_2024": 2.4,
+    "if_5year": 2.8,
+    "cas_2025": {
+      "major": "生物学",
+      "tier": 4,
+      "top": false,
+      "review": false
+    },
+    "jcr": "Q3",
+    "review_weeks": null,
+    "acceptance_rate": 0.5576,
+    "apc_usd": null,
+    "open_access": "Closed",
+    "articles_per_year": 759,
+    "chinese_ratio": null,
+    "self_cite_rate": 0.0,
+    "subject_areas": [
+      "生物",
+      "遗传学"
+    ],
+    "letpub_url": "https://www.letpub.com.cn/index.php?journalid=2998&page=journalapp&view=detail",
+    "scraped_at": "2026-05-14"
+  },
+  {
+    "name": "GEOPHYSICAL RESEARCH LETTERS",
+    "abbr": "GEOPHYS RES LETT",
+    "issn": "0094-8276",
+    "eissn": "",
+    "if_2024": 4.6,
+    "if_5year": 5.1,
+    "cas_2025": {
+      "major": "地球科学",
+      "tier": 1,
+      "top": true,
+      "review": false
+    },
+    "jcr": "Q1",
+    "review_weeks": 8.69,
+    "acceptance_rate": null,
+    "apc_usd": null,
+    "open_access": "Closed",
+    "articles_per_year": 1725,
+    "chinese_ratio": null,
+    "self_cite_rate": 0.087,
+    "subject_areas": [
+      "地学",
+      "地球科学综合"
+    ],
+    "letpub_url": "https://www.letpub.com.cn/index.php?journalid=3078&page=journalapp&view=detail",
+    "scraped_at": "2026-05-14"
+  },
+  {
+    "name": "GFF",
+    "abbr": "GFF",
+    "issn": "1103-5897",
+    "eissn": "",
+    "if_2024": 1.2,
+    "if_5year": 1.2,
+    "cas_2025": {
+      "major": "地球科学",
+      "tier": 1,
+      "top": false,
+      "review": false
+    },
+    "jcr": "Q2",
+    "review_weeks": null,
+    "acceptance_rate": null,
+    "apc_usd": null,
+    "open_access": "Closed",
+    "articles_per_year": 6,
+    "chinese_ratio": null,
+    "self_cite_rate": 0.0,
+    "subject_areas": [
+      "地学",
+      "地质学"
+    ],
+    "letpub_url": "https://www.letpub.com.cn/index.php?journalid=3098&page=journalapp&view=detail",
+    "scraped_at": "2026-05-14"
+  },
+  {
+    "name": "GLIA",
+    "abbr": "GLIA",
+    "issn": "0894-1491",
+    "eissn": "",
+    "if_2024": 5.1,
+    "if_5year": 6.0,
+    "cas_2025": {
+      "major": "医学",
+      "tier": 2,
+      "top": false,
+      "review": false
+    },
+    "jcr": "Q1",
+    "review_weeks": null,
+    "acceptance_rate": null,
+    "apc_usd": null,
+    "open_access": "Closed",
+    "articles_per_year": 138,
+    "chinese_ratio": null,
+    "self_cite_rate": 0.039,
+    "subject_areas": [
+      "医学",
+      "神经科学"
+    ],
+    "letpub_url": "https://www.letpub.com.cn/index.php?journalid=3108&page=journalapp&view=detail",
+    "scraped_at": "2026-05-14"
+  },
+  {
+    "name": "GUT",
+    "abbr": "GUT",
+    "issn": "0017-5749",
+    "eissn": "",
+    "if_2024": 26.2,
+    "if_5year": 25.4,
+    "cas_2025": {
+      "major": "医学",
+      "tier": 2,
+      "top": true,
+      "review": false
+    },
+    "jcr": "Q1",
+    "review_weeks": null,
+    "acceptance_rate": 0.15,
+    "apc_usd": null,
+    "open_access": "Closed",
+    "articles_per_year": 172,
+    "chinese_ratio": null,
+    "self_cite_rate": 0.027,
+    "subject_areas": [
+      "医学",
+      "胃肠肝病学"
+    ],
+    "letpub_url": "https://www.letpub.com.cn/index.php?journalid=3140&page=journalapp&view=detail",
+    "scraped_at": "2026-05-14"
+  },
+  {
+    "name": "HASTINGS CENTER REPORT",
+    "abbr": "HASTINGS CENT REP",
+    "issn": "0093-0334",
+    "eissn": "",
+    "if_2024": 2.3,
+    "if_5year": 2.7,
+    "cas_2025": {
+      "major": "哲学",
+      "tier": 4,
+      "top": false,
+      "review": false
+    },
+    "jcr": "Q1",
+    "review_weeks": null,
+    "acceptance_rate": null,
+    "apc_usd": null,
+    "open_access": "Closed",
+    "articles_per_year": 62,
+    "chinese_ratio": null,
+    "self_cite_rate": 0.043,
+    "subject_areas": [
+      "医学",
+      "卫生保健"
+    ],
+    "letpub_url": "https://www.letpub.com.cn/index.php?journalid=3155&page=journalapp&view=detail",
+    "scraped_at": "2026-05-14"
+  },
+  {
+    "name": "HIGH TEMPERATURE",
+    "abbr": "HIGH TEMP+",
+    "issn": "0018-151X",
+    "eissn": "",
+    "if_2024": 0.7,
+    "if_5year": 0.7,
+    "cas_2025": {
+      "major": "物理与天体物理",
+      "tier": 3,
+      "top": false,
+      "review": false
+    },
+    "jcr": "Q4",
+    "review_weeks": null,
+    "acceptance_rate": null,
+    "apc_usd": null,
+    "open_access": "Closed",
+    "articles_per_year": 72,
+    "chinese_ratio": null,
+    "self_cite_rate": 0.429,
+    "subject_areas": [
+      "物理",
+      "物理：应用"
+    ],
+    "letpub_url": "https://www.letpub.com.cn/index.php?journalid=3221&page=journalapp&view=detail",
+    "scraped_at": "2026-05-14"
+  },
+  {
+    "name": "HISTORY OF THE HUMAN SCIENCES",
+    "abbr": "HIST HUM SCI",
+    "issn": "0952-6951",
+    "eissn": "",
+    "if_2024": 0.5,
+    "if_5year": 0.9,
+    "cas_2025": {
+      "major": "历史学",
+      "tier": 1,
+      "top": true,
+      "review": false
+    },
+    "jcr": "Q2",
+    "review_weeks": null,
+    "acceptance_rate": null,
+    "apc_usd": null,
+    "open_access": "Closed",
+    "articles_per_year": 26,
+    "chinese_ratio": null,
+    "self_cite_rate": 0.0,
+    "subject_areas": [
+      "综合性期刊",
+      "科学史与科学哲学"
+    ],
+    "letpub_url": "https://www.letpub.com.cn/index.php?journalid=3237&page=journalapp&view=detail",
+    "scraped_at": "2026-05-14"
+  },
+  {
+    "name": "HUMAN FACTORS",
+    "abbr": "HUM FACTORS",
+    "issn": "0018-7208",
+    "eissn": "",
+    "if_2024": 3.3,
+    "if_5year": 4.6,
+    "cas_2025": {
+      "major": "心理学",
+      "tier": 2,
+      "top": false,
+      "review": false
+    },
+    "jcr": "Q1",
+    "review_weeks": null,
+    "acceptance_rate": null,
+    "apc_usd": null,
+    "open_access": "Closed",
+    "articles_per_year": 50,
+    "chinese_ratio": null,
+    "self_cite_rate": 0.061,
+    "subject_areas": [
+      "管理科学",
+      "行为科学"
+    ],
+    "letpub_url": "https://www.letpub.com.cn/index.php?journalid=3268&page=journalapp&view=detail",
+    "scraped_at": "2026-05-14"
+  },
+  {
+    "name": "IBIS",
+    "abbr": "IBIS",
+    "issn": "0019-1019",
+    "eissn": "",
+    "if_2024": 2.1,
+    "if_5year": 2.1,
+    "cas_2025": {
+      "major": "生物学",
+      "tier": 2,
+      "top": false,
+      "review": false
+    },
+    "jcr": "Q1",
+    "review_weeks": null,
+    "acceptance_rate": null,
+    "apc_usd": null,
+    "open_access": "Closed",
+    "articles_per_year": 71,
+    "chinese_ratio": null,
+    "self_cite_rate": 0.095,
+    "subject_areas": [
+      "生物",
+      "鸟类学"
+    ],
+    "letpub_url": "https://www.letpub.com.cn/index.php?journalid=3300&page=journalapp&view=detail",
+    "scraped_at": "2026-05-14"
+  },
+  {
+    "name": "ICARUS",
+    "abbr": "ICARUS",
+    "issn": "0019-1035",
+    "eissn": "",
+    "if_2024": 3.0,
+    "if_5year": 3.3,
+    "cas_2025": {
+      "major": "物理与天体物理",
+      "tier": 4,
+      "top": false,
+      "review": false
+    },
+    "jcr": "Q2",
+    "review_weeks": null,
+    "acceptance_rate": null,
+    "apc_usd": null,
+    "open_access": "Closed",
+    "articles_per_year": 390,
+    "chinese_ratio": null,
+    "self_cite_rate": 0.167,
+    "subject_areas": [
+      "地学天文",
+      "天文与天体物理"
+    ],
+    "letpub_url": "https://www.letpub.com.cn/index.php?journalid=3303&page=journalapp&view=detail",
+    "scraped_at": "2026-05-14"
+  },
+  {
+    "name": "IEEE Communications Surveys and Tutorials",
+    "abbr": "IEEE COMMUN SURV TUT",
+    "issn": "1553-877X",
+    "eissn": "",
+    "if_2024": 46.7,
+    "if_5year": 42.8,
+    "cas_2025": {
+      "major": "计算机科学",
+      "tier": 3,
+      "top": true,
+      "review": true
+    },
+    "jcr": "Q1",
+    "review_weeks": null,
+    "acceptance_rate": null,
+    "apc_usd": null,
+    "open_access": "Closed",
+    "articles_per_year": 74,
+    "chinese_ratio": null,
+    "self_cite_rate": 0.024,
+    "subject_areas": [
+      "COMPUTER SCIENCE",
+      "INFORMATION SYSTEMS",
+      "TELECOMMUNICATIONS"
+    ],
+    "letpub_url": "https://www.letpub.com.cn/index.php?journalid=3320&page=journalapp&view=detail",
+    "scraped_at": "2026-05-14"
+  },
+  {
+    "name": "IEEE Geoscience and Remote Sensing Letters",
+    "abbr": "IEEE GEOSCI REMOTE S",
+    "issn": "1545-598X",
+    "eissn": "",
+    "if_2024": 4.4,
+    "if_5year": 4.7,
+    "cas_2025": {
+      "major": "地球科学",
+      "tier": 4,
+      "top": false,
+      "review": false
+    },
+    "jcr": "Q2",
+    "review_weeks": 14.77,
+    "acceptance_rate": null,
+    "apc_usd": null,
+    "open_access": "Closed",
+    "articles_per_year": 1078,
+    "chinese_ratio": null,
+    "self_cite_rate": 0.068,
+    "subject_areas": [
+      "工程技术",
+      "地球化学与地球物理"
+    ],
+    "letpub_url": "https://www.letpub.com.cn/index.php?journalid=3328&page=journalapp&view=detail",
+    "scraped_at": "2026-05-14"
+  },
+  {
+    "name": "IEEE Journal of Selected Topics in Applied Earth Observations and Remote Sensing",
+    "abbr": "IEEE J-STARS",
+    "issn": "1939-1404",
+    "eissn": "",
+    "if_2024": 5.3,
+    "if_5year": 5.6,
+    "cas_2025": {
+      "major": "地球科学",
+      "tier": 4,
+      "top": false,
+      "review": false
+    },
+    "jcr": "Q1",
+    "review_weeks": 13.04,
+    "acceptance_rate": null,
+    "apc_usd": 1496.0,
+    "open_access": "OA",
+    "articles_per_year": 1404,
+    "chinese_ratio": null,
+    "self_cite_rate": 0.151,
+    "subject_areas": [
+      "地学",
+      "成像科学与照相技术"
+    ],
+    "letpub_url": "https://www.letpub.com.cn/index.php?journalid=3336&page=journalapp&view=detail",
+    "scraped_at": "2026-05-14"
+  },
+  {
+    "name": "IEEE SENSORS JOURNAL",
+    "abbr": "IEEE SENS J",
+    "issn": "1530-437X",
+    "eissn": "",
+    "if_2024": 4.5,
+    "if_5year": 4.7,
+    "cas_2025": {
+      "major": "综合性期刊",
+      "tier": 3,
+      "top": false,
+      "review": false
+    },
+    "jcr": "Q2",
+    "review_weeks": 27.37,
+    "acceptance_rate": null,
+    "apc_usd": null,
+    "open_access": "Closed",
+    "articles_per_year": 3965,
+    "chinese_ratio": null,
+    "self_cite_rate": 0.2,
+    "subject_areas": [
+      "工程技术",
+      "工程：电子与电气"
+    ],
+    "letpub_url": "https://www.letpub.com.cn/index.php?journalid=3352&page=journalapp&view=detail",
+    "scraped_at": "2026-05-14"
+  },
+  {
+    "name": "IEEE TRANSACTIONS ON EDUCATION",
+    "abbr": "IEEE T EDUC",
+    "issn": "0018-9359",
+    "eissn": "",
+    "if_2024": 2.0,
+    "if_5year": 2.8,
+    "cas_2025": {
+      "major": "教育学",
+      "tier": 2,
+      "top": false,
+      "review": false
+    },
+    "jcr": "Q2",
+    "review_weeks": null,
+    "acceptance_rate": null,
+    "apc_usd": null,
+    "open_access": "Closed",
+    "articles_per_year": 79,
+    "chinese_ratio": null,
+    "self_cite_rate": 0.1,
+    "subject_areas": [
+      "工程技术",
+      "工程：电子与电气"
+    ],
+    "letpub_url": "https://www.letpub.com.cn/index.php?journalid=3381&page=journalapp&view=detail",
+    "scraped_at": "2026-05-14"
+  },
+  {
+    "name": "IEEE TRANSACTIONS ON ENGINEERING MANAGEMENT",
+    "abbr": "IEEE T ENG MANAGE",
+    "issn": "0018-9391",
+    "eissn": "",
+    "if_2024": 5.2,
+    "if_5year": 5.7,
+    "cas_2025": {
+      "major": "管理学",
+      "tier": 4,
+      "top": false,
+      "review": false
+    },
+    "jcr": "Q1",
+    "review_weeks": 19.55,
+    "acceptance_rate": 0.2,
+    "apc_usd": null,
+    "open_access": "Closed",
+    "articles_per_year": 404,
+    "chinese_ratio": null,
+    "self_cite_rate": 0.173,
+    "subject_areas": [
+      "管理科学",
+      "工程：工业"
+    ],
+    "letpub_url": "https://www.letpub.com.cn/index.php?journalid=3386&page=journalapp&view=detail",
+    "scraped_at": "2026-05-14"
+  },
+  {
+    "name": "IEEE TRANSACTIONS ON GEOSCIENCE AND REMOTE SENSING",
+    "abbr": "IEEE T GEOSCI REMOTE",
+    "issn": "0196-2892",
+    "eissn": "",
+    "if_2024": 8.6,
+    "if_5year": 8.8,
+    "cas_2025": {
+      "major": "地球科学",
+      "tier": 4,
+      "top": true,
+      "review": false
+    },
+    "jcr": "Q1",
+    "review_weeks": 17.38,
+    "acceptance_rate": null,
+    "apc_usd": null,
+    "open_access": "Closed",
+    "articles_per_year": 2902,
+    "chinese_ratio": null,
+    "self_cite_rate": 0.314,
+    "subject_areas": [
+      "工程技术",
+      "地球化学与地球物理"
+    ],
+    "letpub_url": "https://www.letpub.com.cn/index.php?journalid=3389&page=journalapp&view=detail",
+    "scraped_at": "2026-05-14"
+  },
+  {
+    "name": "IEEE TRANSACTIONS ON INDUSTRIAL ELECTRONICS",
+    "abbr": "IEEE T IND ELECTRON",
+    "issn": "0278-0046",
+    "eissn": "",
+    "if_2024": 7.2,
+    "if_5year": 7.8,
+    "cas_2025": {
+      "major": "工程技术",
+      "tier": 2,
+      "top": true,
+      "review": false
+    },
+    "jcr": "Q1",
+    "review_weeks": 39.1,
+    "acceptance_rate": null,
+    "apc_usd": null,
+    "open_access": "Closed",
+    "articles_per_year": 1717,
+    "chinese_ratio": null,
+    "self_cite_rate": 0.139,
+    "subject_areas": [
+      "工程技术",
+      "工程：电子与电气"
+    ],
+    "letpub_url": "https://www.letpub.com.cn/index.php?journalid=3391&page=journalapp&view=detail",
+    "scraped_at": "2026-05-14"
+  },
+  {
+    "name": "IEEE Transactions on Industrial Informatics",
+    "abbr": "IEEE T IND INFORM",
+    "issn": "1551-3203",
+    "eissn": "",
+    "if_2024": 9.9,
+    "if_5year": 10.7,
+    "cas_2025": {
+      "major": "计算机科学",
+      "tier": 2,
+      "top": true,
+      "review": false
+    },
+    "jcr": "Q1",
+    "review_weeks": 19.55,
+    "acceptance_rate": null,
+    "apc_usd": null,
+    "open_access": "Closed",
+    "articles_per_year": 1132,
+    "chinese_ratio": null,
+    "self_cite_rate": 0.081,
+    "subject_areas": [
+      "工程技术",
+      "工程：工业"
+    ],
+    "letpub_url": "https://www.letpub.com.cn/index.php?journalid=3392&page=journalapp&view=detail",
+    "scraped_at": "2026-05-14"
+  },
+  {
+    "name": "IEEE TRANSACTIONS ON INSTRUMENTATION AND MEASUREMENT",
+    "abbr": "IEEE T INSTRUM MEAS",
+    "issn": "0018-9456",
+    "eissn": "",
+    "if_2024": 5.9,
+    "if_5year": 6.0,
+    "cas_2025": {
+      "major": "工程技术",
+      "tier": 3,
+      "top": false,
+      "review": false
+    },
+    "jcr": "Q1",
+    "review_weeks": 29.55,
+    "acceptance_rate": 0.25,
+    "apc_usd": null,
+    "open_access": "Hybrid",
+    "articles_per_year": 2532,
+    "chinese_ratio": null,
+    "self_cite_rate": 0.186,
+    "subject_areas": [
+      "工程技术",
+      "工程：电子与电气"
+    ],
+    "letpub_url": "https://www.letpub.com.cn/index.php?journalid=3397&page=journalapp&view=detail",
+    "scraped_at": "2026-05-14"
+  },
+  {
+    "name": "IEEE TRANSACTIONS ON PATTERN ANALYSIS AND MACHINE INTELLIGENCE",
+    "abbr": "IEEE T PATTERN ANAL",
+    "issn": "0162-8828",
+    "eissn": "",
+    "if_2024": 18.6,
+    "if_5year": 20.4,
+    "cas_2025": {
+      "major": "计算机科学",
+      "tier": 3,
+      "top": true,
+      "review": false
+    },
+    "jcr": "Q1",
+    "review_weeks": 34.33,
+    "acceptance_rate": null,
+    "apc_usd": null,
+    "open_access": "Closed",
+    "articles_per_year": 732,
+    "chinese_ratio": null,
+    "self_cite_rate": 0.032,
+    "subject_areas": [
+      "工程技术",
+      "工程：电子与电气"
+    ],
+    "letpub_url": "https://www.letpub.com.cn/index.php?journalid=3411&page=journalapp&view=detail",
+    "scraped_at": "2026-05-14"
+  },
+  {
+    "name": "INDIANA UNIVERSITY MATHEMATICS JOURNAL",
+    "abbr": "INDIANA U MATH J",
+    "issn": "0022-2518",
+    "eissn": "",
+    "if_2024": 1.2,
+    "if_5year": 1.2,
+    "cas_2025": {
+      "major": "数学",
+      "tier": 4,
+      "top": false,
+      "review": false
+    },
+    "jcr": "Q1",
+    "review_weeks": 19.55,
+    "acceptance_rate": null,
+    "apc_usd": null,
+    "open_access": "Closed",
+    "articles_per_year": 55,
+    "chinese_ratio": null,
+    "self_cite_rate": 0.0,
+    "subject_areas": [
+      "数学",
+      "数学"
+    ],
+    "letpub_url": "https://www.letpub.com.cn/index.php?journalid=3530&page=journalapp&view=detail",
+    "scraped_at": "2026-05-14"
+  },
+  {
+    "name": "INDUSTRIAL & ENGINEERING CHEMISTRY RESEARCH",
+    "abbr": "Ind. Eng. Chem. Res.",
+    "issn": "0888-5885",
+    "eissn": "",
+    "if_2024": 3.9,
+    "if_5year": 4.0,
+    "cas_2025": {
+      "major": "工程技术",
+      "tier": 1,
+      "top": false,
+      "review": false
+    },
+    "jcr": "Q2",
+    "review_weeks": 11.3,
+    "acceptance_rate": 0.5,
+    "apc_usd": null,
+    "open_access": "Hybrid",
+    "articles_per_year": 1814,
+    "chinese_ratio": null,
+    "self_cite_rate": 0.077,
+    "subject_areas": [
+      "工程技术",
+      "工程：化工"
+    ],
+    "letpub_url": "https://www.letpub.com.cn/index.php?journalid=3534&page=journalapp&view=detail",
+    "scraped_at": "2026-05-14"
+  },
+  {
+    "name": "INDUSTRIAL CROPS AND PRODUCTS",
+    "abbr": "IND CROP PROD",
+    "issn": "0926-6690",
+    "eissn": "",
+    "if_2024": 6.2,
+    "if_5year": 6.2,
+    "cas_2025": {
+      "major": "农林科学",
+      "tier": 3,
+      "top": true,
+      "review": false
+    },
+    "jcr": "Q1",
+    "review_weeks": 5.65,
+    "acceptance_rate": 0.66,
+    "apc_usd": null,
+    "open_access": "Closed",
+    "articles_per_year": 2222,
+    "chinese_ratio": null,
+    "self_cite_rate": 0.113,
+    "subject_areas": [
+      "农林科学",
+      "农业工程"
+    ],
+    "letpub_url": "https://www.letpub.com.cn/index.php?journalid=3538&page=journalapp&view=detail",
+    "scraped_at": "2026-05-14"
+  },
+  {
+    "name": "INFOR",
+    "abbr": "INFOR",
+    "issn": "0315-5986",
+    "eissn": "",
+    "if_2024": 1.6,
+    "if_5year": 1.5,
+    "cas_2025": {
+      "major": "管理学",
+      "tier": 2,
+      "top": false,
+      "review": false
+    },
+    "jcr": "Q3",
+    "review_weeks": null,
+    "acceptance_rate": null,
+    "apc_usd": null,
+    "open_access": "Closed",
+    "articles_per_year": 34,
+    "chinese_ratio": null,
+    "self_cite_rate": 0.188,
+    "subject_areas": [
+      "管理科学",
+      "计算机：信息系统"
+    ],
+    "letpub_url": "https://www.letpub.com.cn/index.php?journalid=3556&page=journalapp&view=detail",
+    "scraped_at": "2026-05-14"
+  },
+  {
+    "name": "INFORMATION SCIENCES",
+    "abbr": "INFORM SCIENCES",
+    "issn": "0020-0255",
+    "eissn": "",
+    "if_2024": 6.8,
+    "if_5year": 6.6,
+    "cas_2025": {
+      "major": "计算机科学",
+      "tier": 4,
+      "top": false,
+      "review": false
+    },
+    "jcr": "Q1",
+    "review_weeks": 46.93,
+    "acceptance_rate": 0.225,
+    "apc_usd": null,
+    "open_access": "Closed",
+    "articles_per_year": 1412,
+    "chinese_ratio": null,
+    "self_cite_rate": 0.147,
+    "subject_areas": [
+      "工程技术",
+      "计算机：信息系统"
+    ],
+    "letpub_url": "https://www.letpub.com.cn/index.php?journalid=3567&page=journalapp&view=detail",
+    "scraped_at": "2026-05-14"
+  },
+  {
+    "name": "INFRARED PHYSICS & TECHNOLOGY",
+    "abbr": "INFRARED PHYS TECHN",
+    "issn": "1350-4495",
+    "eissn": "",
+    "if_2024": 3.4,
+    "if_5year": 3.4,
+    "cas_2025": {
+      "major": "物理与天体物理",
+      "tier": 2,
+      "top": false,
+      "review": false
+    },
+    "jcr": "Q2",
+    "review_weeks": 13.04,
+    "acceptance_rate": 0.368,
+    "apc_usd": null,
+    "open_access": "Closed",
+    "articles_per_year": 518,
+    "chinese_ratio": null,
+    "self_cite_rate": 0.147,
+    "subject_areas": [
+      "物理",
+      "光学"
+    ],
+    "letpub_url": "https://www.letpub.com.cn/index.php?journalid=3577&page=journalapp&view=detail",
+    "scraped_at": "2026-05-14"
+  },
+  {
+    "name": "INTEGRAL EQUATIONS AND OPERATOR THEORY",
+    "abbr": "INTEGR EQUAT OPER TH",
+    "issn": "0378-620X",
+    "eissn": "",
+    "if_2024": 0.9,
+    "if_5year": 1.0,
+    "cas_2025": {
+      "major": "数学",
+      "tier": 4,
+      "top": false,
+      "review": false
+    },
+    "jcr": "Q2",
+    "review_weeks": 26.07,
+    "acceptance_rate": null,
+    "apc_usd": null,
+    "open_access": "Closed",
+    "articles_per_year": 33,
+    "chinese_ratio": null,
+    "self_cite_rate": 0.0,
+    "subject_areas": [
+      "数学",
+      "数学"
+    ],
+    "letpub_url": "https://www.letpub.com.cn/index.php?journalid=3602&page=journalapp&view=detail",
+    "scraped_at": "2026-05-14"
+  },
+  {
+    "name": "INTERCIENCIA",
+    "abbr": "INTERCIENCIA",
+    "issn": "0378-1844",
+    "eissn": "",
+    "if_2024": 0.4,
+    "if_5year": 0.4,
+    "cas_2025": {
+      "major": "综合性期刊",
+      "tier": 4,
+      "top": false,
+      "review": false
+    },
+    "jcr": "Q4",
+    "review_weeks": null,
+    "acceptance_rate": null,
+    "apc_usd": null,
+    "open_access": "OA",
+    "articles_per_year": 76,
+    "chinese_ratio": null,
+    "self_cite_rate": 0.5,
+    "subject_areas": [
+      "综合性期刊",
+      "生态学"
+    ],
+    "letpub_url": "https://www.letpub.com.cn/index.php?journalid=3616&page=journalapp&view=detail",
+    "scraped_at": "2026-05-14"
+  },
+  {
+    "name": "INTERNATIONAL FORESTRY REVIEW",
+    "abbr": "INT FOREST REV",
+    "issn": "1465-5489",
+    "eissn": "",
+    "if_2024": 0.9,
+    "if_5year": 1.3,
+    "cas_2025": {
+      "major": "农林科学",
+      "tier": 1,
+      "top": false,
+      "review": false
+    },
+    "jcr": "Q3",
+    "review_weeks": null,
+    "acceptance_rate": null,
+    "apc_usd": null,
+    "open_access": "Closed",
+    "articles_per_year": 33,
+    "chinese_ratio": null,
+    "self_cite_rate": 0.111,
+    "subject_areas": [
+      "农林科学",
+      "林学"
+    ],
+    "letpub_url": "https://www.letpub.com.cn/index.php?journalid=3635&page=journalapp&view=detail",
+    "scraped_at": "2026-05-14"
+  },
+  {
+    "name": "International Journal of Applied Earth Observation and Geoinformation",
+    "abbr": "INT J APPL EARTH OBS",
+    "issn": "0303-2434",
+    "eissn": "",
+    "if_2024": 8.6,
+    "if_5year": 8.6,
+    "cas_2025": {
+      "major": "地球科学",
+      "tier": 1,
+      "top": true,
+      "review": false
+    },
+    "jcr": "Q1",
+    "review_weeks": null,
+    "acceptance_rate": null,
+    "apc_usd": 2400.0,
+    "open_access": "OA",
+    "articles_per_year": 663,
+    "chinese_ratio": null,
+    "self_cite_rate": 0.105,
+    "subject_areas": [
+      "地学",
+      "遥感"
+    ],
+    "letpub_url": "https://www.letpub.com.cn/index.php?journalid=3661&page=journalapp&view=detail",
+    "scraped_at": "2026-05-14"
+  },
+  {
+    "name": "ISIS",
+    "abbr": "ISIS",
+    "issn": "0021-1753",
+    "eissn": "",
+    "if_2024": 0.9,
+    "if_5year": 0.7,
+    "cas_2025": {
+      "major": "哲学",
+      "tier": 4,
+      "top": true,
+      "review": false
+    },
+    "jcr": "Q2",
+    "review_weeks": null,
+    "acceptance_rate": null,
+    "apc_usd": null,
+    "open_access": "Closed",
+    "articles_per_year": 40,
+    "chinese_ratio": null,
+    "self_cite_rate": 0.111,
+    "subject_areas": [
+      "管理科学",
+      "科学史与科学哲学"
+    ],
+    "letpub_url": "https://www.letpub.com.cn/index.php?journalid=3994&page=journalapp&view=detail",
+    "scraped_at": "2026-05-14"
+  },
+  {
+    "name": "ISPRS JOURNAL OF PHOTOGRAMMETRY AND REMOTE SENSING",
+    "abbr": "ISPRS J PHOTOGRAMM",
+    "issn": "0924-2716",
+    "eissn": "",
+    "if_2024": 12.2,
+    "if_5year": 13.7,
+    "cas_2025": {
+      "major": "地球科学",
+      "tier": 3,
+      "top": true,
+      "review": false
+    },
+    "jcr": "Q1",
+    "review_weeks": 39.1,
+    "acceptance_rate": 0.5,
+    "apc_usd": null,
+    "open_access": "Closed",
+    "articles_per_year": 314,
+    "chinese_ratio": null,
+    "self_cite_rate": 0.074,
+    "subject_areas": [
+      "工程技术",
+      "成像科学与照相技术"
+    ],
+    "letpub_url": "https://www.letpub.com.cn/index.php?journalid=3999&page=journalapp&view=detail",
+    "scraped_at": "2026-05-14"
+  },
+  {
+    "name": "JETP LETTERS",
+    "abbr": "JETP LETT+",
+    "issn": "0021-3640",
+    "eissn": "",
+    "if_2024": 1.3,
+    "if_5year": 1.1,
+    "cas_2025": {
+      "major": "物理与天体物理",
+      "tier": 2,
+      "top": false,
+      "review": false
+    },
+    "jcr": "Q3",
+    "review_weeks": null,
+    "acceptance_rate": null,
+    "apc_usd": null,
+    "open_access": "Closed",
+    "articles_per_year": 284,
+    "chinese_ratio": null,
+    "self_cite_rate": 0.231,
+    "subject_areas": [
+      "物理",
+      "物理：综合"
+    ],
+    "letpub_url": "https://www.letpub.com.cn/index.php?journalid=4041&page=journalapp&view=detail",
+    "scraped_at": "2026-05-14"
+  },
+  {
+    "name": "Jokull",
+    "abbr": "JOKULL",
+    "issn": "0449-0576",
+    "eissn": "",
+    "if_2024": 0.3,
+    "if_5year": 0.5,
+    "cas_2025": {
+      "major": "地球科学",
+      "tier": 4,
+      "top": false,
+      "review": false
+    },
+    "jcr": "Q4",
+    "review_weeks": 4.34,
+    "acceptance_rate": null,
+    "apc_usd": null,
+    "open_access": "Closed",
+    "articles_per_year": 0,
+    "chinese_ratio": null,
+    "self_cite_rate": 0.0,
+    "subject_areas": [
+      "地学",
+      "地球科学综合"
+    ],
+    "letpub_url": "https://www.letpub.com.cn/index.php?journalid=4045&page=journalapp&view=detail",
+    "scraped_at": "2026-05-14"
+  },
+  {
+    "name": "JOURNAL OF AGRICULTURAL & ENVIRONMENTAL ETHICS",
+    "abbr": "J AGR ENVIRON ETHIC",
+    "issn": "1187-7863",
+    "eissn": "",
+    "if_2024": 2.8,
+    "if_5year": 2.8,
+    "cas_2025": {
+      "major": "哲学",
+      "tier": 1,
+      "top": false,
+      "review": false
+    },
+    "jcr": "Q1",
+    "review_weeks": null,
+    "acceptance_rate": null,
+    "apc_usd": null,
+    "open_access": "Closed",
+    "articles_per_year": 16,
+    "chinese_ratio": null,
+    "self_cite_rate": 0.036,
+    "subject_areas": [
+      "农林科学",
+      "环境科学"
+    ],
+    "letpub_url": "https://www.letpub.com.cn/index.php?journalid=4090&page=journalapp&view=detail",
+    "scraped_at": "2026-05-14"
+  },
+  {
+    "name": "JOURNAL OF AGRICULTURAL AND FOOD CHEMISTRY",
+    "abbr": "J. Agric. Food Chem.",
+    "issn": "0021-8561",
+    "eissn": "",
+    "if_2024": 6.2,
+    "if_5year": 6.4,
+    "cas_2025": {
+      "major": "农林科学",
+      "tier": 1,
+      "top": true,
+      "review": false
+    },
+    "jcr": "Q1",
+    "review_weeks": 10.43,
+    "acceptance_rate": 0.81,
+    "apc_usd": null,
+    "open_access": "Hybrid",
+    "articles_per_year": 2363,
+    "chinese_ratio": null,
+    "self_cite_rate": 0.129,
+    "subject_areas": [
+      "农林科学",
+      "农业综合"
+    ],
+    "letpub_url": "https://www.letpub.com.cn/index.php?journalid=4091&page=journalapp&view=detail",
+    "scraped_at": "2026-05-14"
+  },
+  {
+    "name": "JOURNAL OF ALGEBRA",
+    "abbr": "J ALGEBRA",
+    "issn": "0021-8693",
+    "eissn": "",
+    "if_2024": 0.8,
+    "if_5year": 0.9,
+    "cas_2025": {
+      "major": "数学",
+      "tier": 3,
+      "top": false,
+      "review": false
+    },
+    "jcr": "Q2",
+    "review_weeks": null,
+    "acceptance_rate": null,
+    "apc_usd": null,
+    "open_access": "Closed",
+    "articles_per_year": 550,
+    "chinese_ratio": null,
+    "self_cite_rate": 0.125,
+    "subject_areas": [
+      "数学",
+      "数学"
+    ],
+    "letpub_url": "https://www.letpub.com.cn/index.php?journalid=4104&page=journalapp&view=detail",
+    "scraped_at": "2026-05-14"
+  },
+  {
+    "name": "JOURNAL OF APPLIED ENTOMOLOGY",
+    "abbr": "J APPL ENTOMOL",
+    "issn": "0931-2048",
+    "eissn": "",
+    "if_2024": 2.0,
+    "if_5year": 2.1,
+    "cas_2025": {
+      "major": "农林科学",
+      "tier": 1,
+      "top": false,
+      "review": false
+    },
+    "jcr": "Q1",
+    "review_weeks": null,
+    "acceptance_rate": null,
+    "apc_usd": null,
+    "open_access": "Closed",
+    "articles_per_year": 151,
+    "chinese_ratio": null,
+    "self_cite_rate": 0.05,
+    "subject_areas": [
+      "生物",
+      "昆虫学"
+    ],
+    "letpub_url": "https://www.letpub.com.cn/index.php?journalid=4142&page=journalapp&view=detail",
+    "scraped_at": "2026-05-14"
+  },
+  {
+    "name": "JOURNAL OF APPLIED PHYSICS",
+    "abbr": "J APPL PHYS",
+    "issn": "0021-8979",
+    "eissn": "",
+    "if_2024": 2.5,
+    "if_5year": 2.7,
+    "cas_2025": {
+      "major": "物理与天体物理",
+      "tier": 2,
+      "top": false,
+      "review": false
+    },
+    "jcr": "Q3",
+    "review_weeks": 13.9,
+    "acceptance_rate": 0.38,
+    "apc_usd": null,
+    "open_access": "Closed",
+    "articles_per_year": 1728,
+    "chinese_ratio": null,
+    "self_cite_rate": 0.08,
+    "subject_areas": [
+      "物理",
+      "物理：应用"
+    ],
+    "letpub_url": "https://www.letpub.com.cn/index.php?journalid=4153&page=journalapp&view=detail",
+    "scraped_at": "2026-05-14"
+  },
+  {
+    "name": "JOURNAL OF CHEMICAL EDUCATION",
+    "abbr": "J. Chem. Educ.",
+    "issn": "0021-9584",
+    "eissn": "",
+    "if_2024": 2.9,
+    "if_5year": 2.8,
+    "cas_2025": {
+      "major": "教育学",
+      "tier": 4,
+      "top": false,
+      "review": false
+    },
+    "jcr": "Q2",
+    "review_weeks": 52.14,
+    "acceptance_rate": null,
+    "apc_usd": null,
+    "open_access": "Hybrid",
+    "articles_per_year": 654,
+    "chinese_ratio": null,
+    "self_cite_rate": 0.517,
+    "subject_areas": [
+      "化学",
+      "化学综合"
+    ],
+    "letpub_url": "https://www.letpub.com.cn/index.php?journalid=4281&page=journalapp&view=detail",
+    "scraped_at": "2026-05-14"
+  },
+  {
+    "name": "JOURNAL OF COMPUTATIONAL PHYSICS",
+    "abbr": "J COMPUT PHYS",
+    "issn": "0021-9991",
+    "eissn": "",
+    "if_2024": 3.8,
+    "if_5year": 5.2,
+    "cas_2025": {
+      "major": "物理与天体物理",
+      "tier": 4,
+      "top": true,
+      "review": false
+    },
+    "jcr": "Q2",
+    "review_weeks": 28.24,
+    "acceptance_rate": 0.25,
+    "apc_usd": null,
+    "open_access": "Closed",
+    "articles_per_year": 751,
+    "chinese_ratio": null,
+    "self_cite_rate": 0.132,
+    "subject_areas": [
+      "物理",
+      "计算机：跨学科应用"
+    ],
+    "letpub_url": "https://www.letpub.com.cn/index.php?journalid=4368&page=journalapp&view=detail",
+    "scraped_at": "2026-05-14"
+  },
+  {
+    "name": "JOURNAL OF CULTURAL HERITAGE",
+    "abbr": "J CULT HERIT",
+    "issn": "1296-2074",
+    "eissn": "",
+    "if_2024": 3.3,
+    "if_5year": 3.6,
+    "cas_2025": {
+      "major": "社会学",
+      "tier": 2,
+      "top": false,
+      "review": false
+    },
+    "jcr": "Q2",
+    "review_weeks": 26.07,
+    "acceptance_rate": null,
+    "apc_usd": null,
+    "open_access": "Closed",
+    "articles_per_year": 228,
+    "chinese_ratio": null,
+    "self_cite_rate": 0.091,
+    "subject_areas": [
+      "综合性期刊",
+      "材料科学：综合"
+    ],
+    "letpub_url": "https://www.letpub.com.cn/index.php?journalid=4397&page=journalapp&view=detail",
+    "scraped_at": "2026-05-14"
+  },
+  {
+    "name": "Journal of Hydrology",
+    "abbr": "J HYDROL",
+    "issn": "0022-1694",
+    "eissn": "",
+    "if_2024": 6.3,
+    "if_5year": 6.9,
+    "cas_2025": {
+      "major": "地球科学",
+      "tier": 2,
+      "top": true,
+      "review": false
+    },
+    "jcr": "Q1",
+    "review_weeks": 36.06,
+    "acceptance_rate": 0.5,
+    "apc_usd": null,
+    "open_access": "Closed",
+    "articles_per_year": 1760,
+    "chinese_ratio": null,
+    "self_cite_rate": 0.159,
+    "subject_areas": [
+      "地学",
+      "地球科学综合"
+    ],
+    "letpub_url": "https://www.letpub.com.cn/index.php?journalid=4649&page=journalapp&view=detail",
+    "scraped_at": "2026-05-14"
+  },
+  {
+    "name": "Journal of Luminescence",
+    "abbr": "J LUMIN",
+    "issn": "0022-2313",
+    "eissn": "",
+    "if_2024": 3.6,
+    "if_5year": 3.4,
+    "cas_2025": {
+      "major": "物理与天体物理",
+      "tier": 4,
+      "top": false,
+      "review": false
+    },
+    "jcr": "Q2",
+    "review_weeks": 19.12,
+    "acceptance_rate": 0.625,
+    "apc_usd": null,
+    "open_access": "Closed",
+    "articles_per_year": 530,
+    "chinese_ratio": null,
+    "self_cite_rate": 0.083,
+    "subject_areas": [
+      "物理",
+      "光学"
+    ],
+    "letpub_url": "https://www.letpub.com.cn/index.php?journalid=4743&page=journalapp&view=detail",
+    "scraped_at": "2026-05-14"
+  },
+  {
+    "name": "JOURNAL OF MATHEMATICAL ANALYSIS AND APPLICATIONS",
+    "abbr": "J MATH ANAL APPL",
+    "issn": "0022-247X",
+    "eissn": "",
+    "if_2024": 1.2,
+    "if_5year": 1.2,
+    "cas_2025": {
+      "major": "数学",
+      "tier": 2,
+      "top": false,
+      "review": false
+    },
+    "jcr": "Q1",
+    "review_weeks": 27.81,
+    "acceptance_rate": 0.5833,
+    "apc_usd": null,
+    "open_access": "Closed",
+    "articles_per_year": 905,
+    "chinese_ratio": null,
+    "self_cite_rate": 0.083,
+    "subject_areas": [
+      "数学",
+      "数学"
+    ],
+    "letpub_url": "https://www.letpub.com.cn/index.php?journalid=4778&page=journalapp&view=detail",
+    "scraped_at": "2026-05-14"
+  },
+  {
+    "name": "JOURNAL OF MEDICAL ETHICS",
+    "abbr": "J MED ETHICS",
+    "issn": "0306-6800",
+    "eissn": "",
+    "if_2024": 3.5,
+    "if_5year": 3.5,
+    "cas_2025": {
+      "major": "哲学",
+      "tier": 1,
+      "top": false,
+      "review": false
+    },
+    "jcr": "Q1",
+    "review_weeks": null,
+    "acceptance_rate": null,
+    "apc_usd": null,
+    "open_access": "Closed",
+    "articles_per_year": 110,
+    "chinese_ratio": null,
+    "self_cite_rate": 0.143,
+    "subject_areas": [
+      "医学",
+      "医学：伦理"
+    ],
+    "letpub_url": "https://www.letpub.com.cn/index.php?journalid=4800&page=journalapp&view=detail",
+    "scraped_at": "2026-05-14"
+  },
+  {
+    "name": "Journal of Physical Chemistry C",
+    "abbr": "J. Phys. Chem. C",
+    "issn": "1932-7447",
+    "eissn": "",
+    "if_2024": 3.2,
+    "if_5year": 3.5,
+    "cas_2025": {
+      "major": "化学",
+      "tier": 1,
+      "top": false,
+      "review": false
+    },
+    "jcr": "Q3",
+    "review_weeks": 9.99,
+    "acceptance_rate": 0.85,
+    "apc_usd": null,
+    "open_access": "Hybrid",
+    "articles_per_year": 2184,
+    "chinese_ratio": null,
+    "self_cite_rate": 0.062,
+    "subject_areas": [
+      "化学",
+      "材料科学：综合"
+    ],
+    "letpub_url": "https://www.letpub.com.cn/index.php?journalid=5032&page=journalapp&view=detail",
+    "scraped_at": "2026-05-14"
+  },
+  {
+    "name": "JOURNAL OF PHYSICS D-APPLIED PHYSICS",
+    "abbr": "J PHYS D APPL PHYS",
+    "issn": "0022-3727",
+    "eissn": "",
+    "if_2024": 3.2,
+    "if_5year": 3.1,
+    "cas_2025": {
+      "major": "物理与天体物理",
+      "tier": 2,
+      "top": false,
+      "review": false
+    },
+    "jcr": "Q2",
+    "review_weeks": 8.26,
+    "acceptance_rate": 0.85,
+    "apc_usd": null,
+    "open_access": "Closed",
+    "articles_per_year": 970,
+    "chinese_ratio": null,
+    "self_cite_rate": 0.062,
+    "subject_areas": [
+      "物理",
+      "物理：应用"
+    ],
+    "letpub_url": "https://www.letpub.com.cn/index.php?journalid=5040&page=journalapp&view=detail",
+    "scraped_at": "2026-05-14"
+  },
+  {
+    "name": "JOURNAL OF THE AMERICAN MOSQUITO CONTROL ASSOCIATION",
+    "abbr": "J AM MOSQUITO CONTR",
+    "issn": "8756-971X",
+    "eissn": "",
+    "if_2024": 1.0,
+    "if_5year": 1.1,
+    "cas_2025": {
+      "major": "农林科学",
+      "tier": 1,
+      "top": false,
+      "review": false
+    },
+    "jcr": "Q3",
+    "review_weeks": null,
+    "acceptance_rate": null,
+    "apc_usd": null,
+    "open_access": "Closed",
+    "articles_per_year": 33,
+    "chinese_ratio": null,
+    "self_cite_rate": 0.1,
+    "subject_areas": [
+      "生物",
+      "昆虫学"
+    ],
+    "letpub_url": "https://www.letpub.com.cn/index.php?journalid=5248&page=journalapp&view=detail",
+    "scraped_at": "2026-05-14"
+  },
+  {
+    "name": "JOURNAL OF THE OPERATIONAL RESEARCH SOCIETY",
+    "abbr": "J OPER RES SOC",
+    "issn": "0160-5682",
+    "eissn": "",
+    "if_2024": 2.7,
+    "if_5year": 3.0,
+    "cas_2025": {
+      "major": "管理学",
+      "tier": 3,
+      "top": false,
+      "review": false
+    },
+    "jcr": "Q3",
+    "review_weeks": 30.41,
+    "acceptance_rate": null,
+    "apc_usd": null,
+    "open_access": "Closed",
+    "articles_per_year": 149,
+    "chinese_ratio": null,
+    "self_cite_rate": 0.111,
+    "subject_areas": [
+      "管理科学",
+      "运筹学与管理科学"
+    ],
+    "letpub_url": "https://www.letpub.com.cn/index.php?journalid=5336&page=journalapp&view=detail",
+    "scraped_at": "2026-05-14"
+  },
+  {
+    "name": "JOURNAL OF THE SCIENCE OF FOOD AND AGRICULTURE",
+    "abbr": "J SCI FOOD AGR",
+    "issn": "0022-5142",
+    "eissn": "",
+    "if_2024": 3.5,
+    "if_5year": 4.2,
+    "cas_2025": {
+      "major": "农林科学",
+      "tier": 2,
+      "top": false,
+      "review": false
+    },
+    "jcr": "Q1",
+    "review_weeks": 13.9,
+    "acceptance_rate": 0.66,
+    "apc_usd": null,
+    "open_access": "Closed",
+    "articles_per_year": 874,
+    "chinese_ratio": null,
+    "self_cite_rate": 0.029,
+    "subject_areas": [
+      "工程技术",
+      "农业综合"
+    ],
+    "letpub_url": "https://www.letpub.com.cn/index.php?journalid=5355&page=journalapp&view=detail",
+    "scraped_at": "2026-05-14"
+  },
+  {
+    "name": "LASER PHYSICS",
+    "abbr": "LASER PHYS",
+    "issn": "1054-660X",
+    "eissn": "",
+    "if_2024": 1.1,
+    "if_5year": 1.0,
+    "cas_2025": {
+      "major": "物理与天体物理",
+      "tier": 3,
+      "top": false,
+      "review": false
+    },
+    "jcr": "Q4",
+    "review_weeks": 5.65,
+    "acceptance_rate": null,
+    "apc_usd": null,
+    "open_access": "Closed",
+    "articles_per_year": 127,
+    "chinese_ratio": null,
+    "self_cite_rate": 0.091,
+    "subject_areas": [
+      "物理",
+      "光学"
+    ],
+    "letpub_url": "https://www.letpub.com.cn/index.php?journalid=5547&page=journalapp&view=detail",
+    "scraped_at": "2026-05-14"
+  },
+  {
+    "name": "Leukos",
+    "abbr": "LEUKOS",
+    "issn": "1550-2724",
+    "eissn": "",
+    "if_2024": 2.6,
+    "if_5year": 3.7,
+    "cas_2025": {
+      "major": "工程技术",
+      "tier": 4,
+      "top": false,
+      "review": false
+    },
+    "jcr": "Q2",
+    "review_weeks": null,
+    "acceptance_rate": null,
+    "apc_usd": null,
+    "open_access": "Closed",
+    "articles_per_year": 34,
+    "chinese_ratio": null,
+    "self_cite_rate": 0.077,
+    "subject_areas": [
+      "工程技术",
+      "光学"
+    ],
+    "letpub_url": "https://www.letpub.com.cn/index.php?journalid=5572&page=journalapp&view=detail",
+    "scraped_at": "2026-05-14"
+  },
+  {
+    "name": "LITHOS",
+    "abbr": "LITHOS",
+    "issn": "0024-4937",
+    "eissn": "",
+    "if_2024": 2.5,
+    "if_5year": 3.3,
+    "cas_2025": {
+      "major": "地球科学",
+      "tier": 4,
+      "top": false,
+      "review": false
+    },
+    "jcr": "Q2",
+    "review_weeks": 19.55,
+    "acceptance_rate": null,
+    "apc_usd": null,
+    "open_access": "Closed",
+    "articles_per_year": 326,
+    "chinese_ratio": null,
+    "self_cite_rate": 0.12,
+    "subject_areas": [
+      "地学",
+      "地球化学与地球物理"
+    ],
+    "letpub_url": "https://www.letpub.com.cn/index.php?journalid=5592&page=journalapp&view=detail",
+    "scraped_at": "2026-05-14"
+  },
+  {
+    "name": "Living Reviews in Relativity",
+    "abbr": "LIVING REV RELATIV",
+    "issn": "1433-8351",
+    "eissn": "",
+    "if_2024": 62.5,
+    "if_5year": 52.4,
+    "cas_2025": {
+      "major": "物理与天体物理",
+      "tier": 2,
+      "top": true,
+      "review": true
+    },
+    "jcr": "Q1",
+    "review_weeks": null,
+    "acceptance_rate": null,
+    "apc_usd": null,
+    "open_access": "OA",
+    "articles_per_year": 6,
+    "chinese_ratio": null,
+    "self_cite_rate": 0.0,
+    "subject_areas": [
+      "物理",
+      "物理：粒子与场物理"
+    ],
+    "letpub_url": "https://www.letpub.com.cn/index.php?journalid=5598&page=journalapp&view=detail",
+    "scraped_at": "2026-05-14"
+  },
+  {
+    "name": "MANAGEMENT SCIENCE",
+    "abbr": "MANAGE SCI",
+    "issn": "0025-1909",
+    "eissn": "",
+    "if_2024": 4.9,
+    "if_5year": 6.6,
+    "cas_2025": {
+      "major": "管理学",
+      "tier": 4,
+      "top": false,
+      "review": false
+    },
+    "jcr": "Q1",
+    "review_weeks": 65.17,
+    "acceptance_rate": null,
+    "apc_usd": null,
+    "open_access": "Closed",
+    "articles_per_year": 260,
+    "chinese_ratio": null,
+    "self_cite_rate": 0.02,
+    "subject_areas": [
+      "管理科学",
+      "运筹学与管理科学"
+    ],
+    "letpub_url": "https://www.letpub.com.cn/index.php?journalid=5649&page=journalapp&view=detail",
+    "scraped_at": "2026-05-14"
+  },
+  {
+    "name": "MATHEMATICAL METHODS IN THE APPLIED SCIENCES",
+    "abbr": "MATH METHOD APPL SCI",
+    "issn": "0170-4214",
+    "eissn": "",
+    "if_2024": 1.8,
+    "if_5year": 1.9,
+    "cas_2025": {
+      "major": "数学",
+      "tier": 1,
+      "top": false,
+      "review": false
+    },
+    "jcr": "Q1",
+    "review_weeks": 26.07,
+    "acceptance_rate": null,
+    "apc_usd": null,
+    "open_access": "Closed",
+    "articles_per_year": 774,
+    "chinese_ratio": null,
+    "self_cite_rate": 0.056,
+    "subject_areas": [
+      "数学",
+      "应用数学"
+    ],
+    "letpub_url": "https://www.letpub.com.cn/index.php?journalid=5725&page=journalapp&view=detail",
+    "scraped_at": "2026-05-14"
+  },
+  {
+    "name": "MATHEMATICS AND COMPUTERS IN SIMULATION",
+    "abbr": "MATH COMPUT SIMULAT",
+    "issn": "0378-4754",
+    "eissn": "",
+    "if_2024": 4.4,
+    "if_5year": 3.9,
+    "cas_2025": {
+      "major": "数学",
+      "tier": 3,
+      "top": true,
+      "review": false
+    },
+    "jcr": "Q2",
+    "review_weeks": 78.21,
+    "acceptance_rate": null,
+    "apc_usd": null,
+    "open_access": "Closed",
+    "articles_per_year": 436,
+    "chinese_ratio": null,
+    "self_cite_rate": 0.045,
+    "subject_areas": [
+      "数学",
+      "计算机：跨学科应用"
+    ],
+    "letpub_url": "https://www.letpub.com.cn/index.php?journalid=5739&page=journalapp&view=detail",
+    "scraped_at": "2026-05-14"
+  },
+  {
+    "name": "Mausam",
+    "abbr": "MAUSAM",
+    "issn": "0252-9416",
+    "eissn": "",
+    "if_2024": 0.7,
+    "if_5year": 0.9,
+    "cas_2025": {
+      "major": "地球科学",
+      "tier": 1,
+      "top": false,
+      "review": false
+    },
+    "jcr": "Q4",
+    "review_weeks": null,
+    "acceptance_rate": null,
+    "apc_usd": null,
+    "open_access": "Closed",
+    "articles_per_year": 88,
+    "chinese_ratio": null,
+    "self_cite_rate": 0.143,
+    "subject_areas": [
+      "地学",
+      "气象与大气科学"
+    ],
+    "letpub_url": "https://www.letpub.com.cn/index.php?journalid=5749&page=journalapp&view=detail",
+    "scraped_at": "2026-05-14"
+  },
+  {
+    "name": "MEDICINE",
+    "abbr": "MEDICINE",
+    "issn": "0025-7974",
+    "eissn": "",
+    "if_2024": 1.4,
+    "if_5year": 1.6,
+    "cas_2025": {
+      "major": "医学",
+      "tier": 1,
+      "top": false,
+      "review": false
+    },
+    "jcr": "Q2",
+    "review_weeks": null,
+    "acceptance_rate": null,
+    "apc_usd": 1950.0,
+    "open_access": "OA",
+    "articles_per_year": 4272,
+    "chinese_ratio": null,
+    "self_cite_rate": 0.0,
+    "subject_areas": [
+      "医学",
+      "医学：内科"
+    ],
+    "letpub_url": "https://www.letpub.com.cn/index.php?journalid=5814&page=journalapp&view=detail",
+    "scraped_at": "2026-05-14"
+  },
+  {
+    "name": "METRIKA",
+    "abbr": "METRIKA",
+    "issn": "0026-1335",
+    "eissn": "",
+    "if_2024": 0.9,
+    "if_5year": 0.9,
+    "cas_2025": {
+      "major": "数学",
+      "tier": 3,
+      "top": false,
+      "review": false
+    },
+    "jcr": "Q3",
+    "review_weeks": null,
+    "acceptance_rate": null,
+    "apc_usd": null,
+    "open_access": "Closed",
+    "articles_per_year": 46,
+    "chinese_ratio": null,
+    "self_cite_rate": 0.0,
+    "subject_areas": [
+      "数学",
+      "统计学与概率论"
+    ],
+    "letpub_url": "https://www.letpub.com.cn/index.php?journalid=5855&page=journalapp&view=detail",
+    "scraped_at": "2026-05-14"
+  },
+  {
+    "name": "MIS QUARTERLY",
+    "abbr": "MIS QUART",
+    "issn": "0276-7783",
+    "eissn": "",
+    "if_2024": 6.0,
+    "if_5year": 11.0,
+    "cas_2025": {
+      "major": "管理学",
+      "tier": 2,
+      "top": false,
+      "review": false
+    },
+    "jcr": "Q1",
+    "review_weeks": null,
+    "acceptance_rate": null,
+    "apc_usd": null,
+    "open_access": "Closed",
+    "articles_per_year": 68,
+    "chinese_ratio": null,
+    "self_cite_rate": 0.05,
+    "subject_areas": [
+      "工程技术",
+      "计算机：信息系统"
+    ],
+    "letpub_url": "https://www.letpub.com.cn/index.php?journalid=5916&page=journalapp&view=detail",
+    "scraped_at": "2026-05-14"
+  },
+  {
+    "name": "NATURE",
+    "abbr": "NATURE",
+    "issn": "0028-0836",
+    "eissn": "",
+    "if_2024": 48.5,
+    "if_5year": 55.0,
+    "cas_2025": {
+      "major": "综合性期刊",
+      "tier": 2,
+      "top": true,
+      "review": false
+    },
+    "jcr": "Q1",
+    "review_weeks": 28.24,
+    "acceptance_rate": 0.1062,
+    "apc_usd": null,
+    "open_access": "Closed",
+    "articles_per_year": 1393,
+    "chinese_ratio": null,
+    "self_cite_rate": 0.016,
+    "subject_areas": [
+      "综合性期刊",
+      "综合性期刊"
+    ],
+    "letpub_url": "https://www.letpub.com.cn/index.php?journalid=6054&page=journalapp&view=detail",
+    "scraped_at": "2026-05-14"
+  },
+  {
+    "name": "NEUROCOMPUTING",
+    "abbr": "NEUROCOMPUTING",
+    "issn": "0925-2312",
+    "eissn": "",
+    "if_2024": 6.5,
+    "if_5year": 6.0,
+    "cas_2025": {
+      "major": "计算机科学",
+      "tier": 4,
+      "top": false,
+      "review": false
+    },
+    "jcr": "Q1",
+    "review_weeks": 24.77,
+    "acceptance_rate": 0.8,
+    "apc_usd": null,
+    "open_access": "Closed",
+    "articles_per_year": 1629,
+    "chinese_ratio": null,
+    "self_cite_rate": 0.092,
+    "subject_areas": [
+      "工程技术",
+      "计算机：人工智能"
+    ],
+    "letpub_url": "https://www.letpub.com.cn/index.php?journalid=6141&page=journalapp&view=detail",
+    "scraped_at": "2026-05-14"
+  },
+  {
+    "name": "NEUROPSYCHOLOGY",
+    "abbr": "NEUROPSYCHOLOGY",
+    "issn": "0894-4105",
+    "eissn": "",
+    "if_2024": 3.0,
+    "if_5year": 3.1,
+    "cas_2025": {
+      "major": "心理学",
+      "tier": 3,
+      "top": false,
+      "review": false
+    },
+    "jcr": "Q2",
+    "review_weeks": null,
+    "acceptance_rate": null,
+    "apc_usd": null,
+    "open_access": "Closed",
+    "articles_per_year": 46,
+    "chinese_ratio": null,
+    "self_cite_rate": 0.033,
+    "subject_areas": [
+      "医学",
+      "神经科学"
+    ],
+    "letpub_url": "https://www.letpub.com.cn/index.php?journalid=6181&page=journalapp&view=detail",
+    "scraped_at": "2026-05-14"
+  },
+  {
+    "name": "NEW ASTRONOMY",
+    "abbr": "NEW ASTRON",
+    "issn": "1384-1076",
+    "eissn": "",
+    "if_2024": 2.1,
+    "if_5year": 1.8,
+    "cas_2025": {
+      "major": "物理与天体物理",
+      "tier": 3,
+      "top": false,
+      "review": false
+    },
+    "jcr": "Q3",
+    "review_weeks": 13.6,
+    "acceptance_rate": 0.51,
+    "apc_usd": null,
+    "open_access": "Closed",
+    "articles_per_year": 111,
+    "chinese_ratio": null,
+    "self_cite_rate": 0.095,
+    "subject_areas": [
+      "地学天文",
+      "天文与天体物理"
+    ],
+    "letpub_url": "https://www.letpub.com.cn/index.php?journalid=6205&page=journalapp&view=detail",
+    "scraped_at": "2026-05-14"
+  },
+  {
+    "name": "NONLINEARITY",
+    "abbr": "NONLINEARITY",
+    "issn": "0951-7715",
+    "eissn": "",
+    "if_2024": 1.6,
+    "if_5year": 1.9,
+    "cas_2025": {
+      "major": "数学",
+      "tier": 3,
+      "top": false,
+      "review": false
+    },
+    "jcr": "Q2",
+    "review_weeks": null,
+    "acceptance_rate": null,
+    "apc_usd": null,
+    "open_access": "Closed",
+    "articles_per_year": 254,
+    "chinese_ratio": null,
+    "self_cite_rate": 0.0,
+    "subject_areas": [
+      "物理",
+      "物理：数学物理"
+    ],
+    "letpub_url": "https://www.letpub.com.cn/index.php?journalid=6245&page=journalapp&view=detail",
+    "scraped_at": "2026-05-14"
+  }
+]
