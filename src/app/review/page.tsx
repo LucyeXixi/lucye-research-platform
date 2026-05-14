@@ -6,6 +6,7 @@ import { searchPubMed, type SearchResult } from '@/lib/pubmed'
 import { chatCompletion } from '@/lib/ai'
 import ApiKeyBanner from '@/components/ApiKeyBanner'
 import StepWizard from '@/components/StepWizard'
+import MarkdownRenderer from '@/components/MarkdownRenderer'
 import { BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer } from 'recharts'
 
 const STEPS = [
@@ -267,9 +268,7 @@ PubMed 检索结果（近${depthConfig.years}年）：
       {step >= 2 && analysis && (
         <div className="card p-6 space-y-4">
           <h2 className="section-title">AI 分析结果</h2>
-          <div className="prose prose-sm max-w-none text-gray-700 whitespace-pre-wrap leading-relaxed text-sm">
-            {analysis}
-          </div>
+          <MarkdownRenderer content={analysis} />
           {step === 2 && (
             <button onClick={() => setStep(3)} className="btn-primary">
               期刊匹配 <ChevronRight className="w-4 h-4" />
