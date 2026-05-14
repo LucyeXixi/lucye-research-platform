@@ -3,7 +3,7 @@ import './globals.css'
 import Nav from '@/components/Nav'
 
 export const metadata: Metadata = {
-  title:       'Lucye的临床科研选题助手',
+  title:       'Lucye的临床科研助手',
   description: '面向临床医学生的科研选题与写作支持平台',
 }
 

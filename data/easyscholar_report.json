@@ -1,0 +1,9 @@
+{
+  "total": 250,
+  "matched": 249,
+  "matched_rate": 0.996,
+  "failed_count": 0,
+  "conflict_count": 188,
+  "output_path": "/Users/lucye/Desktop/research-platform/data/journals_merged.json",
+  "conflicts_path": "/Users/lucye/Desktop/research-platform/data/conflicts.txt"
+}

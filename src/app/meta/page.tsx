@@ -5,7 +5,7 @@ import {
   Search, Loader2, BarChart2, ChevronRight,
   Network, GitMerge, Calendar, Lightbulb, ArrowRight, CheckCircle2,
 } from 'lucide-react'
-import { searchPubMed, searchPubMedRCT, type SearchResult } from '@/lib/pubmed'
+import { searchPubMed, searchPubMedRCT, buildSearchQuery, type SearchResult } from '@/lib/pubmed'
 import { chatCompletion } from '@/lib/ai'
 import ApiKeyBanner from '@/components/ApiKeyBanner'
 import StepWizard from '@/components/StepWizard'
@@ -201,13 +201,14 @@ P（人群）、I（干预/暴露）、C（对照）、O（结局）各一行说
     setRctCount(null)
     setCtCount(null)
     try {
-      // 主检索 + RCT 专项检索并行
+      // Build PICOS-structured query first, then run searches in parallel
+      const picosQuery = await buildSearchQuery(question, metaType === 'nma' ? 'nma' : 'meta')
       const [result, rct] = await Promise.all([
-        searchPubMed(question, years),
-        searchPubMedRCT(question, years).catch(() => ({ rctCount: null, ctCount: null })),
+        searchPubMed(picosQuery, years, true),
+        searchPubMedRCT(picosQuery, years, true).catch(() => ({ rctCount: null, ctCount: null })),
       ])
       setSearchResult(result)
-      setSearchedQuery(result.translatedQuery ?? question)
+      setSearchedQuery(picosQuery !== question ? picosQuery : (result.translatedQuery ?? ''))
       setRctCount(rct.rctCount ?? null)
       setCtCount(rct.ctCount ?? null)
       setStep(2)

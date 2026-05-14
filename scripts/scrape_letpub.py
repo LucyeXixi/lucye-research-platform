@@ -62,11 +62,18 @@ class FetchResult:
 
 
 class PoliteSession:
-    def __init__(self, delay_min: float, delay_max: float, timeout: int = 45) -> None:
+    def __init__(
+        self,
+        delay_min: float,
+        delay_max: float,
+        timeout: int = 45,
+        soft_rate_limit_sleep: int = 3600,
+    ) -> None:
         self.session = requests.Session()
         self.delay_min = delay_min
         self.delay_max = delay_max
         self.timeout = timeout
+        self.soft_rate_limit_sleep = soft_rate_limit_sleep
         self.last_request_at = 0.0
         self.ua = UserAgent() if UserAgent else None
 
@@ -110,6 +117,16 @@ class PoliteSession:
                         continue
                 resp.raise_for_status()
                 resp.encoding = resp.apparent_encoding or "utf-8"
+                if self.is_soft_rate_limited(resp.text):
+                    print(
+                        f"[WARN] LetPub soft rate limit page for {url}; sleeping "
+                        f"{self.soft_rate_limit_sleep}s before retry {attempt}/{retries}",
+                        flush=True,
+                    )
+                    if attempt < retries:
+                        time.sleep(self.soft_rate_limit_sleep)
+                        continue
+                    raise RuntimeError("LetPub soft rate limit page returned")
                 return FetchResult(resp.url, resp.text, resp.status_code)
             except Exception as exc:
                 self.last_request_at = time.monotonic()
@@ -123,6 +140,10 @@ class PoliteSession:
                     )
                     time.sleep(sleep_for)
         raise RuntimeError(f"failed after {retries} attempts: {url}: {last_error}")
+
+    @staticmethod
+    def is_soft_rate_limited(text: str) -> bool:
+        return "请求页面的速度过快" in text or "请求期刊信息系统页面数据过于频繁" in text
 
 
 def clean_text(value: str | None) -> str:
@@ -336,7 +357,11 @@ def crawl_index_seed(
         if not is_allowed(rp, url):
             raise RuntimeError(f"robots.txt disallows index URL: {url}")
         seen_pages.add(url)
-        result = session.get(url)
+        try:
+            result = session.get(url)
+        except Exception as exc:
+            print(f"[WARN] index page failed and will be skipped for now: {url}: {exc}", flush=True)
+            continue
         ids, links = parse_index_page(result.text, result.url)
         before = len(all_ids)
         all_ids.update(ids)
@@ -366,9 +391,24 @@ def collect_journal_ids(
     categories: list[tuple[str, list[str]]],
     index_mode: str,
     max_pages_per_seed: int,
+    major_filter: str = "",
 ) -> set[str]:
     all_ids: set[str] = set()
     seeds: list[str] = []
+    if major_filter:
+        pattern = re.compile(major_filter)
+        categories = [(major, subs) for major, subs in categories if pattern.search(major)]
+        if not categories:
+            categories = [(major_filter, [])]
+            print(
+                f"[INDEX] no parsed category matched; using direct searchcategory1={major_filter!r}",
+                flush=True,
+            )
+        print(
+            f"[INDEX] filtered categories by {major_filter!r}: "
+            f"{', '.join(major for major, _ in categories) or 'none'}",
+            flush=True,
+        )
     for major, subs in categories:
         seeds.append(search_url(major))
         if index_mode == "all":
@@ -381,6 +421,11 @@ def collect_journal_ids(
             write_id_set(JOURNAL_IDS_PATH, all_ids)
         except Exception as exc:
             print(f"[WARN] index seed failed: {seed}: {exc}", flush=True)
+    if major_filter and not all_ids:
+        raise RuntimeError(
+            f"no journal IDs collected for major_filter={major_filter!r}; "
+            "likely LetPub rate limiting or search parameter structure changed"
+        )
     return all_ids
 
 
@@ -686,9 +731,11 @@ def main() -> int:
     parser.add_argument("--index-mode", choices=["major", "all"], default="all")
     parser.add_argument("--rebuild-index", action="store_true")
     parser.add_argument("--max-pages-per-seed", type=int, default=500)
+    parser.add_argument("--major-filter", default="", help="Regex filter for top-level LetPub subject category")
     parser.add_argument("--max-details", type=int, default=None, help="For smoke testing only")
     parser.add_argument("--delay-min", type=float, default=2.0)
     parser.add_argument("--delay-max", type=float, default=4.0)
+    parser.add_argument("--soft-rate-limit-sleep", type=int, default=3600)
     parser.add_argument("--detail-retries", type=int, default=3)
     parser.add_argument("--skip-final-retry", action="store_true")
     parser.add_argument("--retry-failed-only", action="store_true")
@@ -700,7 +747,7 @@ def main() -> int:
         raise SystemExit("--detail-retries must be at least 1")
 
     DATA_DIR.mkdir(parents=True, exist_ok=True)
-    session = PoliteSession(args.delay_min, args.delay_max)
+    session = PoliteSession(args.delay_min, args.delay_max, soft_rate_limit_sleep=args.soft_rate_limit_sleep)
     rp = load_robots(session)
     records_by_id = load_existing_records()
     done_ids = read_id_set(DONE_IDS_PATH)
@@ -717,7 +764,14 @@ def main() -> int:
         categories = extract_categories(main_result.text)
         print(f"[INDEX] extracted {len(categories)} major categories", flush=True)
         ids = sorted(
-            collect_journal_ids(session, rp, categories, args.index_mode, args.max_pages_per_seed),
+            collect_journal_ids(
+                session,
+                rp,
+                categories,
+                args.index_mode,
+                args.max_pages_per_seed,
+                args.major_filter,
+            ),
             key=lambda x: int(x) if x.isdigit() else x,
         )
         write_id_set(JOURNAL_IDS_PATH, ids)

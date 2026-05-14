@@ -7,7 +7,6 @@ function hasChinese(text: string) {
   return /[一-鿿]/.test(text)
 }
 
-// Strip Chinese punctuation and non-PubMed special chars from English queries
 function sanitizeQuery(q: string): string {
   return q
     .replace(/[（）【】《》""''、。，；：！？]/g, ' ')
@@ -15,10 +14,11 @@ function sanitizeQuery(q: string): string {
     .trim()
 }
 
+// General translation (used by review page)
 export async function translateToEnglish(query: string): Promise<string> {
   const cfg = getApiConfig()
   if (hasChinese(query)) {
-    if (!cfg) return query // no key, cannot translate
+    if (!cfg) return query
     try {
       const result = await chatCompletion([
         {
@@ -33,14 +33,67 @@ Rules: use 3-5 concept groups, each group has 1-3 synonyms with OR, groups joine
         { role: 'user', content: query },
       ], { maxTokens: 120 })
       const cleaned = result.trim()
-      // Verify result looks like English, not a fallback Chinese string
       return (cleaned && !hasChinese(cleaned)) ? cleaned : query
     } catch {
       return query
     }
   }
-  // English query: sanitize but don't over-process
   return sanitizeQuery(query)
+}
+
+// PICOS-structured query builder — for Meta/NMA and observational searches
+export async function buildSearchQuery(
+  question: string,
+  type: 'meta' | 'nma' | 'observational' = 'meta'
+): Promise<string> {
+  const cfg = getApiConfig()
+  const fallback = sanitizeQuery(question)
+  if (!cfg) return fallback
+
+  const systemPrompts: Record<typeof type, string> = {
+    meta: `You are a PubMed search expert for systematic reviews and pairwise meta-analyses. Build a PubMed Boolean search string using PICOS structure.
+
+Structure: (Population terms) AND (Intervention/Comparator terms) AND (randomized OR randomised OR placebo OR "clinical trial"[pt])
+
+Rules:
+- P block: disease/condition + MeSH term + abbreviation if common (2-3 terms)
+- I/C block: ALL interventions being compared + key synonyms (most important block)
+- NEVER include outcome terms — they are too restrictive and miss RCTs
+- Always end with the RCT filter shown above
+- Return ONLY the search string, no explanation`,
+
+    nma: `You are a PubMed search expert for network meta-analyses. Build a PubMed Boolean search string using PICOS structure.
+
+Structure: (Population terms) AND (Intervention1 OR Intervention2 OR Intervention3 OR ...) AND (randomized OR randomised OR placebo OR "clinical trial"[pt])
+
+Rules:
+- P block: disease/condition name + MeSH synonym (keep concise, 2-3 terms max)
+- I block: list ALL interventions in the comparison network + 1-2 synonyms each — this is the critical block for NMA coverage
+- NEVER include outcome terms
+- The RCT filter is mandatory
+- Return ONLY the search string, no explanation`,
+
+    observational: `You are a PubMed search expert for real-world and observational studies. Build a PubMed Boolean search string.
+
+Structure: (Disease/Condition terms) AND (Exposure/Treatment terms OR outcome terms)
+
+Rules:
+- Extract the main clinical condition + key exposure or outcome
+- Do NOT add an RCT filter — this is for observational/real-world data studies
+- Keep to 2 concept blocks maximum to avoid over-restriction
+- Return ONLY the search string, no explanation`,
+  }
+
+  try {
+    const result = await chatCompletion([
+      { role: 'system', content: systemPrompts[type] },
+      { role: 'user', content: question },
+    ], { maxTokens: 160 })
+    const cleaned = result.trim()
+    return (cleaned && !hasChinese(cleaned)) ? cleaned : fallback
+  } catch {
+    return fallback
+  }
 }
 
 export interface Article {
@@ -94,19 +147,18 @@ export async function searchPubMed(
   years = 10,
   skipTranslate = false
 ): Promise<SearchResult & { translatedQuery?: string }> {
-  // Build optimized PubMed query (translate + sanitize)
   let searchQuery = skipTranslate ? query : await translateToEnglish(query)
   const didTranslate = searchQuery !== query
   let translatedQuery: string | undefined = didTranslate ? searchQuery : undefined
 
   let esearch = await runEsearch(searchQuery, years)
 
-  // Retry with first 3 words if 0 results and query is complex
+  // Retry with simplified keywords if 0 results and query is complex
   if (parseInt(esearch.count) === 0 && searchQuery.split(/\s+/).length > 6) {
     const shorter = searchQuery
-      .replace(/\(|\)/g, '')            // strip parens
-      .split(/\s+(?:AND|OR)\s+/i)       // split on AND/OR
-      .flatMap(s => s.trim().split(/\s+/).slice(0, 2)) // first 2 words per group
+      .replace(/\(|\)/g, '')
+      .split(/\s+(?:AND|OR)\s+/i)
+      .flatMap(s => s.trim().split(/\s+/).slice(0, 2))
       .filter(Boolean)
       .slice(0, 6)
       .join(' ')
@@ -121,19 +173,13 @@ export async function searchPubMed(
   const { count, webenv, query_key, fullQuery } = esearch
   const totalCount = parseInt(count) || 0
 
-  // Guard: if no webenv/query_key, return count only
   if (!webenv || !query_key || totalCount === 0) {
     return { totalCount, yearDistribution: {}, topJournals: [], articles: [], query: fullQuery, translatedQuery }
   }
 
   const summaryData = await fetchJson(
     `${BASE}/esummary.fcgi?${qs({
-      db:       'pubmed',
-      query_key,
-      WebEnv:   webenv,
-      retmax:   '50',
-      retstart: '0',
-      retmode:  'json',
+      db: 'pubmed', query_key, WebEnv: webenv, retmax: '50', retstart: '0', retmode: 'json',
     })}`
   ) as { result?: Record<string, unknown> & { uids?: string[] } }
 
@@ -149,8 +195,8 @@ export async function searchPubMed(
     } | undefined
     if (!doc || typeof doc !== 'object' || !doc.title) continue
     const yearStr = doc.pubdate?.split(' ')[0] || '未知'
-    yearDist[yearStr]      = (yearDist[yearStr]      || 0) + 1
-    journalMap[doc.source ?? ''] = (journalMap[doc.source ?? ''] || 0) + 1
+    yearDist[yearStr]                   = (yearDist[yearStr]      || 0) + 1
+    journalMap[doc.source ?? '']        = (journalMap[doc.source ?? ''] || 0) + 1
     articles.push({
       pmid:    uid,
       title:   doc.title   || '',
@@ -170,15 +216,16 @@ export async function searchPubMed(
   return { totalCount, yearDistribution: yearDist, topJournals, articles, query: fullQuery, translatedQuery }
 }
 
-// RCT-specific search
+// RCT-specific search — accepts pre-built query via skipTranslate
 export async function searchPubMedRCT(
   query: string,
-  years = 10
+  years = 10,
+  skipTranslate = false
 ): Promise<{ rctCount: number; ctCount: number }> {
   const minYear = new Date().getFullYear() - years
-  const searchQuery = await translateToEnglish(query)
+  const searchQuery = skipTranslate ? query : await translateToEnglish(query)
 
-  const rctQuery = `(${searchQuery}) AND ("${minYear}"[PDAT]:"3000"[PDAT]) AND (randomized controlled trial[pt] OR randomised controlled trial[pt] OR RCT[ti])`
+  const rctQuery = `(${searchQuery}) AND ("${minYear}"[PDAT]:"3000"[PDAT]) AND (randomized controlled trial[pt] OR randomised controlled trial[pt] OR randomized[tiab] OR randomised[tiab] OR placebo[tiab])`
 
   const [rctData, ctData] = await Promise.allSettled([
     fetchJson(`${BASE}/esearch.fcgi?${qs({ db: 'pubmed', term: rctQuery, retmax: '0', retmode: 'json' })}`),

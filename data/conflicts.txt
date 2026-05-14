@@ -1,0 +1,189 @@
+key	name	field	letpub	easy_scholar	letpub_url
+1619-4500	4OR-A Quarterly Journal of Operations Research	cas_tier	2	4	https://www.letpub.com.cn/index.php?journalid=1&page=journalapp&view=detail
+0898-9621	Accountability in Research-Ethics Integrity and Policy	cas_tier	3	2	https://www.letpub.com.cn/index.php?journalid=14&page=journalapp&view=detail
+0094-5765	ACTA ASTRONAUTICA	cas_tier	1	2	https://www.letpub.com.cn/index.php?journalid=58&page=journalapp&view=detail
+0001-5237	ACTA ASTRONOMICA	cas_tier	3	4	https://www.letpub.com.cn/index.php?journalid=59&page=journalapp&view=detail
+0001-5962	ACTA MATHEMATICA	cas_tier	3	1	https://www.letpub.com.cn/index.php?journalid=113&page=journalapp&view=detail
+1000-3290	ACTA PHYSICA SINICA	cas_tier	2	3	https://www.letpub.com.cn/index.php?journalid=159&page=journalapp&view=detail
+1806-2563	ACTA SCIENTIARUM-TECHNOLOGY	cas_tier	3	4	https://www.letpub.com.cn/index.php?journalid=176&page=journalapp&view=detail
+0269-9370	AIDS	cas_tier	1	2	https://www.letpub.com.cn/index.php?journalid=349&page=journalapp&view=detail
+0002-5232	Algebra and Logic	cas_tier	3	4	https://www.letpub.com.cn/index.php?journalid=365&page=journalapp&view=detail
+1005-3867	ALGEBRA COLLOQUIUM	cas_tier	2	4	https://www.letpub.com.cn/index.php?journalid=366&page=journalapp&view=detail
+0044-7447	AMBIO	cas_tier	4	2	https://www.letpub.com.cn/index.php?journalid=387&page=journalapp&view=detail
+1526-5161	AMERICAN JOURNAL OF BIOETHICS	cas_tier	3	1	https://www.letpub.com.cn/index.php?journalid=399&page=journalapp&view=detail
+1433-7851	ANGEWANDTE CHEMIE-INTERNATIONAL EDITION	cas_tier	4	1	https://www.letpub.com.cn/index.php?journalid=534&page=journalapp&view=detail
+0232-704X	ANNALS OF GLOBAL ANALYSIS AND GEOMETRY	cas_tier	2	4	https://www.letpub.com.cn/index.php?journalid=608&page=journalapp&view=detail
+0003-486X	ANNALS OF MATHEMATICS	cas_tier	4	1	https://www.letpub.com.cn/index.php?journalid=616&page=journalapp&view=detail
+0254-5330	ANNALS OF OPERATIONS RESEARCH	cas_tier	2	4	https://www.letpub.com.cn/index.php?journalid=627&page=journalapp&view=detail
+0003-3790	ANNALS OF SCIENCE	cas_tier	4	1	https://www.letpub.com.cn/index.php?journalid=636&page=journalapp&view=detail
+1548-5943	Annual Review of Clinical Psychology	cas_tier	2	1	https://www.letpub.com.cn/index.php?journalid=662&page=journalapp&view=detail
+1543-5938	Annual Review of Environment and Resources	cas_tier	4	1	https://www.letpub.com.cn/index.php?journalid=666&page=journalapp&view=detail
+0066-4189	Annual Review of Fluid Mechanics	cas_tier	2	1	https://www.letpub.com.cn/index.php?journalid=667&page=journalapp&view=detail
+0066-4286	Annual Review of Phytopathology	cas_tier	4	1	https://www.letpub.com.cn/index.php?journalid=683&page=journalapp&view=detail
+0066-4308	Annual Review of Psychology	cas_tier	2	1	https://www.letpub.com.cn/index.php?journalid=685&page=journalapp&view=detail
+0003-682X	APPLIED ACOUSTICS	cas_tier	3	2	https://www.letpub.com.cn/index.php?journalid=713&page=journalapp&view=detail
+1683-3511	Applied and Computational Mathematics	cas_tier	4	2	https://www.letpub.com.cn/index.php?journalid=715&page=journalapp&view=detail
+0926-3373	Applied Catalysis B-Environment and Energy	cas_tier	4	1	https://www.letpub.com.cn/index.php?journalid=722&page=journalapp&view=detail
+0306-2619	APPLIED ENERGY	cas_tier	2	1	https://www.letpub.com.cn/index.php?journalid=729&page=journalapp&view=detail
+0924-669X	APPLIED INTELLIGENCE	cas_tier	1	3	https://www.letpub.com.cn/index.php?journalid=737&page=journalapp&view=detail
+0096-3003	APPLIED MATHEMATICS AND COMPUTATION	cas_tier	1	2	https://www.letpub.com.cn/index.php?journalid=740&page=journalapp&view=detail
+0893-9659	Applied Mathematics Letters	cas_tier	4	2	https://www.letpub.com.cn/index.php?journalid=743&page=journalapp&view=detail
+0003-6900	Applied Mechanics Reviews	cas_tier	3	1	https://www.letpub.com.cn/index.php?journalid=745&page=journalapp&view=detail
+0003-6951	APPLIED PHYSICS LETTERS	cas_tier	4	2	https://www.letpub.com.cn/index.php?journalid=756&page=journalapp&view=detail
+1568-4946	APPLIED SOFT COMPUTING	cas_tier	4	2	https://www.letpub.com.cn/index.php?journalid=760&page=journalapp&view=detail
+1551-7004	ARKIVOC	cas_tier	1	4	https://www.letpub.com.cn/index.php?journalid=877&page=journalapp&view=detail
+0303-1179	ASTERISQUE	cas_tier	2	4	https://www.letpub.com.cn/index.php?journalid=925&page=journalapp&view=detail
+1531-1074	ASTROBIOLOGY	cas_tier	1	2	https://www.letpub.com.cn/index.php?journalid=927&page=journalapp&view=detail
+1063-7737	ASTRONOMY LETTERS-A JOURNAL OF ASTRONOMY AND SPACE ASTROPHYSICS	cas_tier	3	4	https://www.letpub.com.cn/index.php?journalid=933&page=journalapp&view=detail
+0004-8038	AUK	cas_tier	4	3	https://www.letpub.com.cn/index.php?journalid=964&page=journalapp&view=detail
+1931-6690	Bayesian Analysis	cas_tier	2	1	https://www.letpub.com.cn/index.php?journalid=1041&page=journalapp&view=detail
+0144-929X	BEHAVIOUR & INFORMATION TECHNOLOGY	cas_tier	1	4	https://www.letpub.com.cn/index.php?journalid=1051&page=journalapp&view=detail
+0166-4328	BEHAVIOURAL BRAIN RESEARCH	cas_tier	1	3	https://www.letpub.com.cn/index.php?journalid=1052&page=journalapp&view=detail
+0142-9612	BIOMATERIALS	cas_tier	3	1	https://www.letpub.com.cn/index.php?journalid=1163&page=journalapp&view=detail
+1746-8094	Biomedical Signal Processing and Control	cas_tier	1	2	https://www.letpub.com.cn/index.php?journalid=1175&page=journalapp&view=detail
+0006-341X	BIOMETRICS	cas_tier	2	3	https://www.letpub.com.cn/index.php?journalid=1180&page=journalapp&view=detail
+0006-3444	BIOMETRIKA	cas_tier	4	1	https://www.letpub.com.cn/index.php?journalid=1181&page=journalapp&view=detail
+0960-8524	BIORESOURCE TECHNOLOGY	cas_tier	3	1	https://www.letpub.com.cn/index.php?journalid=1196&page=journalapp&view=detail
+0304-8799	BOSQUE	cas_tier	1	4	https://www.letpub.com.cn/index.php?journalid=1295&page=journalapp&view=detail
+0008-0624	CALCOLO	cas_tier	4	3	https://www.letpub.com.cn/index.php?journalid=1444&page=journalapp&view=detail
+0008-6223	CARBON	cas_tier	1	2	https://www.letpub.com.cn/index.php?journalid=1525&page=journalapp&view=detail
+0341-8162	CATENA	cas_tier	2	1	https://www.letpub.com.cn/index.php?journalid=1556&page=journalapp&view=detail
+0092-8674	CELL	cas_tier	3	1	https://www.letpub.com.cn/index.php?journalid=1562&page=journalapp&view=detail
+0104-7760	Cerne	cas_tier	2	4	https://www.letpub.com.cn/index.php?journalid=1618&page=journalapp&view=detail
+1054-1500	CHAOS	cas_tier	1	3	https://www.letpub.com.cn/index.php?journalid=1623&page=journalapp&view=detail
+1359-7345	CHEMICAL COMMUNICATIONS	cas_tier	4	2	https://www.letpub.com.cn/index.php?journalid=1634&page=journalapp&view=detail
+0379-864X	CHEMICAL SENSES	cas_tier	2	4	https://www.letpub.com.cn/index.php?journalid=1654&page=journalapp&view=detail
+0306-0012	CHEMICAL SOCIETY REVIEWS	cas_tier	4	1	https://www.letpub.com.cn/index.php?journalid=1655&page=journalapp&view=detail
+0235-7216	Chemija	cas_tier	1	4	https://www.letpub.com.cn/index.php?journalid=1663&page=journalapp&view=detail
+0252-9599	CHINESE ANNALS OF MATHEMATICS SERIES B	cas_tier	3	4	https://www.letpub.com.cn/index.php?journalid=1700&page=journalapp&view=detail
+1671-7694	Chinese Optics Letters	cas_tier	4	2	https://www.letpub.com.cn/index.php?journalid=1722&page=journalapp&view=detail
+1674-1056	Chinese Physics B	cas_tier	4	3	https://www.letpub.com.cn/index.php?journalid=1723&page=journalapp&view=detail
+0256-307X	CHINESE PHYSICS LETTERS	cas_tier	3	1	https://www.letpub.com.cn/index.php?journalid=1725&page=journalapp&view=detail
+1389-0417	Cognitive Systems Research	cas_tier	2	4	https://www.letpub.com.cn/index.php?journalid=1884&page=journalapp&view=detail
+1061-3773	COMPUTER APPLICATIONS IN ENGINEERING EDUCATION	cas_tier	2	4	https://www.letpub.com.cn/index.php?journalid=1980&page=journalapp&view=detail
+0148-9267	COMPUTER MUSIC JOURNAL	cas_tier	2	4	https://www.letpub.com.cn/index.php?journalid=1990&page=journalapp&view=detail
+0360-1315	COMPUTERS & EDUCATION	cas_tier	2	1	https://www.letpub.com.cn/index.php?journalid=2003&page=journalapp&view=detail
+1063-1801	Configurations	cas_tier	3	4	https://www.letpub.com.cn/index.php?journalid=2027&page=journalapp&view=detail
+0011-3891	CURRENT SCIENCE	cas_tier	3	4	https://www.letpub.com.cn/index.php?journalid=2190&page=journalapp&view=detail
+0167-9236	DECISION SUPPORT SYSTEMS	cas_tier	4	2	https://www.letpub.com.cn/index.php?journalid=2230&page=journalapp&view=detail
+8756-5641	DEVELOPMENTAL NEUROPSYCHOLOGY	cas_tier	1	4	https://www.letpub.com.cn/index.php?journalid=2271&page=journalapp&view=detail
+1028-3358	DOKLADY PHYSICS	cas_tier	3	4	https://www.letpub.com.cn/index.php?journalid=2344&page=journalapp&view=detail
+0012-7361	Dyna	cas_tier	1	4	https://www.letpub.com.cn/index.php?journalid=2371&page=journalapp&view=detail
+8755-2930	EARTHQUAKE SPECTRA	cas_tier	4	3	https://www.letpub.com.cn/index.php?journalid=2396&page=journalapp&view=detail
+0921-8009	ECOLOGICAL ECONOMICS	cas_tier	4	2	https://www.letpub.com.cn/index.php?journalid=2405&page=journalapp&view=detail
+1708-3087	ECOLOGY AND SOCIETY	cas_tier	1	3	https://www.letpub.com.cn/index.php?journalid=2414&page=journalapp&view=detail
+0147-6513	ECOTOXICOLOGY AND ENVIRONMENTAL SAFETY	cas_tier	1	2	https://www.letpub.com.cn/index.php?journalid=2428&page=journalapp&view=detail
+0748-7983	EJSO	cas_tier	4	2	https://www.letpub.com.cn/index.php?journalid=2436&page=journalapp&view=detail
+0013-4686	ELECTROCHIMICA ACTA	cas_tier	4	2	https://www.letpub.com.cn/index.php?journalid=2449&page=journalapp&view=detail
+0301-4215	Energy Policy	cas_tier	4	2	https://www.letpub.com.cn/index.php?journalid=2505&page=journalapp&view=detail
+1610-3653	Environmental Chemistry Letters	cas_tier	3	2	https://www.letpub.com.cn/index.php?journalid=2544&page=journalapp&view=detail
+0269-7491	ENVIRONMENTAL POLLUTION	cas_tier	4	2	https://www.letpub.com.cn/index.php?journalid=2560&page=journalapp&view=detail
+0295-5075	EPL	cas_tier	2	4	https://www.letpub.com.cn/index.php?journalid=2589&page=journalapp&view=detail
+0013-9998	ERDE	cas_tier	3	4	https://www.letpub.com.cn/index.php?journalid=2592&page=journalapp&view=detail
+0014-2336	EUPHYTICA	cas_tier	1	3	https://www.letpub.com.cn/index.php?journalid=2614&page=journalapp&view=detail
+0377-2217	EUROPEAN JOURNAL OF OPERATIONAL RESEARCH	cas_tier	1	2	https://www.letpub.com.cn/index.php?journalid=2684&page=journalapp&view=detail
+0957-4174	EXPERT SYSTEMS WITH APPLICATIONS	cas_tier	4	1	https://www.letpub.com.cn/index.php?journalid=2799&page=journalapp&view=detail
+0950-222X	EYE	cas_tier	2	3	https://www.letpub.com.cn/index.php?journalid=2805&page=journalapp&view=detail
+0354-5180	Filomat	cas_tier	2	4	https://www.letpub.com.cn/index.php?journalid=2835&page=journalapp&view=detail
+0363-2415	FISHERIES	cas_tier	2	3	https://www.letpub.com.cn/index.php?journalid=2847&page=journalapp&view=detail
+1583-5022	Fixed Point Theory	cas_tier	1	4	https://www.letpub.com.cn/index.php?journalid=2854&page=journalapp&view=detail
+0367-2530	FLORA	cas_tier	1	3	https://www.letpub.com.cn/index.php?journalid=2859&page=journalapp&view=detail
+0268-005X	FOOD HYDROCOLLOIDS	cas_tier	2	1	https://www.letpub.com.cn/index.php?journalid=2894&page=journalapp&view=detail
+0963-9969	FOOD RESEARCH INTERNATIONAL	cas_tier	3	1	https://www.letpub.com.cn/index.php?journalid=2898&page=journalapp&view=detail
+8755-9129	FOOD REVIEWS INTERNATIONAL	cas_tier	4	2	https://www.letpub.com.cn/index.php?journalid=2899&page=journalapp&view=detail
+0429-2766	Fourrages	cas_tier	3	4	https://www.letpub.com.cn/index.php?journalid=2933&page=journalapp&view=detail
+0016-2361	Fuel	cas_tier	1	2	https://www.letpub.com.cn/index.php?journalid=2950&page=journalapp&view=detail
+0165-0114	FUZZY SETS AND SYSTEMS	cas_tier	3	1	https://www.letpub.com.cn/index.php?journalid=2978&page=journalapp&view=detail
+0378-1119	GENE	cas_tier	4	3	https://www.letpub.com.cn/index.php?journalid=2998&page=journalapp&view=detail
+0094-8276	GEOPHYSICAL RESEARCH LETTERS	cas_tier	1	2	https://www.letpub.com.cn/index.php?journalid=3078&page=journalapp&view=detail
+1103-5897	GFF	cas_tier	1	4	https://www.letpub.com.cn/index.php?journalid=3098&page=journalapp&view=detail
+0017-5749	GUT	cas_tier	2	1	https://www.letpub.com.cn/index.php?journalid=3140&page=journalapp&view=detail
+0093-0334	HASTINGS CENTER REPORT	cas_tier	4	3	https://www.letpub.com.cn/index.php?journalid=3155&page=journalapp&view=detail
+0018-151X	HIGH TEMPERATURE	cas_tier	3	4	https://www.letpub.com.cn/index.php?journalid=3221&page=journalapp&view=detail
+0952-6951	HISTORY OF THE HUMAN SCIENCES	cas_tier	1	2	https://www.letpub.com.cn/index.php?journalid=3237&page=journalapp&view=detail
+0018-7208	HUMAN FACTORS	cas_tier	2	3	https://www.letpub.com.cn/index.php?journalid=3268&page=journalapp&view=detail
+0019-1019	IBIS	cas_tier	2	3	https://www.letpub.com.cn/index.php?journalid=3300&page=journalapp&view=detail
+0019-1035	ICARUS	cas_tier	4	3	https://www.letpub.com.cn/index.php?journalid=3303&page=journalapp&view=detail
+1553-877X	IEEE Communications Surveys and Tutorials	cas_tier	3	1	https://www.letpub.com.cn/index.php?journalid=3320&page=journalapp&view=detail
+1545-598X	IEEE Geoscience and Remote Sensing Letters	cas_tier	4	3	https://www.letpub.com.cn/index.php?journalid=3328&page=journalapp&view=detail
+1939-1404	IEEE Journal of Selected Topics in Applied Earth Observations and Remote Sensing	cas_tier	4	2	https://www.letpub.com.cn/index.php?journalid=3336&page=journalapp&view=detail
+0018-9359	IEEE TRANSACTIONS ON EDUCATION	cas_tier	2	4	https://www.letpub.com.cn/index.php?journalid=3381&page=journalapp&view=detail
+0018-9391	IEEE TRANSACTIONS ON ENGINEERING MANAGEMENT	cas_tier	4	3	https://www.letpub.com.cn/index.php?journalid=3386&page=journalapp&view=detail
+0196-2892	IEEE TRANSACTIONS ON GEOSCIENCE AND REMOTE SENSING	cas_tier	4	1	https://www.letpub.com.cn/index.php?journalid=3389&page=journalapp&view=detail
+0278-0046	IEEE TRANSACTIONS ON INDUSTRIAL ELECTRONICS	cas_tier	2	1	https://www.letpub.com.cn/index.php?journalid=3391&page=journalapp&view=detail
+1551-3203	IEEE Transactions on Industrial Informatics	cas_tier	2	1	https://www.letpub.com.cn/index.php?journalid=3392&page=journalapp&view=detail
+0018-9456	IEEE TRANSACTIONS ON INSTRUMENTATION AND MEASUREMENT	cas_tier	3	2	https://www.letpub.com.cn/index.php?journalid=3397&page=journalapp&view=detail
+0162-8828	IEEE TRANSACTIONS ON PATTERN ANALYSIS AND MACHINE INTELLIGENCE	cas_tier	3	1	https://www.letpub.com.cn/index.php?journalid=3411&page=journalapp&view=detail
+0022-2518	INDIANA UNIVERSITY MATHEMATICS JOURNAL	cas_tier	4	2	https://www.letpub.com.cn/index.php?journalid=3530&page=journalapp&view=detail
+0888-5885	INDUSTRIAL & ENGINEERING CHEMISTRY RESEARCH	cas_tier	1	3	https://www.letpub.com.cn/index.php?journalid=3534&page=journalapp&view=detail
+0926-6690	INDUSTRIAL CROPS AND PRODUCTS	cas_tier	3	1	https://www.letpub.com.cn/index.php?journalid=3538&page=journalapp&view=detail
+0315-5986	INFOR	cas_tier	2	4	https://www.letpub.com.cn/index.php?journalid=3556&page=journalapp&view=detail
+0020-0255	INFORMATION SCIENCES	cas_tier	4	2	https://www.letpub.com.cn/index.php?journalid=3567&page=journalapp&view=detail
+0378-620X	INTEGRAL EQUATIONS AND OPERATOR THEORY	cas_tier	4	3	https://www.letpub.com.cn/index.php?journalid=3602&page=journalapp&view=detail
+1465-5489	INTERNATIONAL FORESTRY REVIEW	cas_tier	1	4	https://www.letpub.com.cn/index.php?journalid=3635&page=journalapp&view=detail
+0021-1753	ISIS	cas_tier	4	2	https://www.letpub.com.cn/index.php?journalid=3994&page=journalapp&view=detail
+0924-2716	ISPRS JOURNAL OF PHOTOGRAMMETRY AND REMOTE SENSING	cas_tier	3	1	https://www.letpub.com.cn/index.php?journalid=3999&page=journalapp&view=detail
+0021-3640	JETP LETTERS	cas_tier	2	4	https://www.letpub.com.cn/index.php?journalid=4041&page=journalapp&view=detail
+1187-7863	JOURNAL OF AGRICULTURAL & ENVIRONMENTAL ETHICS	cas_tier	1	3	https://www.letpub.com.cn/index.php?journalid=4090&page=journalapp&view=detail
+0021-8693	JOURNAL OF ALGEBRA	cas_tier	3	2	https://www.letpub.com.cn/index.php?journalid=4104&page=journalapp&view=detail
+0931-2048	JOURNAL OF APPLIED ENTOMOLOGY	cas_tier	1	3	https://www.letpub.com.cn/index.php?journalid=4142&page=journalapp&view=detail
+0021-8979	JOURNAL OF APPLIED PHYSICS	cas_tier	2	3	https://www.letpub.com.cn/index.php?journalid=4153&page=journalapp&view=detail
+0021-9584	JOURNAL OF CHEMICAL EDUCATION	cas_tier	4	3	https://www.letpub.com.cn/index.php?journalid=4281&page=journalapp&view=detail
+0021-9991	JOURNAL OF COMPUTATIONAL PHYSICS	cas_tier	4	2	https://www.letpub.com.cn/index.php?journalid=4368&page=journalapp&view=detail
+0022-1694	Journal of Hydrology	cas_tier	2	1	https://www.letpub.com.cn/index.php?journalid=4649&page=journalapp&view=detail
+0022-2313	Journal of Luminescence	cas_tier	4	3	https://www.letpub.com.cn/index.php?journalid=4743&page=journalapp&view=detail
+0022-247X	JOURNAL OF MATHEMATICAL ANALYSIS AND APPLICATIONS	cas_tier	2	3	https://www.letpub.com.cn/index.php?journalid=4778&page=journalapp&view=detail
+0306-6800	JOURNAL OF MEDICAL ETHICS	cas_tier	1	2	https://www.letpub.com.cn/index.php?journalid=4800&page=journalapp&view=detail
+1932-7447	Journal of Physical Chemistry C	cas_tier	1	3	https://www.letpub.com.cn/index.php?journalid=5032&page=journalapp&view=detail
+0022-3727	JOURNAL OF PHYSICS D-APPLIED PHYSICS	cas_tier	2	3	https://www.letpub.com.cn/index.php?journalid=5040&page=journalapp&view=detail
+8756-971X	JOURNAL OF THE AMERICAN MOSQUITO CONTROL ASSOCIATION	cas_tier	1	4	https://www.letpub.com.cn/index.php?journalid=5248&page=journalapp&view=detail
+0160-5682	JOURNAL OF THE OPERATIONAL RESEARCH SOCIETY	cas_tier	3	4	https://www.letpub.com.cn/index.php?journalid=5336&page=journalapp&view=detail
+0022-5142	JOURNAL OF THE SCIENCE OF FOOD AND AGRICULTURE	cas_tier	2	3	https://www.letpub.com.cn/index.php?journalid=5355&page=journalapp&view=detail
+1054-660X	LASER PHYSICS	cas_tier	3	4	https://www.letpub.com.cn/index.php?journalid=5547&page=journalapp&view=detail
+1550-2724	Leukos	cas_tier	4	3	https://www.letpub.com.cn/index.php?journalid=5572&page=journalapp&view=detail
+0024-4937	LITHOS	cas_tier	4	2	https://www.letpub.com.cn/index.php?journalid=5592&page=journalapp&view=detail
+1433-8351	Living Reviews in Relativity	cas_tier	2	1	https://www.letpub.com.cn/index.php?journalid=5598&page=journalapp&view=detail
+0025-1909	MANAGEMENT SCIENCE	cas_tier	4	2	https://www.letpub.com.cn/index.php?journalid=5649&page=journalapp&view=detail
+0170-4214	MATHEMATICAL METHODS IN THE APPLIED SCIENCES	cas_tier	1	4	https://www.letpub.com.cn/index.php?journalid=5725&page=journalapp&view=detail
+0378-4754	MATHEMATICS AND COMPUTERS IN SIMULATION	cas_tier	3	2	https://www.letpub.com.cn/index.php?journalid=5739&page=journalapp&view=detail
+0252-9416	Mausam	cas_tier	1	4	https://www.letpub.com.cn/index.php?journalid=5749&page=journalapp&view=detail
+0025-7974	MEDICINE	cas_tier	1	4	https://www.letpub.com.cn/index.php?journalid=5814&page=journalapp&view=detail
+0026-1335	METRIKA	cas_tier	3	4	https://www.letpub.com.cn/index.php?journalid=5855&page=journalapp&view=detail
+0028-0836	NATURE	cas_tier	2	1	https://www.letpub.com.cn/index.php?journalid=6054&page=journalapp&view=detail
+0925-2312	NEUROCOMPUTING	cas_tier	4	2	https://www.letpub.com.cn/index.php?journalid=6141&page=journalapp&view=detail
+1384-1076	NEW ASTRONOMY	cas_tier	3	4	https://www.letpub.com.cn/index.php?journalid=6205&page=journalapp&view=detail
+0951-7715	NONLINEARITY	cas_tier	3	2	https://www.letpub.com.cn/index.php?journalid=6245&page=journalapp&view=detail
+0168-9002	NUCLEAR INSTRUMENTS & METHODS IN PHYSICS RESEARCH SECTION A-ACCELERATORS SPECTROMETERS DETECTORS AND ASSOCIATED EQUIPMENT	cas_tier	2	3	https://www.letpub.com.cn/index.php?journalid=6269&page=journalapp&view=detail
+0260-6917	NURSE EDUCATION TODAY	cas_tier	1	2	https://www.letpub.com.cn/index.php?journalid=6294&page=journalapp&view=detail
+0030-1299	OIKOS	cas_tier	3	2	https://www.letpub.com.cn/index.php?journalid=6349&page=journalapp&view=detail
+0305-0483	OMEGA-INTERNATIONAL JOURNAL OF MANAGEMENT SCIENCE	cas_tier	4	2	https://www.letpub.com.cn/index.php?journalid=6355&page=journalapp&view=detail
+1340-6000	OPTICAL REVIEW	cas_tier	3	4	https://www.letpub.com.cn/index.php?journalid=6390&page=journalapp&view=detail
+0030-3992	OPTICS AND LASER TECHNOLOGY	cas_tier	1	2	https://www.letpub.com.cn/index.php?journalid=6392&page=journalapp&view=detail
+0171-6468	OR SPECTRUM	cas_tier	2	4	https://www.letpub.com.cn/index.php?journalid=6407&page=journalapp&view=detail
+1364-503X	PHILOSOPHICAL TRANSACTIONS OF THE ROYAL SOCIETY A-MATHEMATICAL PHYSICAL AND ENGINEERING SCIENCES	cas_tier	1	3	https://www.letpub.com.cn/index.php?journalid=6611&page=journalapp&view=detail
+1539-3755	PHYSICAL REVIEW E	cas_tier	4	3	https://www.letpub.com.cn/index.php?journalid=6657&page=journalapp&view=detail
+0370-1573	PHYSICS REPORTS-REVIEW SECTION OF PHYSICS LETTERS	cas_tier	2	1	https://www.letpub.com.cn/index.php?journalid=6682&page=journalapp&view=detail
+0031-9228	PHYSICS TODAY	cas_tier	3	4	https://www.letpub.com.cn/index.php?journalid=6683&page=journalapp&view=detail
+1932-6203	PLoS One	cas_tier	1	3	https://www.letpub.com.cn/index.php?journalid=6775&page=journalapp&view=detail
+0032-3861	POLYMER	cas_tier	1	2	https://www.letpub.com.cn/index.php?journalid=6794&page=journalapp&view=detail
+1385-1292	POSITIVITY	cas_tier	2	3	https://www.letpub.com.cn/index.php?journalid=6813&page=journalapp&view=detail
+1454-9069	Proceedings of the Romanian Academy Series A-Mathematics Physics Technical Sciences Information Science	cas_tier	1	4	https://www.letpub.com.cn/index.php?journalid=6899&page=journalapp&view=detail
+1558-8599	Pure and Applied Mathematics Quarterly	cas_tier	1	4	https://www.letpub.com.cn/index.php?journalid=7034&page=journalapp&view=detail
+0034-6861	REVIEWS OF MODERN PHYSICS	cas_tier	3	1	https://www.letpub.com.cn/index.php?journalid=7195&page=journalapp&view=detail
+1355-8382	RNA	cas_tier	4	3	https://www.letpub.com.cn/index.php?journalid=7309&page=journalapp&view=detail
+0036-8075	SCIENCE	cas_tier	3	1	https://www.letpub.com.cn/index.php?journalid=7393&page=journalapp&view=detail
+1513-1874	SCIENCEASIA	cas_tier	2	4	https://www.letpub.com.cn/index.php?journalid=7415&page=journalapp&view=detail
+0036-8733	SCIENTIFIC AMERICAN	cas_tier	3	4	https://www.letpub.com.cn/index.php?journalid=7422&page=journalapp&view=detail
+0138-9130	SCIENTOMETRICS	cas_tier	1	3	https://www.letpub.com.cn/index.php?journalid=7426&page=journalapp&view=detail
+1063-7826	SEMICONDUCTORS	cas_tier	1	4	https://www.letpub.com.cn/index.php?journalid=7441&page=journalapp&view=detail
+0037-1912	SEMIGROUP FORUM	cas_tier	2	3	https://www.letpub.com.cn/index.php?journalid=7443&page=journalapp&view=detail
+0038-0938	SOLAR PHYSICS	cas_tier	2	3	https://www.letpub.com.cn/index.php?journalid=7558&page=journalapp&view=detail
+0932-5026	STATISTICAL PAPERS	cas_tier	4	3	https://www.letpub.com.cn/index.php?journalid=7634&page=journalapp&view=detail
+1532-6349	STOCHASTIC MODELS	cas_tier	3	4	https://www.letpub.com.cn/index.php?journalid=7650&page=journalapp&view=detail
+0039-2103	STRAIN	cas_tier	1	4	https://www.letpub.com.cn/index.php?journalid=7654&page=journalapp&view=detail
+0039-3630	STUDIES IN CONSERVATION	cas_tier	2	3	https://www.letpub.com.cn/index.php?journalid=7680&page=journalapp&view=detail
+0039-7660	Sylwan	cas_tier	1	4	https://www.letpub.com.cn/index.php?journalid=7724&page=journalapp&view=detail
+0039-7857	SYNTHESE	cas_tier	3	2	https://www.letpub.com.cn/index.php?journalid=7729&page=journalapp&view=detail
+0166-4972	TECHNOVATION	cas_tier	3	1	https://www.letpub.com.cn/index.php?journalid=7760&page=journalapp&view=detail
+1133-0686	TEST	cas_tier	1	3	https://www.letpub.com.cn/index.php?journalid=7778&page=journalapp&view=detail
+1134-5764	Top	cas_tier	2	4	https://www.letpub.com.cn/index.php?journalid=7834&page=journalapp&view=detail

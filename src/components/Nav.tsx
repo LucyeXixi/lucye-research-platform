@@ -19,7 +19,7 @@ export default function Nav() {
       <div className="max-w-7xl mx-auto px-4 flex items-center justify-between h-14">
         <Link href="/" className="flex items-center gap-2 font-semibold text-primary-700">
           <FlaskConical className="w-5 h-5" />
-          <span>Lucye的临床科研选题助手</span>
+          <span>Lucye的临床科研助手</span>
         </Link>
 
         <div className="flex items-center gap-1">

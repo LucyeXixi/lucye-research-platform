@@ -1,0 +1,27 @@
+{
+  "scraped_at": "2026-05-14",
+  "total": 0,
+  "field_fill_rates": {
+    "name": 0,
+    "abbr": 0,
+    "issn": 0,
+    "eissn": 0,
+    "if_2024": 0,
+    "if_5year": 0,
+    "cas_2025": 0,
+    "jcr": 0,
+    "review_weeks": 0,
+    "acceptance_rate": 0,
+    "apc_usd": 0,
+    "open_access": 0,
+    "articles_per_year": 0,
+    "chinese_ratio": 0,
+    "self_cite_rate": 0,
+    "subject_areas": 0,
+    "letpub_url": 0,
+    "scraped_at": 0
+  },
+  "failed_id_count": 0,
+  "failed_ids": [],
+  "output_path": "/Users/lucye/Desktop/research-platform/data/journals.json"
+}
