@@ -100,14 +100,20 @@ export default function NMANetwork({ nodes, edges, verdict }: Props) {
             if (!p) return null
             const nodeR = 26 + (node.studies / maxNodeStudies) * 10
             const short = node.label.length > 8 ? node.label.slice(0, 7) + '…' : node.label
+            const isIsolated = !connectedIds.has(node.id)
+            const fill   = isIsolated ? '#fef2f2' : '#eff6ff'
+            const stroke = isIsolated ? '#ef4444' : '#3b82f6'
+            const textC  = isIsolated ? '#991b1b' : '#1e40af'
+            const subC   = isIsolated ? '#fca5a5' : '#60a5fa'
             return (
               <g key={node.id}>
-                <circle cx={p.x} cy={p.y} r={nodeR} fill="#eff6ff" stroke="#3b82f6" strokeWidth={1.5} />
+                <circle cx={p.x} cy={p.y} r={nodeR} fill={fill} stroke={stroke} strokeWidth={isIsolated ? 2 : 1.5}
+                  strokeDasharray={isIsolated ? '4 2' : undefined} />
                 <text x={p.x} y={p.y - 5} textAnchor="middle" dominantBaseline="middle"
-                  fontSize="10" fill="#1e40af" fontWeight="600">{short}</text>
+                  fontSize="10" fill={textC} fontWeight="600">{short}</text>
                 {node.studies > 0 && (
                   <text x={p.x} y={p.y + 10} textAnchor="middle" dominantBaseline="middle"
-                    fontSize="8" fill="#60a5fa">{node.studies} 篇</text>
+                    fontSize="8" fill={subC}>{node.studies} 篇</text>
                 )}
               </g>
             )
@@ -116,16 +122,34 @@ export default function NMANetwork({ nodes, edges, verdict }: Props) {
       </div>
 
       {/* Legend */}
-      <div className="flex items-center gap-4 text-xs text-gray-400 px-1">
+      <div className="flex flex-wrap items-center gap-x-4 gap-y-1 text-xs text-gray-400 px-1">
         <span className="flex items-center gap-1">
-          <span className="w-6 h-0.5 bg-blue-200 inline-block" style={{ height: 2 }} />
+          <span className="w-6 inline-block bg-blue-200 rounded" style={{ height: 2 }} />
           线条粗细 = 预估直接比较数量
         </span>
         <span className="flex items-center gap-1">
           <span className="w-3 h-3 rounded-full bg-blue-100 border border-blue-400 inline-block" />
           节点大小 = 节点证据量
         </span>
+        {isolatedNodes.length > 0 && (
+          <span className="flex items-center gap-1">
+            <span className="w-3 h-3 rounded-full bg-red-50 border-2 border-red-400 border-dashed inline-block" />
+            红色虚线 = 孤立节点（无直接比较）
+          </span>
+        )}
       </div>
+
+      {/* NMAskill verdict criteria */}
+      {vc && (
+        <div className={`rounded-lg border px-3 py-2.5 text-xs space-y-1 ${vc.bg} ${vc.border}`}>
+          <p className={`font-semibold ${vc.text}`}>判断依据（NMA 可行性标准）</p>
+          <ul className={`space-y-0.5 ${vc.text} opacity-80 list-none`}>
+            <li>✓ <span className="text-emerald-700 font-medium">推荐进行</span>：网络连通 + 存在闭合环 + ≥3 个节点各有 ≥2 条边（可检验不一致性）</li>
+            <li>△ <span className="text-amber-700 font-medium">需谨慎评估</span>：网络连通但为纯星状结构（仅一个中枢节点），间接比较精度有限</li>
+            <li>✗ <span className="text-red-700 font-medium">不建议进行</span>：网络不连通 / 存在孤立节点 / 节点数 &lt; 3，无法进行有效 NMA</li>
+          </ul>
+        </div>
+      )}
     </div>
   )
 }
