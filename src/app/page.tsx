@@ -65,7 +65,7 @@ export default function HomePage() {
           面向临床医学生 · 免费开源
         </div>
         <h1 className="text-4xl font-bold text-gray-900 tracking-tight">
-          Lucye的临床科研选题助手
+          Lucye的临床科研助手
         </h1>
         <p className="text-lg text-gray-500 max-w-2xl mx-auto">
           从模糊想法到可执行选题，涵盖综述、Meta 分析、临床数据三大方向。
