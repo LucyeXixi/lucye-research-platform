@@ -102,9 +102,18 @@ def load_working_records(base_records: list[dict[str, Any]]) -> list[dict[str, A
     if len(merged) != len(base_records):
         print(
             f"[WARN] existing merged length {len(merged)} differs from input length {len(base_records)}; "
-            "starting from source journals.json",
+            "merging previous easyScholar results by ISSN/name",
             flush=True,
         )
+        previous_by_key = {
+            record_key(record): record.get("easy_scholar")
+            for record in merged
+            if isinstance(record, dict) and record.get("easy_scholar")
+        }
+        for record in base_records:
+            previous = previous_by_key.get(record_key(record))
+            if previous:
+                record["easy_scholar"] = previous
         return base_records
     return merged
 

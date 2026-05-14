@@ -631,8 +631,10 @@ def scrape_details(
     failed_ids: set[str],
     *,
     max_details: int | None = None,
+    detail_retries: int = 3,
 ) -> None:
     completed_this_run = 0
+    last_checkpoint_completed = 0
     last_report_at = time.monotonic()
     total = len(ids)
     pending = [jid for jid in ids if jid not in done_ids]
@@ -647,7 +649,7 @@ def scrape_details(
             failed_ids.add(journal_id)
             continue
         try:
-            result = session.get(url)
+            result = session.get(url, retries=detail_retries)
             record = parse_detail(result.text, journal_id, result.url)
             if not validate_record(record):
                 raise RuntimeError("detail page parsed without required name/issn")
@@ -661,8 +663,13 @@ def scrape_details(
             failed_ids.add(journal_id)
 
         now = time.monotonic()
-        if completed_this_run and completed_this_run % 50 == 0:
+        if (
+            completed_this_run
+            and completed_this_run % 50 == 0
+            and completed_this_run != last_checkpoint_completed
+        ):
             checkpoint(records_by_id, done_ids, failed_ids)
+            last_checkpoint_completed = completed_this_run
         if now - last_report_at >= 3600:
             print(
                 f"[PROGRESS] completed {len(done_ids)} / {total}; failed {len(failed_ids)}; "
@@ -682,11 +689,15 @@ def main() -> int:
     parser.add_argument("--max-details", type=int, default=None, help="For smoke testing only")
     parser.add_argument("--delay-min", type=float, default=2.0)
     parser.add_argument("--delay-max", type=float, default=4.0)
+    parser.add_argument("--detail-retries", type=int, default=3)
+    parser.add_argument("--skip-final-retry", action="store_true")
     parser.add_argument("--retry-failed-only", action="store_true")
     args = parser.parse_args()
 
     if args.delay_min < 2.0 or args.delay_max < args.delay_min:
         raise SystemExit("delay must respect the requested 2-4 second minimum unless code is edited intentionally")
+    if args.detail_retries < 1:
+        raise SystemExit("--detail-retries must be at least 1")
 
     DATA_DIR.mkdir(parents=True, exist_ok=True)
     session = PoliteSession(args.delay_min, args.delay_max)
@@ -720,13 +731,14 @@ def main() -> int:
         done_ids,
         failed_ids,
         max_details=args.max_details,
+        detail_retries=args.detail_retries,
     )
 
-    if failed_ids and not args.retry_failed_only:
+    if failed_ids and not args.retry_failed_only and not args.skip_final_retry:
         retry_ids = sorted(failed_ids, key=lambda x: int(x) if x.isdigit() else x)
         print(f"[RETRY] retrying {len(retry_ids)} failed IDs once", flush=True)
         before_retry = set(failed_ids)
-        scrape_details(session, rp, retry_ids, records_by_id, done_ids, failed_ids)
+        scrape_details(session, rp, retry_ids, records_by_id, done_ids, failed_ids, detail_retries=args.detail_retries)
         still_failed = failed_ids.intersection(before_retry)
         write_id_set(FAILED_IDS_PATH, still_failed)
         failed_ids = still_failed

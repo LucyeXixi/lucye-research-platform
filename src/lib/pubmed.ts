@@ -17,62 +17,78 @@ export interface SearchResult {
   query:            string
 }
 
-export interface ProsperoResult {
-  registered: boolean
-  count:      number
-  url:        string
+function qs(params: Record<string, string | undefined>) {
+  const p = new URLSearchParams()
+  Object.entries(params).forEach(([k, v]) => { if (v != null) p.set(k, v) })
+  return p.toString()
 }
 
-function qs(params: Record<string, string>) {
-  return new URLSearchParams(params).toString()
+async function fetchJson(url: string): Promise<unknown> {
+  const res = await fetch(url)
+  if (!res.ok) throw new Error(`PubMed API 返回 ${res.status}`)
+  const text = await res.text()
+  if (!text.trim()) throw new Error('PubMed API 返回了空响应，请稍后重试')
+  try {
+    return JSON.parse(text)
+  } catch {
+    throw new Error('PubMed API 响应解析失败，请稍后重试')
+  }
 }
 
 export async function searchPubMed(
   query: string,
   years = 10
 ): Promise<SearchResult> {
-  const minYear  = new Date().getFullYear() - years
+  const minYear   = new Date().getFullYear() - years
   const fullQuery = `${query} AND ("${minYear}"[PDAT]:"3000"[PDAT])`
 
-  const searchRes = await fetch(
+  const searchData = await fetchJson(
     `${BASE}/esearch.fcgi?${qs({
-      db:          'pubmed',
-      term:        fullQuery,
-      retmax:      '100',
-      usehistory:  'y',
-      retmode:     'json',
+      db:         'pubmed',
+      term:       fullQuery,
+      retmax:     '100',
+      usehistory: 'y',
+      retmode:    'json',
     })}`
-  )
-  const searchData = await searchRes.json()
+  ) as { esearchresult: { count: string; webenv?: string; query_key?: string } }
+
   const { count, webenv, query_key } = searchData.esearchresult
+  const totalCount = parseInt(count) || 0
 
-  const summaryRes = await fetch(
+  // Guard: if no webenv/query_key, return count only
+  if (!webenv || !query_key || totalCount === 0) {
+    return { totalCount, yearDistribution: {}, topJournals: [], articles: [], query: fullQuery }
+  }
+
+  const summaryData = await fetchJson(
     `${BASE}/esummary.fcgi?${qs({
-      db:          'pubmed',
+      db:       'pubmed',
       query_key,
-      WebEnv:      webenv,
-      retmax:      '50',
-      retstart:    '0',
-      retmode:     'json',
+      WebEnv:   webenv,
+      retmax:   '50',
+      retstart: '0',
+      retmode:  'json',
     })}`
-  )
-  const summaryData = await summaryRes.json()
+  ) as { result?: Record<string, unknown> & { uids?: string[] } }
 
-  const articles:    Article[]               = []
-  const yearDist:    Record<string, number>  = {}
-  const journalMap:  Record<string, number>  = {}
+  const articles:   Article[]              = []
+  const yearDist:   Record<string, number> = {}
+  const journalMap: Record<string, number> = {}
 
   const uids: string[] = summaryData.result?.uids || []
   for (const uid of uids) {
-    const doc = summaryData.result[uid]
-    if (!doc) continue
+    const doc = summaryData.result?.[uid] as {
+      pubdate?: string; title?: string; source?: string
+      authors?: { name: string }[]
+    } | undefined
+    if (!doc || typeof doc !== 'object' || !doc.title) continue
     const yearStr = doc.pubdate?.split(' ')[0] || '未知'
-    yearDist[yearStr]  = (yearDist[yearStr]  || 0) + 1
-    journalMap[doc.source] = (journalMap[doc.source] || 0) + 1
+    yearDist[yearStr]      = (yearDist[yearStr]      || 0) + 1
+    journalMap[doc.source ?? ''] = (journalMap[doc.source ?? ''] || 0) + 1
     articles.push({
       pmid:    uid,
       title:   doc.title   || '',
-      authors: (doc.authors || []).slice(0, 3).map((a: { name: string }) => a.name),
+      authors: (doc.authors || []).slice(0, 3).map(a => a.name),
       journal: doc.source  || '',
       year:    parseInt(yearStr) || 0,
       pubdate: doc.pubdate || '',
@@ -80,35 +96,12 @@ export async function searchPubMed(
   }
 
   const topJournals = Object.entries(journalMap)
+    .filter(([name]) => name.trim())
     .sort((a, b) => b[1] - a[1])
     .slice(0, 8)
     .map(([name, count]) => ({ name, count }))
 
-  return {
-    totalCount:       parseInt(count) || 0,
-    yearDistribution: yearDist,
-    topJournals,
-    articles,
-    query:            fullQuery,
-  }
-}
-
-export async function searchOpenAlex(query: string) {
-  const res = await fetch(
-    `https://api.openalex.org/works?search=${encodeURIComponent(query)}&per-page=5&filter=from_publication_date:2020-01-01`,
-    { headers: { 'User-Agent': 'ResearchPlatform/1.0 (mailto:research@example.com)' } }
-  )
-  if (!res.ok) throw new Error('OpenAlex 请求失败')
-  return res.json()
-}
-
-export async function checkProspero(query: string): Promise<ProsperoResult> {
-  const url = `https://www.crd.york.ac.uk/prospero/#searchadvanced?query=${encodeURIComponent(query)}`
-  return {
-    registered: false,
-    count:      0,
-    url,
-  }
+  return { totalCount, yearDistribution: yearDist, topJournals, articles, query: fullQuery }
 }
 
 export async function searchClinicalTrials(query: string) {
