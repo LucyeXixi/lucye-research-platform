@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react'
 import { Eye, EyeOff, CheckCircle2, AlertCircle, Loader2, ExternalLink, ChevronDown, ChevronUp } from 'lucide-react'
 import { getApiConfig, saveApiConfig, clearApiConfig, type Provider } from '@/lib/storage'
 import { testConnection } from '@/lib/ai'
+import { loadJournals, type Journal } from '@/lib/journals'
 
 const PROVIDERS = [
   {
@@ -77,6 +78,7 @@ export default function ConfigPage() {
   const [status,   setStatus]     = useState<'idle' | 'testing' | 'ok' | 'error'>('idle')
   const [errMsg,   setErrMsg]     = useState('')
   const [openStep, setOpenStep]   = useState<Provider | null>('deepseek')
+  const [journals, setJournals]   = useState<Journal[]>([])
 
   useEffect(() => {
     const cfg = getApiConfig()
@@ -86,9 +88,17 @@ export default function ConfigPage() {
       setBaseUrl(cfg.baseUrl || '')
       setModel(cfg.model   || '')
     }
+    loadJournals().then(setJournals).catch(() => setJournals([]))
   }, [])
 
   const selectedProvider = PROVIDERS.find(p => p.id === provider)!
+  const journalStats = {
+    total: journals.length,
+    withIF: journals.filter(j => j.if_2024 != null).length,
+    withCas: journals.filter(j => j.cas_2025).length,
+    withJcr: journals.filter(j => j.jcr).length,
+    scrapedAt: journals.find(j => j.scraped_at)?.scraped_at,
+  }
 
   function handleProviderChange(p: Provider) {
     setProvider(p)
@@ -147,6 +157,37 @@ export default function ConfigPage() {
         <p className="text-sm text-gray-500 mt-1">
           配置 AI 服务的 API Key。Key 仅保存在你的浏览器本地，不会上传到任何服务器。
         </p>
+      </div>
+
+      {/* Journal database status */}
+      <div className="card p-5 space-y-3">
+        <div className="flex items-start justify-between gap-3">
+          <div>
+            <p className="text-sm font-semibold text-gray-900">期刊数据库</p>
+            <p className="text-xs text-gray-500 mt-0.5">
+              用于期刊匹配、IF/JCR/中科院分区、审稿周期和 APC 展示。
+            </p>
+          </div>
+          <span className={`badge ${journalStats.total ? 'bg-emerald-50 text-emerald-700' : 'bg-amber-50 text-amber-700'}`}>
+            {journalStats.total ? '已启用' : '未加载'}
+          </span>
+        </div>
+        <div className="grid grid-cols-2 sm:grid-cols-4 gap-2">
+          {[
+            { label: '期刊数', value: journalStats.total },
+            { label: 'IF 覆盖', value: journalStats.withIF },
+            { label: '中科院', value: journalStats.withCas },
+            { label: 'JCR', value: journalStats.withJcr },
+          ].map(item => (
+            <div key={item.label} className="rounded-lg bg-gray-50 px-3 py-2">
+              <p className="text-[10px] text-gray-400">{item.label}</p>
+              <p className="text-lg font-semibold text-gray-900">{item.value}</p>
+            </div>
+          ))}
+        </div>
+        {journalStats.scrapedAt && (
+          <p className="text-xs text-gray-400">数据版本：{journalStats.scrapedAt} · 来源文件：public/data/journals_merged.json</p>
+        )}
       </div>
 
       {/* Provider selection */}

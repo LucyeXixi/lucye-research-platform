@@ -1,8 +1,9 @@
 'use client'
 
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { Search, Loader2, BookOpen, ChevronRight, BarChart2, Calendar, Languages } from 'lucide-react'
 import { searchPubMed, type SearchResult } from '@/lib/pubmed'
+import { loadJournals, findJournalMeta, formatCas, formatIF, type Journal } from '@/lib/journals'
 import { chatCompletion } from '@/lib/ai'
 import ApiKeyBanner from '@/components/ApiKeyBanner'
 import StepWizard from '@/components/StepWizard'
@@ -33,10 +34,15 @@ export default function ReviewPage() {
   const [translatedKw,  setTranslatedKw]  = useState('')
   const [analyzing,     setAnalyzing]     = useState(false)
   const [analysis,      setAnalysis]      = useState('')
+  const [journalCatalog,setJournalCatalog]= useState<Journal[]>([])
   const [deadline,      setDeadline]      = useState('')
   const [error,         setError]         = useState('')
 
   const depthConfig = SEARCH_DEPTHS.find(d => d.id === depth)!
+
+  useEffect(() => {
+    loadJournals().then(setJournalCatalog).catch(() => setJournalCatalog([]))
+  }, [])
 
   async function handleSearch() {
     if (!keywords.trim()) return
@@ -283,29 +289,45 @@ PubMed 检索结果（近${depthConfig.years}年）：
         </div>
       )}
 
-      {/* Step 3: Journal matching (placeholder until journals.json ready) */}
+      {/* Step 3: Journal matching */}
       {step >= 3 && (
         <div className="card p-6 space-y-4">
           <h2 className="section-title">期刊匹配推荐</h2>
-          <div className="bg-amber-50 border border-amber-100 rounded-lg p-4 text-sm text-amber-700">
-            <p className="font-medium">期刊数据库准备中</p>
+          <div className="bg-blue-50 border border-blue-100 rounded-lg p-4 text-sm text-blue-700">
+            <p className="font-medium">期刊数据库已启用</p>
             <p className="mt-1 text-xs">
-              期刊完整数据（中科院分区、IF、版面费、审稿周期）需要 Codex 爬虫任务完成后生成
-              <code className="mx-1 bg-amber-100 px-1 rounded">journals_merged.json</code>，
-              并放置到 <code className="bg-amber-100 px-1 rounded">public/data/</code> 目录。
-              <br />爬虫完成前，以下为基于检索结果的参考期刊：
+              已接入本地期刊库（IF、JCR、中科院分区、审稿周期、版面费等）。匹配时优先使用 ISSN/eISSN，其次使用标准刊名或缩写精确匹配。
             </p>
           </div>
           {searchResult && (
             <div className="space-y-2">
-              {searchResult.topJournals.slice(0, 5).map(j => (
-                <div key={j.name} className="flex items-center justify-between border border-gray-100 rounded-lg px-4 py-3">
-                  <div>
-                    <p className="text-sm font-medium text-gray-900">{j.name}</p>
-                    <p className="text-xs text-gray-400">在此检索样本中发表 {j.count} 篇相关文章</p>
+              {searchResult.topJournals.slice(0, 8).map(j => {
+                const meta = findJournalMeta(journalCatalog, j)
+                return (
+                <div key={j.name} className="flex items-center justify-between gap-3 border border-gray-100 rounded-lg px-4 py-3">
+                  <div className="min-w-0">
+                    <div className="flex items-center gap-2 flex-wrap">
+                      <p className="text-sm font-medium text-gray-900">{meta?.name || j.fullName || j.name}</p>
+                      <span className={`text-[10px] rounded-full px-2 py-0.5 ${
+                        meta?.if_2024 != null ? 'bg-blue-50 text-blue-700' : 'bg-gray-50 text-gray-400'
+                      }`}>
+                        {formatIF(meta?.if_2024)}
+                      </span>
+                      <span className="text-[10px] rounded-full px-2 py-0.5 bg-gray-50 text-gray-500">
+                        {meta?.jcr || 'JCR 未收录'}
+                      </span>
+                      <span className="text-[10px] rounded-full px-2 py-0.5 bg-gray-50 text-gray-500">
+                        {formatCas(meta)}
+                      </span>
+                    </div>
+                    <p className="text-xs text-gray-400 mt-1">
+                      在此检索样本中发表 {j.count} 篇相关文章
+                      {meta?.review_weeks != null ? ` · 审稿约 ${meta.review_weeks} 周` : ''}
+                      {meta?.apc_usd != null ? ` · APC $${meta.apc_usd.toLocaleString()}` : ''}
+                    </p>
                   </div>
                   <a
-                    href={`https://www.letpub.com.cn/index.php?page=journalapp&view=query&journal_name=${encodeURIComponent(j.name)}`}
+                    href={meta?.letpub_url || `https://www.letpub.com.cn/index.php?page=journalapp&view=query&journal_name=${encodeURIComponent(j.name)}`}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-xs text-primary-600 hover:underline shrink-0 ml-2"
@@ -313,7 +335,8 @@ PubMed 检索结果（近${depthConfig.years}年）：
                     查 LetPub →
                   </a>
                 </div>
-              ))}
+                )
+              })}
             </div>
           )}
           {step === 3 && (
