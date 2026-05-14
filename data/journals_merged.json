@@ -1772,7 +1772,14 @@
       "数学跨学科应用"
     ],
     "letpub_url": "https://www.letpub.com.cn/index.php?journalid=1041&page=journalapp&view=detail",
-    "scraped_at": "2026-05-14"
+    "scraped_at": "2026-05-14",
+    "easy_scholar": {
+      "cas_tier": 1,
+      "cas_top": null,
+      "jcr": null,
+      "oa": null,
+      "matched": true
+    }
   },
   {
     "name": "BEHAVIORAL AND BRAIN SCIENCES",
@@ -1800,7 +1807,14 @@
       "行为科学"
     ],
     "letpub_url": "https://www.letpub.com.cn/index.php?journalid=1044&page=journalapp&view=detail",
-    "scraped_at": "2026-05-14"
+    "scraped_at": "2026-05-14",
+    "easy_scholar": {
+      "cas_tier": 1,
+      "cas_top": null,
+      "jcr": null,
+      "oa": null,
+      "matched": true
+    }
   },
   {
     "name": "BEHAVIOUR & INFORMATION TECHNOLOGY",
@@ -1828,7 +1842,14 @@
       "计算机：控制论"
     ],
     "letpub_url": "https://www.letpub.com.cn/index.php?journalid=1051&page=journalapp&view=detail",
-    "scraped_at": "2026-05-14"
+    "scraped_at": "2026-05-14",
+    "easy_scholar": {
+      "cas_tier": 4,
+      "cas_top": null,
+      "jcr": null,
+      "oa": null,
+      "matched": true
+    }
   },
   {
     "name": "BEHAVIOURAL BRAIN RESEARCH",
@@ -1856,7 +1877,14 @@
       "行为科学"
     ],
     "letpub_url": "https://www.letpub.com.cn/index.php?journalid=1052&page=journalapp&view=detail",
-    "scraped_at": "2026-05-14"
+    "scraped_at": "2026-05-14",
+    "easy_scholar": {
+      "cas_tier": 3,
+      "cas_top": null,
+      "jcr": null,
+      "oa": null,
+      "matched": true
+    }
   },
   {
     "name": "BERNOULLI",
@@ -1884,7 +1912,14 @@
       "统计学与概率论"
     ],
     "letpub_url": "https://www.letpub.com.cn/index.php?journalid=1066&page=journalapp&view=detail",
-    "scraped_at": "2026-05-14"
+    "scraped_at": "2026-05-14",
+    "easy_scholar": {
+      "cas_tier": 2,
+      "cas_top": null,
+      "jcr": null,
+      "oa": null,
+      "matched": true
+    }
   },
   {
     "name": "BIOMATERIALS",
@@ -1912,7 +1947,14 @@
       "材料科学：生物材料"
     ],
     "letpub_url": "https://www.letpub.com.cn/index.php?journalid=1163&page=journalapp&view=detail",
-    "scraped_at": "2026-05-14"
+    "scraped_at": "2026-05-14",
+    "easy_scholar": {
+      "cas_tier": 1,
+      "cas_top": null,
+      "jcr": null,
+      "oa": null,
+      "matched": true
+    }
   },
   {
     "name": "Biomedical Signal Processing and Control",
@@ -1940,7 +1982,14 @@
       "工程：生物医学"
     ],
     "letpub_url": "https://www.letpub.com.cn/index.php?journalid=1175&page=journalapp&view=detail",
-    "scraped_at": "2026-05-14"
+    "scraped_at": "2026-05-14",
+    "easy_scholar": {
+      "cas_tier": 2,
+      "cas_top": null,
+      "jcr": null,
+      "oa": null,
+      "matched": true
+    }
   },
   {
     "name": "BIOMETRICS",
@@ -1968,7 +2017,14 @@
       "生物学"
     ],
     "letpub_url": "https://www.letpub.com.cn/index.php?journalid=1180&page=journalapp&view=detail",
-    "scraped_at": "2026-05-14"
+    "scraped_at": "2026-05-14",
+    "easy_scholar": {
+      "cas_tier": 3,
+      "cas_top": null,
+      "jcr": null,
+      "oa": null,
+      "matched": true
+    }
   },
   {
     "name": "BIOMETRIKA",
@@ -1996,7 +2052,14 @@
       "生物学"
     ],
     "letpub_url": "https://www.letpub.com.cn/index.php?journalid=1181&page=journalapp&view=detail",
-    "scraped_at": "2026-05-14"
+    "scraped_at": "2026-05-14",
+    "easy_scholar": {
+      "cas_tier": 1,
+      "cas_top": null,
+      "jcr": null,
+      "oa": null,
+      "matched": true
+    }
   },
   {
     "name": "BIORESOURCE TECHNOLOGY",
@@ -2024,7 +2087,14 @@
       "能源与燃料"
     ],
     "letpub_url": "https://www.letpub.com.cn/index.php?journalid=1196&page=journalapp&view=detail",
-    "scraped_at": "2026-05-14"
+    "scraped_at": "2026-05-14",
+    "easy_scholar": {
+      "cas_tier": 1,
+      "cas_top": null,
+      "jcr": null,
+      "oa": null,
+      "matched": true
+    }
   },
   {
     "name": "BIOSTATISTICS",
@@ -2052,7 +2122,14 @@
       "数学与计算生物学"
     ],
     "letpub_url": "https://www.letpub.com.cn/index.php?journalid=1204&page=journalapp&view=detail",
-    "scraped_at": "2026-05-14"
+    "scraped_at": "2026-05-14",
+    "easy_scholar": {
+      "cas_tier": 3,
+      "cas_top": null,
+      "jcr": null,
+      "oa": null,
+      "matched": true
+    }
   },
   {
     "name": "BONE",
@@ -2080,7 +2157,14 @@
       "内分泌学与代谢"
     ],
     "letpub_url": "https://www.letpub.com.cn/index.php?journalid=1289&page=journalapp&view=detail",
-    "scraped_at": "2026-05-14"
+    "scraped_at": "2026-05-14",
+    "easy_scholar": {
+      "cas_tier": 2,
+      "cas_top": null,
+      "jcr": null,
+      "oa": null,
+      "matched": true
+    }
   },
   {
     "name": "BOSQUE",
@@ -2108,7 +2192,14 @@
       "Forestry"
     ],
     "letpub_url": "https://www.letpub.com.cn/index.php?journalid=1295&page=journalapp&view=detail",
-    "scraped_at": "2026-05-14"
+    "scraped_at": "2026-05-14",
+    "easy_scholar": {
+      "cas_tier": 4,
+      "cas_top": null,
+      "jcr": null,
+      "oa": null,
+      "matched": true
+    }
   },
   {
     "name": "CALCOLO",
@@ -2136,7 +2227,14 @@
       "数学"
     ],
     "letpub_url": "https://www.letpub.com.cn/index.php?journalid=1444&page=journalapp&view=detail",
-    "scraped_at": "2026-05-14"
+    "scraped_at": "2026-05-14",
+    "easy_scholar": {
+      "cas_tier": 3,
+      "cas_top": null,
+      "jcr": null,
+      "oa": null,
+      "matched": true
+    }
   },
   {
     "name": "CARBON",
@@ -2164,7 +2262,14 @@
       "材料科学：综合"
     ],
     "letpub_url": "https://www.letpub.com.cn/index.php?journalid=1525&page=journalapp&view=detail",
-    "scraped_at": "2026-05-14"
+    "scraped_at": "2026-05-14",
+    "easy_scholar": {
+      "cas_tier": 2,
+      "cas_top": null,
+      "jcr": null,
+      "oa": null,
+      "matched": true
+    }
   },
   {
     "name": "CATENA",
@@ -2192,7 +2297,14 @@
       "地球科学综合"
     ],
     "letpub_url": "https://www.letpub.com.cn/index.php?journalid=1556&page=journalapp&view=detail",
-    "scraped_at": "2026-05-14"
+    "scraped_at": "2026-05-14",
+    "easy_scholar": {
+      "cas_tier": 1,
+      "cas_top": null,
+      "jcr": null,
+      "oa": null,
+      "matched": true
+    }
   },
   {
     "name": "CELL",
@@ -2220,7 +2332,14 @@
       "生化与分子生物学"
     ],
     "letpub_url": "https://www.letpub.com.cn/index.php?journalid=1562&page=journalapp&view=detail",
-    "scraped_at": "2026-05-14"
+    "scraped_at": "2026-05-14",
+    "easy_scholar": {
+      "cas_tier": 1,
+      "cas_top": null,
+      "jcr": null,
+      "oa": null,
+      "matched": true
+    }
   },
   {
     "name": "Cerne",
@@ -2248,7 +2367,14 @@
       "林学"
     ],
     "letpub_url": "https://www.letpub.com.cn/index.php?journalid=1618&page=journalapp&view=detail",
-    "scraped_at": "2026-05-14"
+    "scraped_at": "2026-05-14",
+    "easy_scholar": {
+      "cas_tier": 4,
+      "cas_top": null,
+      "jcr": null,
+      "oa": null,
+      "matched": true
+    }
   },
   {
     "name": "CHAOS",
@@ -2276,7 +2402,14 @@
       "物理：数学物理"
     ],
     "letpub_url": "https://www.letpub.com.cn/index.php?journalid=1623&page=journalapp&view=detail",
-    "scraped_at": "2026-05-14"
+    "scraped_at": "2026-05-14",
+    "easy_scholar": {
+      "cas_tier": 3,
+      "cas_top": null,
+      "jcr": null,
+      "oa": null,
+      "matched": true
+    }
   },
   {
     "name": "CHAOS SOLITONS & FRACTALS",
@@ -2304,7 +2437,14 @@
       "数学跨学科应用"
     ],
     "letpub_url": "https://www.letpub.com.cn/index.php?journalid=1624&page=journalapp&view=detail",
-    "scraped_at": "2026-05-14"
+    "scraped_at": "2026-05-14",
+    "easy_scholar": {
+      "cas_tier": 1,
+      "cas_top": null,
+      "jcr": null,
+      "oa": null,
+      "matched": true
+    }
   },
   {
     "name": "CHEMICAL COMMUNICATIONS",
@@ -2332,7 +2472,14 @@
       "化学综合"
     ],
     "letpub_url": "https://www.letpub.com.cn/index.php?journalid=1634&page=journalapp&view=detail",
-    "scraped_at": "2026-05-14"
+    "scraped_at": "2026-05-14",
+    "easy_scholar": {
+      "cas_tier": 2,
+      "cas_top": null,
+      "jcr": null,
+      "oa": null,
+      "matched": true
+    }
   },
   {
     "name": "CHEMICAL SENSES",
@@ -2360,7 +2507,14 @@
       "行为科学"
     ],
     "letpub_url": "https://www.letpub.com.cn/index.php?journalid=1654&page=journalapp&view=detail",
-    "scraped_at": "2026-05-14"
+    "scraped_at": "2026-05-14",
+    "easy_scholar": {
+      "cas_tier": 4,
+      "cas_top": null,
+      "jcr": null,
+      "oa": null,
+      "matched": true
+    }
   },
   {
     "name": "CHEMICAL SOCIETY REVIEWS",
@@ -2388,7 +2542,14 @@
       "化学综合"
     ],
     "letpub_url": "https://www.letpub.com.cn/index.php?journalid=1655&page=journalapp&view=detail",
-    "scraped_at": "2026-05-14"
+    "scraped_at": "2026-05-14",
+    "easy_scholar": {
+      "cas_tier": 1,
+      "cas_top": null,
+      "jcr": null,
+      "oa": null,
+      "matched": true
+    }
   },
   {
     "name": "Chemija",
@@ -2416,7 +2577,14 @@
       "化学综合"
     ],
     "letpub_url": "https://www.letpub.com.cn/index.php?journalid=1663&page=journalapp&view=detail",
-    "scraped_at": "2026-05-14"
+    "scraped_at": "2026-05-14",
+    "easy_scholar": {
+      "cas_tier": 4,
+      "cas_top": null,
+      "jcr": null,
+      "oa": null,
+      "matched": true
+    }
   },
   {
     "name": "Chiang Mai Journal of Science",
@@ -2443,7 +2611,14 @@
       "MULTIDISCIPLINARY SCIENCES"
     ],
     "letpub_url": "https://www.letpub.com.cn/index.php?journalid=1689&page=journalapp&view=detail",
-    "scraped_at": "2026-05-14"
+    "scraped_at": "2026-05-14",
+    "easy_scholar": {
+      "cas_tier": 4,
+      "cas_top": null,
+      "jcr": null,
+      "oa": null,
+      "matched": true
+    }
   },
   {
     "name": "CHINESE ANNALS OF MATHEMATICS SERIES B",
@@ -2471,7 +2646,14 @@
       "数学"
     ],
     "letpub_url": "https://www.letpub.com.cn/index.php?journalid=1700&page=journalapp&view=detail",
-    "scraped_at": "2026-05-14"
+    "scraped_at": "2026-05-14",
+    "easy_scholar": {
+      "cas_tier": 4,
+      "cas_top": null,
+      "jcr": null,
+      "oa": null,
+      "matched": true
+    }
   },
   {
     "name": "Chinese Optics Letters",
@@ -2499,7 +2681,14 @@
       "光学"
     ],
     "letpub_url": "https://www.letpub.com.cn/index.php?journalid=1722&page=journalapp&view=detail",
-    "scraped_at": "2026-05-14"
+    "scraped_at": "2026-05-14",
+    "easy_scholar": {
+      "cas_tier": 2,
+      "cas_top": null,
+      "jcr": null,
+      "oa": null,
+      "matched": true
+    }
   },
   {
     "name": "Chinese Physics B",
@@ -2527,7 +2716,14 @@
       "物理：综合"
     ],
     "letpub_url": "https://www.letpub.com.cn/index.php?journalid=1723&page=journalapp&view=detail",
-    "scraped_at": "2026-05-14"
+    "scraped_at": "2026-05-14",
+    "easy_scholar": {
+      "cas_tier": 3,
+      "cas_top": null,
+      "jcr": null,
+      "oa": null,
+      "matched": true
+    }
   },
   {
     "name": "CHINESE PHYSICS LETTERS",
@@ -2555,7 +2751,14 @@
       "物理：综合"
     ],
     "letpub_url": "https://www.letpub.com.cn/index.php?journalid=1725&page=journalapp&view=detail",
-    "scraped_at": "2026-05-14"
+    "scraped_at": "2026-05-14",
+    "easy_scholar": {
+      "cas_tier": 1,
+      "cas_top": null,
+      "jcr": null,
+      "oa": null,
+      "matched": true
+    }
   },
   {
     "name": "CHINESE SCIENCE BULLETIN",
@@ -2583,7 +2786,14 @@
       "综合性期刊"
     ],
     "letpub_url": "https://www.letpub.com.cn/index.php?journalid=1726&page=journalapp&view=detail",
-    "scraped_at": "2026-05-14"
+    "scraped_at": "2026-05-14",
+    "easy_scholar": {
+      "cas_tier": null,
+      "cas_top": null,
+      "jcr": null,
+      "oa": null,
+      "matched": false
+    }
   },
   {
     "name": "Cognitive Systems Research",
@@ -2611,7 +2821,14 @@
       "计算机：人工智能"
     ],
     "letpub_url": "https://www.letpub.com.cn/index.php?journalid=1884&page=journalapp&view=detail",
-    "scraped_at": "2026-05-14"
+    "scraped_at": "2026-05-14",
+    "easy_scholar": {
+      "cas_tier": 4,
+      "cas_top": null,
+      "jcr": null,
+      "oa": null,
+      "matched": true
+    }
   },
   {
     "name": "Communications in Nonlinear Science and Numerical Simulation",
@@ -2641,7 +2858,14 @@
       "INTERDISCIPLINARY APPLICATIONS"
     ],
     "letpub_url": "https://www.letpub.com.cn/index.php?journalid=1913&page=journalapp&view=detail",
-    "scraped_at": "2026-05-14"
+    "scraped_at": "2026-05-14",
+    "easy_scholar": {
+      "cas_tier": 2,
+      "cas_top": null,
+      "jcr": null,
+      "oa": null,
+      "matched": true
+    }
   },
   {
     "name": "COMPUTER APPLICATIONS IN ENGINEERING EDUCATION",
@@ -2669,7 +2893,14 @@
       "工程：综合"
     ],
     "letpub_url": "https://www.letpub.com.cn/index.php?journalid=1980&page=journalapp&view=detail",
-    "scraped_at": "2026-05-14"
+    "scraped_at": "2026-05-14",
+    "easy_scholar": {
+      "cas_tier": 4,
+      "cas_top": null,
+      "jcr": null,
+      "oa": null,
+      "matched": true
+    }
   },
   {
     "name": "COMPUTER MUSIC JOURNAL",
@@ -2697,7 +2928,14 @@
       "计算机：跨学科应用"
     ],
     "letpub_url": "https://www.letpub.com.cn/index.php?journalid=1990&page=journalapp&view=detail",
-    "scraped_at": "2026-05-14"
+    "scraped_at": "2026-05-14",
+    "easy_scholar": {
+      "cas_tier": 4,
+      "cas_top": null,
+      "jcr": null,
+      "oa": null,
+      "matched": true
+    }
   },
   {
     "name": "COMPUTERS & EDUCATION",
@@ -2725,7 +2963,14 @@
       "计算机：跨学科应用"
     ],
     "letpub_url": "https://www.letpub.com.cn/index.php?journalid=2003&page=journalapp&view=detail",
-    "scraped_at": "2026-05-14"
+    "scraped_at": "2026-05-14",
+    "easy_scholar": {
+      "cas_tier": 1,
+      "cas_top": null,
+      "jcr": null,
+      "oa": null,
+      "matched": true
+    }
   },
   {
     "name": "COMPUTERS & MATHEMATICS WITH APPLICATIONS",
@@ -2753,7 +2998,14 @@
       "计算机：跨学科应用"
     ],
     "letpub_url": "https://www.letpub.com.cn/index.php?journalid=2009&page=journalapp&view=detail",
-    "scraped_at": "2026-05-14"
+    "scraped_at": "2026-05-14",
+    "easy_scholar": {
+      "cas_tier": 2,
+      "cas_top": null,
+      "jcr": null,
+      "oa": null,
+      "matched": true
+    }
   },
   {
     "name": "COMPUTERS AND ELECTRONICS IN AGRICULTURE",
@@ -2781,7 +3033,14 @@
       "计算机：跨学科应用"
     ],
     "letpub_url": "https://www.letpub.com.cn/index.php?journalid=2014&page=journalapp&view=detail",
-    "scraped_at": "2026-05-14"
+    "scraped_at": "2026-05-14",
+    "easy_scholar": {
+      "cas_tier": 1,
+      "cas_top": null,
+      "jcr": null,
+      "oa": null,
+      "matched": true
+    }
   },
   {
     "name": "Configurations",
@@ -2809,7 +3068,14 @@
       "Literature and Literary Theory"
     ],
     "letpub_url": "https://www.letpub.com.cn/index.php?journalid=2027&page=journalapp&view=detail",
-    "scraped_at": "2026-05-14"
+    "scraped_at": "2026-05-14",
+    "easy_scholar": {
+      "cas_tier": 4,
+      "cas_top": null,
+      "jcr": null,
+      "oa": null,
+      "matched": true
+    }
   },
   {
     "name": "Construction and Building Materials",
@@ -2837,7 +3103,14 @@
       "材料科学：综合"
     ],
     "letpub_url": "https://www.letpub.com.cn/index.php?journalid=2035&page=journalapp&view=detail",
-    "scraped_at": "2026-05-14"
+    "scraped_at": "2026-05-14",
+    "easy_scholar": {
+      "cas_tier": 1,
+      "cas_top": null,
+      "jcr": null,
+      "oa": null,
+      "matched": true
+    }
   },
   {
     "name": "CORTEX",
@@ -2865,7 +3138,14 @@
       "行为科学"
     ],
     "letpub_url": "https://www.letpub.com.cn/index.php?journalid=2066&page=journalapp&view=detail",
-    "scraped_at": "2026-05-14"
+    "scraped_at": "2026-05-14",
+    "easy_scholar": {
+      "cas_tier": 2,
+      "cas_top": null,
+      "jcr": null,
+      "oa": null,
+      "matched": true
+    }
   },
   {
     "name": "COSMIC RESEARCH",
@@ -2893,7 +3173,14 @@
       "工程：宇航"
     ],
     "letpub_url": "https://www.letpub.com.cn/index.php?journalid=2067&page=journalapp&view=detail",
-    "scraped_at": "2026-05-14"
+    "scraped_at": "2026-05-14",
+    "easy_scholar": {
+      "cas_tier": 4,
+      "cas_top": null,
+      "jcr": null,
+      "oa": null,
+      "matched": true
+    }
   },
   {
     "name": "CRITICAL REVIEWS IN ENVIRONMENTAL SCIENCE AND TECHNOLOGY",
@@ -2921,7 +3208,14 @@
       "环境科学"
     ],
     "letpub_url": "https://www.letpub.com.cn/index.php?journalid=2078&page=journalapp&view=detail",
-    "scraped_at": "2026-05-14"
+    "scraped_at": "2026-05-14",
+    "easy_scholar": {
+      "cas_tier": 1,
+      "cas_top": null,
+      "jcr": null,
+      "oa": null,
+      "matched": true
+    }
   },
   {
     "name": "CURRENT SCIENCE",
@@ -2949,7 +3243,14 @@
       "综合性期刊"
     ],
     "letpub_url": "https://www.letpub.com.cn/index.php?journalid=2190&page=journalapp&view=detail",
-    "scraped_at": "2026-05-14"
+    "scraped_at": "2026-05-14",
+    "easy_scholar": {
+      "cas_tier": 4,
+      "cas_top": null,
+      "jcr": null,
+      "oa": null,
+      "matched": true
+    }
   },
   {
     "name": "DECISION SUPPORT SYSTEMS",
@@ -2977,7 +3278,14 @@
       "计算机：人工智能"
     ],
     "letpub_url": "https://www.letpub.com.cn/index.php?journalid=2230&page=journalapp&view=detail",
-    "scraped_at": "2026-05-14"
+    "scraped_at": "2026-05-14",
+    "easy_scholar": {
+      "cas_tier": 2,
+      "cas_top": null,
+      "jcr": null,
+      "oa": null,
+      "matched": true
+    }
   },
   {
     "name": "DEVELOPMENTAL NEUROPSYCHOLOGY",
@@ -3005,7 +3313,14 @@
       "心理学"
     ],
     "letpub_url": "https://www.letpub.com.cn/index.php?journalid=2271&page=journalapp&view=detail",
-    "scraped_at": "2026-05-14"
+    "scraped_at": "2026-05-14",
+    "easy_scholar": {
+      "cas_tier": 4,
+      "cas_top": null,
+      "jcr": null,
+      "oa": null,
+      "matched": true
+    }
   },
   {
     "name": "DOKLADY PHYSICS",
@@ -3033,7 +3348,14 @@
       "力学"
     ],
     "letpub_url": "https://www.letpub.com.cn/index.php?journalid=2344&page=journalapp&view=detail",
-    "scraped_at": "2026-05-14"
+    "scraped_at": "2026-05-14",
+    "easy_scholar": {
+      "cas_tier": 4,
+      "cas_top": null,
+      "jcr": null,
+      "oa": null,
+      "matched": true
+    }
   },
   {
     "name": "Dyna",
@@ -3061,7 +3383,14 @@
       "工程：综合"
     ],
     "letpub_url": "https://www.letpub.com.cn/index.php?journalid=2371&page=journalapp&view=detail",
-    "scraped_at": "2026-05-14"
+    "scraped_at": "2026-05-14",
+    "easy_scholar": {
+      "cas_tier": 4,
+      "cas_top": null,
+      "jcr": null,
+      "oa": null,
+      "matched": true
+    }
   },
   {
     "name": "EARTHQUAKE SPECTRA",
@@ -3089,7 +3418,14 @@
       "工程：地质"
     ],
     "letpub_url": "https://www.letpub.com.cn/index.php?journalid=2396&page=journalapp&view=detail",
-    "scraped_at": "2026-05-14"
+    "scraped_at": "2026-05-14",
+    "easy_scholar": {
+      "cas_tier": 3,
+      "cas_top": null,
+      "jcr": null,
+      "oa": null,
+      "matched": true
+    }
   },
   {
     "name": "ECOLOGICAL ECONOMICS",
@@ -3117,7 +3453,14 @@
       "环境科学"
     ],
     "letpub_url": "https://www.letpub.com.cn/index.php?journalid=2405&page=journalapp&view=detail",
-    "scraped_at": "2026-05-14"
+    "scraped_at": "2026-05-14",
+    "easy_scholar": {
+      "cas_tier": 2,
+      "cas_top": null,
+      "jcr": null,
+      "oa": null,
+      "matched": true
+    }
   },
   {
     "name": "ECOLOGY AND SOCIETY",
@@ -3145,7 +3488,14 @@
       "生态学"
     ],
     "letpub_url": "https://www.letpub.com.cn/index.php?journalid=2414&page=journalapp&view=detail",
-    "scraped_at": "2026-05-14"
+    "scraped_at": "2026-05-14",
+    "easy_scholar": {
+      "cas_tier": 3,
+      "cas_top": null,
+      "jcr": null,
+      "oa": null,
+      "matched": true
+    }
   },
   {
     "name": "ECOTOXICOLOGY AND ENVIRONMENTAL SAFETY",

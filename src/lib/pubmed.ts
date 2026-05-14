@@ -1,4 +1,26 @@
+import { chatCompletion } from './ai'
+import { getApiConfig } from './storage'
+
 const BASE = 'https://eutils.ncbi.nlm.nih.gov/entrez/eutils'
+
+function hasChinese(text: string) {
+  return /[一-鿿]/.test(text)
+}
+
+export async function translateToEnglish(query: string): Promise<string> {
+  if (!hasChinese(query)) return query
+  const cfg = getApiConfig()
+  if (!cfg) return query // no key, return as-is
+  try {
+    const result = await chatCompletion([
+      { role: 'system', content: 'You are a medical translator. Translate the Chinese medical query into concise English PubMed search terms. Return ONLY the translated terms, nothing else.' },
+      { role: 'user', content: query },
+    ], { maxTokens: 80 })
+    return result.trim() || query
+  } catch {
+    return query
+  }
+}
 
 export interface Article {
   pmid:     string
@@ -37,10 +59,22 @@ async function fetchJson(url: string): Promise<unknown> {
 
 export async function searchPubMed(
   query: string,
-  years = 10
-): Promise<SearchResult> {
+  years = 10,
+  skipTranslate = false
+): Promise<SearchResult & { translatedQuery?: string }> {
+  // Auto-translate Chinese to English for PubMed
+  let searchQuery = query
+  let translatedQuery: string | undefined
+  if (!skipTranslate && hasChinese(query)) {
+    const eng = await translateToEnglish(query)
+    if (eng !== query) {
+      searchQuery = eng
+      translatedQuery = eng
+    }
+  }
+
   const minYear   = new Date().getFullYear() - years
-  const fullQuery = `${query} AND ("${minYear}"[PDAT]:"3000"[PDAT])`
+  const fullQuery = `${searchQuery} AND ("${minYear}"[PDAT]:"3000"[PDAT])`
 
   const searchData = await fetchJson(
     `${BASE}/esearch.fcgi?${qs({
@@ -101,7 +135,7 @@ export async function searchPubMed(
     .slice(0, 8)
     .map(([name, count]) => ({ name, count }))
 
-  return { totalCount, yearDistribution: yearDist, topJournals, articles, query: fullQuery }
+  return { totalCount, yearDistribution: yearDist, topJournals, articles, query: fullQuery, translatedQuery }
 }
 
 export async function searchClinicalTrials(query: string) {

@@ -1,12 +1,13 @@
 'use client'
 
 import { useState } from 'react'
-import { Search, Loader2, BookOpen, ChevronRight, BarChart2, Calendar, AlertCircle } from 'lucide-react'
+import { Search, Loader2, BookOpen, ChevronRight, BarChart2, Calendar, Languages } from 'lucide-react'
 import { searchPubMed, type SearchResult } from '@/lib/pubmed'
 import { chatCompletion } from '@/lib/ai'
 import ApiKeyBanner from '@/components/ApiKeyBanner'
 import StepWizard from '@/components/StepWizard'
 import MarkdownRenderer from '@/components/MarkdownRenderer'
+import ErrorBox from '@/components/ErrorBox'
 import { BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer } from 'recharts'
 
 const STEPS = [
@@ -25,14 +26,15 @@ const SEARCH_DEPTHS = [
 
 export default function ReviewPage() {
   const [step,        setStep]        = useState(0)
-  const [keywords,    setKeywords]    = useState('')
-  const [depth,       setDepth]       = useState('medium')
-  const [searching,   setSearching]   = useState(false)
-  const [searchResult, setSearchResult] = useState<SearchResult | null>(null)
-  const [analyzing,   setAnalyzing]   = useState(false)
-  const [analysis,    setAnalysis]    = useState('')
-  const [deadline,    setDeadline]    = useState('')
-  const [error,       setError]       = useState('')
+  const [keywords,      setKeywords]      = useState('')
+  const [depth,         setDepth]         = useState('medium')
+  const [searching,     setSearching]     = useState(false)
+  const [searchResult,  setSearchResult]  = useState<SearchResult | null>(null)
+  const [translatedKw,  setTranslatedKw]  = useState('')
+  const [analyzing,     setAnalyzing]     = useState(false)
+  const [analysis,      setAnalysis]      = useState('')
+  const [deadline,      setDeadline]      = useState('')
+  const [error,         setError]         = useState('')
 
   const depthConfig = SEARCH_DEPTHS.find(d => d.id === depth)!
 
@@ -43,6 +45,7 @@ export default function ReviewPage() {
     try {
       const result = await searchPubMed(keywords, depthConfig.years)
       setSearchResult(result)
+      if (result.translatedQuery) setTranslatedKw(result.translatedQuery)
       setStep(1)
     } catch (e) {
       setError(e instanceof Error ? e.message : '检索失败，请稍后重试')
@@ -125,12 +128,7 @@ PubMed 检索结果（近${depthConfig.years}年）：
 
       <StepWizard steps={STEPS} currentStep={step} onChange={setStep} />
 
-      {error && (
-        <div className="flex items-start gap-2 text-sm text-red-700 bg-red-50 px-4 py-3 rounded-lg border border-red-100">
-          <AlertCircle className="w-4 h-4 shrink-0 mt-0.5" />
-          {error}
-        </div>
-      )}
+      <ErrorBox error={error} onClose={() => setError('')} />
 
       {/* Step 0: Input */}
       {step === 0 && (
@@ -184,9 +182,17 @@ PubMed 检索结果（近${depthConfig.years}年）：
       {/* Step 1: Search results */}
       {step >= 1 && searchResult && (
         <div className="card p-6 space-y-5">
-          <div className="flex items-center justify-between">
+          <div className="flex items-center justify-between flex-wrap gap-2">
             <h2 className="section-title">检索结果</h2>
-            <span className="text-xs text-gray-400">关键词：{keywords}</span>
+            <div className="flex flex-col items-end gap-1">
+              {translatedKw && (
+                <span className="flex items-center gap-1 text-xs text-blue-600 bg-blue-50 px-2 py-0.5 rounded-full">
+                  <Languages className="w-3 h-3" />
+                  已自动翻译为英文：{translatedKw}
+                </span>
+              )}
+              <span className="text-xs text-gray-400">原始输入：{keywords}</span>
+            </div>
           </div>
 
           <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">

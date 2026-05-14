@@ -1,10 +1,11 @@
 'use client'
 
 import { useState } from 'react'
-import { Database, Loader2, ChevronRight, AlertCircle, Code2, Calendar } from 'lucide-react'
+import { Database, Loader2, ChevronRight, Code2, Calendar } from 'lucide-react'
 import { chatCompletion } from '@/lib/ai'
 import ApiKeyBanner from '@/components/ApiKeyBanner'
 import StepWizard from '@/components/StepWizard'
+import ErrorBox from '@/components/ErrorBox'
 
 const STEPS = [
   { label: '选数据库' },
@@ -233,12 +234,7 @@ export default function ClinicalPage() {
       <ApiKeyBanner />
       <StepWizard steps={STEPS} currentStep={step} onChange={setStep} />
 
-      {error && (
-        <div className="flex items-start gap-2 text-sm text-red-700 bg-red-50 px-4 py-3 rounded-lg border border-red-100">
-          <AlertCircle className="w-4 h-4 shrink-0 mt-0.5" />
-          {error}
-        </div>
-      )}
+      <ErrorBox error={error} onClose={() => setError('')} />
 
       {/* Step 0: Database selection */}
       {step === 0 && (

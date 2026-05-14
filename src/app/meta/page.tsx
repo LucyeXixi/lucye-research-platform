@@ -2,7 +2,7 @@
 
 import { useState } from 'react'
 import {
-  Search, Loader2, BarChart2, ChevronRight, AlertCircle,
+  Search, Loader2, BarChart2, ChevronRight,
   Network, GitMerge, Calendar, Lightbulb, ArrowRight, CheckCircle2,
 } from 'lucide-react'
 import { searchPubMed, type SearchResult } from '@/lib/pubmed'
@@ -10,6 +10,7 @@ import { chatCompletion } from '@/lib/ai'
 import ApiKeyBanner from '@/components/ApiKeyBanner'
 import StepWizard from '@/components/StepWizard'
 import MarkdownRenderer from '@/components/MarkdownRenderer'
+import ErrorBox from '@/components/ErrorBox'
 import NMANetwork, { type NMANode, type NMAEdge } from '@/components/NMANetwork'
 import { BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer } from 'recharts'
 
@@ -293,11 +294,7 @@ ${isNMA ? `## 干预节点识别
 
       {step > 0 && <StepWizard steps={STEPS} currentStep={step} onChange={setStep} />}
 
-      {error && (
-        <div className="flex items-start gap-2 text-sm text-red-700 bg-red-50 px-4 py-3 rounded-lg border border-red-100">
-          <AlertCircle className="w-4 h-4 shrink-0 mt-0.5" /> {error}
-        </div>
-      )}
+      <ErrorBox error={error} onClose={() => setError('')} />
 
       {/* ── 模式选择 ── */}
       {mode === 'choose' && (
