@@ -41,6 +41,15 @@ Rules: use 3-5 concept groups, each group has 1-3 synonyms with OR, groups joine
   return sanitizeQuery(query)
 }
 
+// Balance parentheses in a PubMed query string
+function fixParens(q: string): string {
+  const opens  = (q.match(/\(/g) || []).length
+  const closes = (q.match(/\)/g) || []).length
+  if (opens > closes) return q + ')'.repeat(opens - closes)
+  if (closes > opens) return '('.repeat(closes - opens) + q
+  return q
+}
+
 // PICOS-structured query builder — for Meta/NMA and observational searches
 export async function buildSearchQuery(
   question: string,
@@ -53,43 +62,45 @@ export async function buildSearchQuery(
   const systemPrompts: Record<typeof type, string> = {
     meta: `You are a PubMed search expert for systematic reviews and pairwise meta-analyses. Build a PubMed Boolean search string using PICOS structure.
 
-Structure: (Population terms) AND (Intervention/Comparator terms) AND (randomized OR randomised OR placebo OR "clinical trial"[pt])
+Structure: (Population terms) AND (Intervention/Comparator terms) AND (randomized[tiab] OR randomised[tiab] OR placebo[tiab] OR "clinical trial"[pt])
 
 Rules:
-- P block: disease/condition + MeSH term + abbreviation if common (2-3 terms)
-- I/C block: ALL interventions being compared + key synonyms (most important block)
-- NEVER include outcome terms — they are too restrictive and miss RCTs
-- Always end with the RCT filter shown above
-- Return ONLY the search string, no explanation`,
+- P block: disease/condition name + MeSH term if applicable (2 terms max)
+- I/C block: all interventions + 1-2 synonyms each, joined with OR
+- NEVER include outcome terms — they miss RCTs where outcome is in the body
+- Always end with the RCT filter
+- Keep each block concise (≤4 terms per block)
+- Return ONLY the complete balanced search string, nothing else`,
 
-    nma: `You are a PubMed search expert for network meta-analyses. Build a PubMed Boolean search string using PICOS structure.
+    nma: `You are a PubMed search expert for network meta-analyses. Build a PubMed Boolean search string.
 
-Structure: (Population terms) AND (Intervention1 OR Intervention2 OR Intervention3 OR ...) AND (randomized OR randomised OR placebo OR "clinical trial"[pt])
-
-Rules:
-- P block: disease/condition name + MeSH synonym (keep concise, 2-3 terms max)
-- I block: list ALL interventions in the comparison network + 1-2 synonyms each — this is the critical block for NMA coverage
-- NEVER include outcome terms
-- The RCT filter is mandatory
-- Return ONLY the search string, no explanation`,
-
-    observational: `You are a PubMed search expert for real-world and observational studies. Build a PubMed Boolean search string.
-
-Structure: (Disease/Condition terms) AND (Exposure/Treatment terms OR outcome terms)
+Structure: (Population/Disease) AND (Intervention1 OR Syn1 OR Intervention2 OR Syn2 OR ...) AND (randomized[tiab] OR randomised[tiab] OR placebo[tiab] OR "clinical trial"[pt])
 
 Rules:
-- Extract the main clinical condition + key exposure or outcome
-- Do NOT add an RCT filter — this is for observational/real-world data studies
-- Keep to 2 concept blocks maximum to avoid over-restriction
-- Return ONLY the search string, no explanation`,
+- P block: main disease/condition (2 terms max, keep short)
+- I block: list every intervention in the NMA network with 1 synonym each — this block must be comprehensive
+- NO outcome terms
+- RCT filter is mandatory at the end
+- The entire string must have balanced parentheses
+- Return ONLY the complete balanced search string, nothing else`,
+
+    observational: `You are a PubMed search expert for observational studies. Build a PubMed Boolean search string.
+
+Structure: (Condition terms) AND (Exposure/Outcome key terms)
+
+Rules:
+- Extract the main condition + key exposure or outcome (2 blocks max)
+- No RCT filter
+- Keep it simple to avoid over-restriction
+- Return ONLY the complete balanced search string, nothing else`,
   }
 
   try {
     const result = await chatCompletion([
       { role: 'system', content: systemPrompts[type] },
       { role: 'user', content: question },
-    ], { maxTokens: 160 })
-    const cleaned = result.trim()
+    ], { maxTokens: 300 })   // 300 tokens to avoid query truncation
+    const cleaned = fixParens(result.trim())
     return (cleaned && !hasChinese(cleaned)) ? cleaned : fallback
   } catch {
     return fallback
@@ -111,6 +122,7 @@ export interface SearchResult {
   topJournals:      { name: string; count: number }[]
   articles:         Article[]
   query:            string
+  queryTooBoard?:   boolean   // true = query is too broad / probably malformed
 }
 
 function qs(params: Record<string, string | undefined>) {
@@ -131,15 +143,23 @@ async function fetchJson(url: string): Promise<unknown> {
   }
 }
 
+// If a query returns >500K results it's almost certainly malformed (missing terms, only date matched)
+const QUERY_TOO_BROAD = 500_000
+
 async function runEsearch(term: string, years: number) {
-  const minYear = new Date().getFullYear() - years
+  const minYear   = new Date().getFullYear() - years
   const fullQuery = `${term} AND ("${minYear}"[PDAT]:"3000"[PDAT])`
   const data = await fetchJson(
     `${BASE}/esearch.fcgi?${qs({
       db: 'pubmed', term: fullQuery, retmax: '100', usehistory: 'y', retmode: 'json',
     })}`
   ) as { esearchresult: { count: string; webenv?: string; query_key?: string } }
-  return { ...data.esearchresult, fullQuery }
+  const count = parseInt(data.esearchresult.count) || 0
+  return {
+    ...data.esearchresult,
+    fullQuery,
+    queryTooBoard: count > QUERY_TOO_BROAD,
+  }
 }
 
 export async function searchPubMed(
@@ -170,11 +190,11 @@ export async function searchPubMed(
     }
   }
 
-  const { count, webenv, query_key, fullQuery } = esearch
+  const { count, webenv, query_key, fullQuery, queryTooBoard } = esearch
   const totalCount = parseInt(count) || 0
 
-  if (!webenv || !query_key || totalCount === 0) {
-    return { totalCount, yearDistribution: {}, topJournals: [], articles: [], query: fullQuery, translatedQuery }
+  if (!webenv || !query_key || totalCount === 0 || queryTooBoard) {
+    return { totalCount, yearDistribution: {}, topJournals: [], articles: [], query: fullQuery, translatedQuery, queryTooBoard }
   }
 
   const summaryData = await fetchJson(
@@ -213,7 +233,7 @@ export async function searchPubMed(
     .slice(0, 8)
     .map(([name, count]) => ({ name, count }))
 
-  return { totalCount, yearDistribution: yearDist, topJournals, articles, query: fullQuery, translatedQuery }
+  return { totalCount, yearDistribution: yearDist, topJournals, articles, query: fullQuery, translatedQuery, queryTooBoard: false }
 }
 
 // RCT-specific search — accepts pre-built query via skipTranslate

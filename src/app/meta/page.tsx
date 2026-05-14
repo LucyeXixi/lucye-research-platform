@@ -504,38 +504,75 @@ ${isNMA ? `## 干预节点识别
         <div className="card p-6 space-y-5">
           <div className="flex items-start justify-between flex-wrap gap-2">
             <h2 className="section-title">文献检索结果</h2>
-            {searchedQuery && searchedQuery !== question && (
-              <div className="flex flex-col items-end gap-0.5">
-                <span className="flex items-center gap-1 text-xs text-blue-600 bg-blue-50 px-2 py-0.5 rounded-full max-w-xs truncate">
-                  <Search className="w-3 h-3 shrink-0" />
-                  检索式：{searchedQuery}
-                </span>
-                <span className="text-xs text-gray-400">原始输入：{question}</span>
-              </div>
+            {searchedQuery && (
+              <details className="text-right group">
+                <summary className="text-xs text-blue-600 bg-blue-50 px-2 py-0.5 rounded-full cursor-pointer list-none flex items-center gap-1 hover:bg-blue-100">
+                  <Search className="w-3 h-3 shrink-0" /> 查看检索式
+                </summary>
+                <div className="mt-1 text-xs text-gray-500 bg-gray-50 border border-gray-100 rounded-lg p-2 text-left max-w-sm font-mono break-all">
+                  {searchedQuery}
+                </div>
+              </details>
             )}
           </div>
 
-          {/* Stats */}
+          {/* Query too broad warning */}
+          {searchResult.queryTooBoard && (
+            <div className="bg-amber-50 border border-amber-200 rounded-xl p-3 flex items-start gap-2">
+              <span className="text-amber-500 text-base shrink-0">⚠</span>
+              <div>
+                <p className="text-xs font-semibold text-amber-800">检索式可能过于宽泛</p>
+                <p className="text-xs text-amber-700 mt-0.5">
+                  总文献量异常偏大，通常是检索式被截断或语法有误导致 PubMed 回退到仅日期过滤。
+                  <strong>请以「可纳入 RCT」数为主要参考</strong>，或尝试修改问题描述后重新检索。
+                </p>
+              </div>
+            </div>
+          )}
+
+          {/* ── Primary metric: RCT count ── */}
+          <RctFeasibilityBadge rct={rctCount} ct={ctCount} type={metaType} />
+
+          {/* Secondary stats */}
           <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
             {[
-              { label: 'PubMed 文献量', value: searchResult.totalCount.toLocaleString() + ' 篇', sub: `近 ${years} 年`, color: '' },
-              { label: '可纳入 RCT', value: rctCount !== null ? rctCount.toLocaleString() + ' 篇' : '检索中…', sub: 'PubMed RCT 专项', color: rctCount !== null && rctCount < 5 ? 'amber' : '' },
-              { label: '已完成临床试验', value: ctCount !== null ? ctCount.toLocaleString() + ' 项' : '检索中…', sub: 'ClinicalTrials.gov', color: '' },
-              { label: '覆盖期刊（样本）', value: searchResult.topJournals.length + ' 本', sub: 'Top 期刊分布', color: '' },
-              { label: '分析类型', value: metaType === 'nma' ? '网状 NMA' : '普通 Meta', sub: 'AI 推荐', color: '' },
+              {
+                label: '全类型文献量',
+                value: searchResult.queryTooBoard
+                  ? '结果异常'
+                  : searchResult.totalCount.toLocaleString() + ' 篇',
+                sub: `近 ${years} 年（含综述等）`,
+                warn: !!searchResult.queryTooBoard,
+              },
+              {
+                label: '覆盖期刊（样本）',
+                value: searchResult.queryTooBoard
+                  ? '—'
+                  : searchResult.topJournals.length
+                    ? searchResult.topJournals.length + ' 本'
+                    : '0 本',
+                sub: searchResult.queryTooBoard ? '检索式宽泛，不可靠' : 'Top 期刊分布',
+                warn: !!searchResult.queryTooBoard,
+              },
+              {
+                label: '分析类型',
+                value: metaType === 'nma' ? '网状 NMA' : '普通 Meta',
+                sub: 'AI 推荐',
+                warn: false,
+              },
             ].map(s => (
-              <div key={s.label} className={`rounded-xl p-3 ${s.color === 'amber' ? 'bg-amber-50' : 'bg-gray-50'}`}>
+              <div key={s.label} className={`rounded-xl p-3 ${s.warn ? 'bg-amber-50' : 'bg-gray-50'}`}>
                 <p className="text-xs text-gray-400">{s.label}</p>
-                <p className={`text-lg font-bold mt-0.5 ${s.color === 'amber' ? 'text-amber-700' : 'text-gray-900'}`}>{s.value}</p>
-                <p className="text-xs text-gray-400">{s.sub}</p>
+                <p className={`text-lg font-bold mt-0.5 ${s.warn ? 'text-amber-600' : 'text-gray-900'}`}>{s.value}</p>
+                <p className={`text-xs mt-0.5 ${s.warn ? 'text-amber-500' : 'text-gray-400'}`}>{s.sub}</p>
               </div>
             ))}
           </div>
 
-          {/* Trend chart */}
-          {yearData.length > 0 && (
+          {/* Trend chart — only show if data looks valid */}
+          {yearData.length > 0 && !searchResult.queryTooBoard && (
             <div>
-              <p className="text-xs font-medium text-gray-500 uppercase tracking-wide mb-2">发表趋势</p>
+              <p className="text-xs font-medium text-gray-500 uppercase tracking-wide mb-2">发表趋势（全类型）</p>
               <ResponsiveContainer width="100%" height={130}>
                 <BarChart data={yearData} barSize={14}>
                   <XAxis dataKey="year" tick={{ fontSize: 10 }} axisLine={false} tickLine={false} />
@@ -548,24 +585,26 @@ ${isNMA ? `## 干预节点识别
           )}
 
           {/* Top journals */}
-          <div>
-            <p className="text-xs font-medium text-gray-500 uppercase tracking-wide mb-2">主要发表期刊（样本）</p>
-            <div className="space-y-1.5">
-              {searchResult.topJournals.map((j, i) => {
-                const pct = Math.round((j.count / searchResult.topJournals[0].count) * 100)
-                return (
-                  <div key={j.name} className="flex items-center gap-2">
-                    <span className="text-xs text-gray-300 w-4 shrink-0">{i + 1}</span>
-                    <span className="text-xs text-gray-700 truncate flex-1">{j.name}</span>
-                    <div className="w-24 h-1.5 bg-gray-100 rounded-full shrink-0">
-                      <div className="h-1.5 bg-violet-300 rounded-full" style={{ width: `${pct}%` }} />
+          {searchResult.topJournals.length > 0 && !searchResult.queryTooBoard && (
+            <div>
+              <p className="text-xs font-medium text-gray-500 uppercase tracking-wide mb-2">主要发表期刊（样本）</p>
+              <div className="space-y-1.5">
+                {searchResult.topJournals.map((j, i) => {
+                  const pct = Math.round((j.count / searchResult.topJournals[0].count) * 100)
+                  return (
+                    <div key={j.name} className="flex items-center gap-2">
+                      <span className="text-xs text-gray-300 w-4 shrink-0">{i + 1}</span>
+                      <span className="text-xs text-gray-700 truncate flex-1">{j.name}</span>
+                      <div className="w-24 h-1.5 bg-gray-100 rounded-full shrink-0">
+                        <div className="h-1.5 bg-violet-300 rounded-full" style={{ width: `${pct}%` }} />
+                      </div>
+                      <span className="text-xs text-gray-400 w-8 text-right shrink-0">{j.count}</span>
                     </div>
-                    <span className="text-xs text-gray-400 w-8 text-right shrink-0">{j.count}</span>
-                  </div>
-                )
-              })}
+                  )
+                })}
+              </div>
             </div>
-          </div>
+          )}
 
           {/* PROSPERO */}
           <div className="bg-gray-50 rounded-lg px-4 py-3 flex items-center justify-between">
@@ -677,6 +716,61 @@ ${isNMA ? `## 干预节点识别
           {deadline && <MetaProgress deadline={deadline} type={metaType} />}
         </div>
       )}
+    </div>
+  )
+}
+
+// ── RCT 可行性指示器（NMAskill 阈值）────────────────────────────────────────
+function RctFeasibilityBadge({
+  rct, ct, type,
+}: { rct: number | null; ct: number | null; type: MetaType }) {
+  // Thresholds from NMAskill: NMA ≥20 RCTs = green, 10-19 = amber, <10 = red
+  //                           Pairwise ≥10 = green, 5-9 = amber, <5 = red
+  const minGreen  = type === 'nma' ? 20 : 10
+  const minAmber  = type === 'nma' ? 10 : 5
+  const rctLabel  = rct !== null ? rct.toLocaleString() + ' 篇' : '检索中…'
+  const ctLabel   = ct  !== null ? ct.toLocaleString()  + ' 项' : '—'
+
+  const verdict = rct === null ? 'pending'
+    : rct >= minGreen ? 'green'
+    : rct >= minAmber ? 'amber'
+    : 'red'
+
+  const verdictText: Record<string, string> = {
+    pending: '检索中',
+    green:   type === 'nma' ? `网络证据充足，可推进 NMA（≥${minGreen} RCT）` : `文献量充足，可推进 Meta（≥${minGreen} RCT）`,
+    amber:   type === 'nma' ? `证据尚可，NMA 可谨慎推进（建议 ≥${minGreen} RCT）` : `文献量偏少，Meta 可做但功效有限`,
+    red:     type === 'nma' ? `RCT 数量不足以支撑 NMA（需 ≥${minAmber} 篇）` : `RCT 数量不足，可行性存疑`,
+  }
+
+  const bg:   Record<string, string> = { pending: 'bg-gray-50', green: 'bg-emerald-50', amber: 'bg-amber-50', red: 'bg-red-50' }
+  const text: Record<string, string> = { pending: 'text-gray-600', green: 'text-emerald-700', amber: 'text-amber-700', red: 'text-red-700' }
+  const dot:  Record<string, string> = { pending: 'bg-gray-300', green: 'bg-emerald-400', amber: 'bg-amber-400', red: 'bg-red-400' }
+
+  return (
+    <div className={`rounded-xl p-4 ${bg[verdict]} border border-opacity-30`}>
+      <div className="flex items-start gap-3">
+        <div className={`w-2.5 h-2.5 rounded-full mt-1 shrink-0 ${dot[verdict]}`} />
+        <div className="flex-1 min-w-0">
+          <div className="flex items-baseline gap-3 flex-wrap">
+            <div>
+              <span className="text-xs text-gray-500">可纳入 RCT</span>
+              <p className={`text-2xl font-bold leading-tight ${text[verdict]}`}>{rctLabel}</p>
+              <span className="text-xs text-gray-400">PubMed RCT 专项检索</span>
+            </div>
+            {ct !== null && ct > 0 && (
+              <div className="border-l border-gray-200 pl-3">
+                <span className="text-xs text-gray-500">已完成临床试验</span>
+                <p className="text-xl font-bold text-gray-700 leading-tight">{ctLabel}</p>
+                <span className="text-xs text-gray-400">ClinicalTrials.gov</span>
+              </div>
+            )}
+          </div>
+          {verdict !== 'pending' && (
+            <p className={`text-xs mt-2 font-medium ${text[verdict]}`}>{verdictText[verdict]}</p>
+          )}
+        </div>
+      </div>
     </div>
   )
 }
