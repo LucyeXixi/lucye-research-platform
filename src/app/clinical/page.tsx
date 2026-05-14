@@ -86,6 +86,13 @@ const DATABASES = [
 type PageMode   = 'choose' | 'existing' | 'database'
 type OutcomeType = 'binary' | 'survival' | 'continuous' | 'mediation'
 
+interface UploadedDataProfile {
+  columns:    string[]
+  rowCount:   number | null
+  sheetName?: string
+  warnings:   string[]
+}
+
 const EXISTING_STEPS = [
   { label: '描述数据' },
   { label: '文献背调' },
@@ -101,6 +108,126 @@ const DATABASE_STEPS = [
   { label: '代码模板' },
   { label: '进度规划' },
 ]
+
+function parseDelimitedLine(line: string, delimiter: string): string[] {
+  const cells: string[] = []
+  let current = ''
+  let inQuotes = false
+
+  for (let i = 0; i < line.length; i++) {
+    const char = line[i]
+    const next = line[i + 1]
+    if (char === '"' && next === '"') {
+      current += '"'
+      i += 1
+    } else if (char === '"') {
+      inQuotes = !inQuotes
+    } else if (char === delimiter && !inQuotes) {
+      cells.push(current.trim())
+      current = ''
+    } else {
+      current += char
+    }
+  }
+  cells.push(current.trim())
+  return cells
+}
+
+function normalizeColumns(rawColumns: unknown[]): { columns: string[]; warnings: string[] } {
+  const warnings: string[] = []
+  const seen = new Map<string, number>()
+  const columns = rawColumns.map((value, index) => {
+    const cleaned = String(value ?? '')
+      .replace(/^\uFEFF/, '')
+      .replace(/^"|"$/g, '')
+      .trim()
+    let name = cleaned || `未命名列${index + 1}`
+    if (!cleaned) warnings.push(`第 ${index + 1} 列没有列名，已临时命名为「${name}」。`)
+
+    const count = seen.get(name) ?? 0
+    seen.set(name, count + 1)
+    if (count > 0) {
+      warnings.push(`列名「${name}」重复，已临时命名为「${name}_${count + 1}」。`)
+      name = `${name}_${count + 1}`
+    }
+    return name
+  }).filter(Boolean)
+
+  if (columns.length > 120) warnings.push(`列数较多（${columns.length} 列），页面仅优先展示前 120 列，AI 分析会按列名摘要处理。`)
+  return { columns, warnings }
+}
+
+function inferDelimitedProfile(text: string): UploadedDataProfile {
+  const normalized = text.replace(/^\uFEFF/, '')
+  const lines = normalized.split(/\r?\n/).filter(line => line.trim().length > 0)
+  if (!lines.length) return { columns: [], rowCount: null, warnings: ['文件为空，未读取到列名。'] }
+
+  const delimiters = ['\t', ',', ';', '|']
+  const delimiter = delimiters
+    .map(d => ({
+      delimiter: d,
+      score: lines.slice(0, 10).reduce((sum, line) => sum + parseDelimitedLine(line, d).length, 0),
+    }))
+    .sort((a, b) => b.score - a.score)[0].delimiter
+
+  const sampledRows = lines.slice(0, 20).map(line => parseDelimitedLine(line, delimiter))
+  const headerIndex = sampledRows
+    .map((row, index) => ({ index, nonEmpty: row.filter(Boolean).length }))
+    .sort((a, b) => b.nonEmpty - a.nonEmpty)[0]?.index ?? 0
+
+  const { columns, warnings } = normalizeColumns(sampledRows[headerIndex] ?? [])
+  if (headerIndex > 0) warnings.push(`前 ${headerIndex} 行看起来像说明文字，已自动从第 ${headerIndex + 1} 行识别列名。`)
+  if (columns.length <= 1) warnings.push('只识别到 1 列，可能是分隔符或文件编码不规范。你仍可手动描述数据后继续。')
+
+  return {
+    columns,
+    rowCount: Math.max(lines.length - headerIndex - 1, 0),
+    warnings,
+  }
+}
+
+function readFile(file: File, mode: 'text'): Promise<string>
+function readFile(file: File, mode: 'arrayBuffer'): Promise<ArrayBuffer>
+function readFile(file: File, mode: 'text' | 'arrayBuffer') {
+  return new Promise<string | ArrayBuffer>((resolve, reject) => {
+    const reader = new FileReader()
+    reader.onload = () => resolve(reader.result as string | ArrayBuffer)
+    reader.onerror = () => reject(new Error('文件读取失败，请检查文件是否损坏。'))
+    if (mode === 'arrayBuffer') reader.readAsArrayBuffer(file)
+    else reader.readAsText(file)
+  })
+}
+
+async function extractDataProfile(file: File): Promise<UploadedDataProfile> {
+  const ext = file.name.split('.').pop()?.toLowerCase() ?? ''
+  if (['xlsx', 'xls'].includes(ext)) {
+    const data = await readFile(file, 'arrayBuffer')
+    const wb = XLSX.read(data, { type: 'array' })
+    const sheetName = wb.SheetNames[0]
+    const ws = wb.Sheets[sheetName]
+    const rows = XLSX.utils.sheet_to_json<unknown[]>(ws, { header: 1, defval: '' })
+    const headerIndex = rows
+      .slice(0, 20)
+      .map((row, index) => ({ index, nonEmpty: row.filter(cell => String(cell ?? '').trim()).length }))
+      .sort((a, b) => b.nonEmpty - a.nonEmpty)[0]?.index ?? 0
+    const { columns, warnings } = normalizeColumns(rows[headerIndex] ?? [])
+    if (headerIndex > 0) warnings.push(`前 ${headerIndex} 行看起来像说明文字，已自动从第 ${headerIndex + 1} 行识别列名。`)
+    return {
+      columns,
+      rowCount: Math.max(rows.length - headerIndex - 1, 0),
+      sheetName,
+      warnings,
+    }
+  }
+
+  const text = await readFile(file, 'text')
+  return inferDelimitedProfile(text)
+}
+
+function extractSuggestedDescription(text: string): string {
+  const match = text.match(/##\s*可粘贴的数据描述\s*([\s\S]*?)(?=\n##\s|$)/)
+  return (match?.[1] ?? text).replace(/^\s*[-:：]\s*/, '').trim()
+}
 
 // ─── Main ─────────────────────────────────────────────────────────────────────
 export default function ClinicalPage() {
@@ -171,7 +298,13 @@ function ExistingDataFlow({ onBack }: { onBack: () => void }) {
   const [description,  setDescription]  = useState('')
   const [outcome,      setOutcome]      = useState<OutcomeType>('binary')
   const [csvColumns,   setCsvColumns]   = useState<string[]>([])
+  const [csvRowCount,  setCsvRowCount]  = useState<number | null>(null)
   const [csvFileName,  setCsvFileName]  = useState('')
+  const [csvSheetName, setCsvSheetName] = useState('')
+  const [csvWarnings,  setCsvWarnings]  = useState<string[]>([])
+  const [fileInsight,  setFileInsight]  = useState('')
+  const [parsingFile,  setParsingFile]  = useState(false)
+  const [profilingFile,setProfilingFile]= useState(false)
   const [isDragging,   setIsDragging]   = useState(false)
   const [searching,    setSearching]    = useState(false)
   const [searchResult, setSearchResult] = useState<SearchResult | null>(null)
@@ -184,30 +317,36 @@ function ExistingDataFlow({ onBack }: { onBack: () => void }) {
   const [error,        setError]        = useState('')
   const fileRef = useRef<HTMLInputElement>(null)
 
-  const processFile = useCallback((file: File) => {
-    const ext = file.name.split('.').pop()?.toLowerCase() ?? ''
+  function resetFile() {
+    setCsvColumns([])
+    setCsvRowCount(null)
+    setCsvFileName('')
+    setCsvSheetName('')
+    setCsvWarnings([])
+    setFileInsight('')
+    if (fileRef.current) fileRef.current.value = ''
+  }
+
+  const processFile = useCallback(async (file: File) => {
+    setParsingFile(true)
+    setError('')
     setCsvFileName(file.name)
-    if (ext === 'csv' || ext === 'tsv' || ext === 'txt') {
-      const reader = new FileReader()
-      reader.onload = ev => {
-        const text = (ev.target?.result as string) || ''
-        const sep = ext === 'tsv' ? '\t' : ','
-        const firstLine = text.split(/\r?\n/)[0] || ''
-        const cols = firstLine.split(sep).map(s => s.replace(/^"|"$/g, '').trim()).filter(Boolean)
-        setCsvColumns(cols)
-      }
-      reader.readAsText(file)
-    } else if (ext === 'xlsx' || ext === 'xls') {
-      const reader = new FileReader()
-      reader.onload = ev => {
-        const data = ev.target?.result
-        const wb = XLSX.read(data, { type: 'array' })
-        const ws = wb.Sheets[wb.SheetNames[0]]
-        const rows = XLSX.utils.sheet_to_json<string[]>(ws, { header: 1 })
-        const cols = (rows[0] || []).map(s => String(s).trim()).filter(Boolean)
-        setCsvColumns(cols)
-      }
-      reader.readAsArrayBuffer(file)
+    setFileInsight('')
+    try {
+      const profile = await extractDataProfile(file)
+      setCsvColumns(profile.columns)
+      setCsvRowCount(profile.rowCount)
+      setCsvSheetName(profile.sheetName ?? '')
+      setCsvWarnings(profile.warnings)
+      if (!profile.columns.length) setError('未能自动识别列名。你可以继续手动填写数据描述，或整理表头后重新上传。')
+    } catch (e) {
+      setCsvColumns([])
+      setCsvRowCount(null)
+      setCsvSheetName('')
+      setCsvWarnings([e instanceof Error ? e.message : '文件解析失败。'])
+      setError(e instanceof Error ? e.message : '文件解析失败。你仍可手动填写数据描述后继续。')
+    } finally {
+      setParsingFile(false)
     }
   }, [])
 
@@ -240,6 +379,59 @@ function ExistingDataFlow({ onBack }: { onBack: () => void }) {
     }
   }
 
+  async function handleProfileFileWithAI() {
+    if (!csvColumns.length) return
+    setProfilingFile(true)
+    setError('')
+    try {
+      const columnText = csvColumns.slice(0, 160).join('、')
+      const text = await chatCompletion([
+        {
+          role: 'system',
+          content: '你是一位临床数据管理和医学统计顾问。只根据用户提供的列名做结构识别，不要假装已经看过原始数据内容。回复中文，简洁、可直接粘贴到研究描述中。',
+        },
+        {
+          role: 'user',
+          content: `请根据以下数据文件结构，帮助我识别变量含义、可能的研究设计和需要补充的信息。
+
+文件名：${csvFileName}
+工作表：${csvSheetName || '未提供'}
+行数：${csvRowCount ?? '未识别'}
+列数：${csvColumns.length}
+解析提示：${csvWarnings.length ? csvWarnings.join('；') : '无'}
+列名（最多前160列）：${columnText}
+
+请按以下格式输出：
+
+## 数据结构摘要
+用 3-5 句话说明这份数据大概是什么类型、可能的人群/调查对象、主要变量模块。
+
+## 变量类型初判
+列出可能的结局变量、暴露变量、协变量/混杂因素、ID/时间变量。不能确定时写“可能”。
+
+## 建议补充的信息
+列出继续做临床数据分析前，用户还应该补充的 5 个关键信息。
+
+## 可粘贴的数据描述
+给出一段 120-180 字的中文数据描述草稿。`,
+        },
+      ], { maxTokens: 1200, temperature: 0.3 })
+
+      setFileInsight(text)
+      const prefix = `数据文件：${csvFileName}，${csvRowCount !== null ? `约 ${csvRowCount} 行，` : ''}共 ${csvColumns.length} 列。`
+      const suggestedDescription = extractSuggestedDescription(text)
+      setDescription(prev => {
+        const trimmed = prev.trim()
+        if (trimmed.includes(prefix)) return trimmed
+        return `${trimmed ? `${trimmed}\n\n` : ''}${prefix}\n${suggestedDescription}`.trim()
+      })
+    } catch (e) {
+      setError(e instanceof Error ? e.message : 'AI 识别失败，请检查 API 配置')
+    } finally {
+      setProfilingFile(false)
+    }
+  }
+
   async function handleAnalyze() {
     if (!searchResult) return
     setAnalyzing(true)
@@ -249,7 +441,7 @@ function ExistingDataFlow({ onBack }: { onBack: () => void }) {
       const sampleArticles = searchResult.articles.slice(0, 5)
         .map(a => `- ${a.title} (${a.journal}, ${a.year})`).join('\n')
       const colsHint = csvColumns.length
-        ? `\n已识别数据列名：${csvColumns.join('、')}`
+        ? `\n已识别数据文件：${csvFileName}，${csvRowCount !== null ? `约${csvRowCount}行，` : ''}${csvColumns.length}列。列名：${csvColumns.slice(0, 180).join('、')}${fileInsight ? `\nAI文件结构识别：${fileInsight}` : ''}`
         : ''
 
       const text = await chatCompletion([
@@ -296,7 +488,7 @@ ${sampleArticles || '（无样本文章）'}
     setError('')
     try {
       const colsHint = csvColumns.length
-        ? `数据集列名（变量）：${csvColumns.join(', ')}\n`
+        ? `数据集文件：${csvFileName}\n数据规模：${csvRowCount !== null ? `约${csvRowCount}行，` : ''}${csvColumns.length}列\n数据集列名（变量）：${csvColumns.slice(0, 180).join(', ')}\n${fileInsight ? `AI文件结构识别：${fileInsight}\n` : ''}`
         : ''
       const text = await chatCompletion([
         { role: 'system', content: '你是一位生物统计学家，擅长 R 语言医学数据分析。请生成可直接运行的 R 代码框架，注释使用中文，代码用 ```r 包裹。' },
@@ -357,7 +549,7 @@ ${colsHint}
           <div>
             <label className="label">上传数据文件（可选）</label>
             <div
-              onClick={() => !csvColumns.length && fileRef.current?.click()}
+              onClick={() => !csvColumns.length && !parsingFile && fileRef.current?.click()}
               onDragOver={e => { e.preventDefault(); setIsDragging(true) }}
               onDragEnter={e => { e.preventDefault(); setIsDragging(true) }}
               onDragLeave={() => setIsDragging(false)}
@@ -370,26 +562,65 @@ ${colsHint}
                   : 'border-gray-200 hover:border-emerald-300 hover:bg-gray-50'
               }`}
             >
-              {csvColumns.length > 0 ? (
+              {parsingFile ? (
+                <div className="p-6 text-center">
+                  <Loader2 className="w-7 h-7 mx-auto mb-2 text-emerald-400 animate-spin" />
+                  <p className="text-sm font-medium text-gray-600">正在读取文件结构…</p>
+                  <p className="text-xs text-gray-400 mt-1">会自动识别表头行、空列名和重复列名</p>
+                </div>
+              ) : csvColumns.length > 0 ? (
                 <div className="p-4">
                   <div className="flex items-center justify-between mb-2">
                     <div className="flex items-center gap-2">
-                      <CheckCircle2 className="w-4 h-4 text-emerald-500" />
+                      <FileSpreadsheet className="w-4 h-4 text-emerald-500" />
                       <span className="text-sm font-medium text-emerald-700">{csvFileName}</span>
-                      <span className="text-xs text-emerald-500">已读取 {csvColumns.length} 列</span>
+                      <span className="text-xs text-emerald-500">
+                        {csvRowCount !== null ? `约 ${csvRowCount} 行 · ` : ''}已读取 {csvColumns.length} 列
+                      </span>
+                      {csvSheetName && <span className="text-xs text-emerald-500">工作表：{csvSheetName}</span>}
                     </div>
                     <button
-                      onClick={e => { e.stopPropagation(); setCsvColumns([]); setCsvFileName('') }}
+                      onClick={e => { e.stopPropagation(); resetFile() }}
                       className="text-gray-400 hover:text-gray-600 p-0.5"
                     >
                       <X className="w-3.5 h-3.5" />
                     </button>
                   </div>
                   <div className="flex flex-wrap gap-1">
-                    {csvColumns.map(col => (
+                    {csvColumns.slice(0, 120).map(col => (
                       <span key={col} className="badge bg-white border border-emerald-200 text-emerald-700 text-xs">{col}</span>
                     ))}
+                    {csvColumns.length > 120 && (
+                      <span className="badge bg-emerald-100 border border-emerald-200 text-emerald-700 text-xs">
+                        还有 {csvColumns.length - 120} 列未显示
+                      </span>
+                    )}
                   </div>
+                  {csvWarnings.length > 0 && (
+                    <div className="mt-3 rounded-lg border border-amber-200 bg-amber-50 px-3 py-2 text-xs text-amber-700 space-y-1">
+                      {csvWarnings.slice(0, 3).map(warning => <p key={warning}>{warning}</p>)}
+                      {csvWarnings.length > 3 && <p>另有 {csvWarnings.length - 3} 条格式提示，AI 分析会一并参考。</p>}
+                    </div>
+                  )}
+                  <div className="mt-3 flex flex-wrap items-center gap-2">
+                    <button
+                      type="button"
+                      onClick={e => { e.stopPropagation(); handleProfileFileWithAI() }}
+                      disabled={profilingFile}
+                      className="btn-secondary text-xs"
+                    >
+                      {profilingFile
+                        ? <><Loader2 className="w-3.5 h-3.5 animate-spin" /> AI 识别中…</>
+                        : <><CheckCircle2 className="w-3.5 h-3.5" /> AI 识别并补全描述</>
+                      }
+                    </button>
+                    <span className="text-xs text-gray-400">仅发送列名和结构摘要，不发送原始数据行。</span>
+                  </div>
+                  {fileInsight && (
+                    <div className="mt-3 rounded-lg border border-emerald-100 bg-white p-3 text-sm">
+                      <MarkdownRenderer content={fileInsight} />
+                    </div>
+                  )}
                 </div>
               ) : (
                 <div className="p-6 text-center">

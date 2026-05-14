@@ -1,9 +1,13 @@
 # Dependencies
 node_modules/
+.venv/
 
 # Next.js build output
 .next/
 out/
+
+# Generated TypeScript incremental state
+tsconfig.tsbuildinfo
 
 # Environment files
 .env
@@ -13,6 +17,9 @@ out/
 # Logs
 npm-debug.log*
 *.log
+
+# Scraper/intermediate data. Keep committed browser assets under public/data/.
+data/
 
 # OS
 .DS_Store
