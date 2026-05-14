@@ -1,10 +1,11 @@
 'use client'
 
-import { useState, useRef } from 'react'
+import { useState, useRef, useCallback } from 'react'
+import * as XLSX from 'xlsx'
 import {
   Database, Loader2, ChevronRight, Code2, Calendar,
   FileSpreadsheet, Search, BarChart2, BookOpen, ArrowRight,
-  FlaskConical, Microscope,
+  FlaskConical, Microscope, Upload, X, CheckCircle2,
 } from 'lucide-react'
 import { searchPubMed, buildSearchQuery, type SearchResult } from '@/lib/pubmed'
 import { chatCompletion } from '@/lib/ai'
@@ -170,6 +171,8 @@ function ExistingDataFlow({ onBack }: { onBack: () => void }) {
   const [description,  setDescription]  = useState('')
   const [outcome,      setOutcome]      = useState<OutcomeType>('binary')
   const [csvColumns,   setCsvColumns]   = useState<string[]>([])
+  const [csvFileName,  setCsvFileName]  = useState('')
+  const [isDragging,   setIsDragging]   = useState(false)
   const [searching,    setSearching]    = useState(false)
   const [searchResult, setSearchResult] = useState<SearchResult | null>(null)
   const [searchedQ,    setSearchedQ]    = useState('')
@@ -181,17 +184,43 @@ function ExistingDataFlow({ onBack }: { onBack: () => void }) {
   const [error,        setError]        = useState('')
   const fileRef = useRef<HTMLInputElement>(null)
 
-  function handleCSV(e: React.ChangeEvent<HTMLInputElement>) {
-    const file = e.target.files?.[0]
-    if (!file) return
-    const reader = new FileReader()
-    reader.onload = ev => {
-      const text = (ev.target?.result as string) || ''
-      const firstLine = text.split(/\r?\n/)[0] || ''
-      const cols = firstLine.split(',').map(s => s.replace(/^"|"$/g, '').trim()).filter(Boolean)
-      setCsvColumns(cols)
+  const processFile = useCallback((file: File) => {
+    const ext = file.name.split('.').pop()?.toLowerCase() ?? ''
+    setCsvFileName(file.name)
+    if (ext === 'csv' || ext === 'tsv' || ext === 'txt') {
+      const reader = new FileReader()
+      reader.onload = ev => {
+        const text = (ev.target?.result as string) || ''
+        const sep = ext === 'tsv' ? '\t' : ','
+        const firstLine = text.split(/\r?\n/)[0] || ''
+        const cols = firstLine.split(sep).map(s => s.replace(/^"|"$/g, '').trim()).filter(Boolean)
+        setCsvColumns(cols)
+      }
+      reader.readAsText(file)
+    } else if (ext === 'xlsx' || ext === 'xls') {
+      const reader = new FileReader()
+      reader.onload = ev => {
+        const data = ev.target?.result
+        const wb = XLSX.read(data, { type: 'array' })
+        const ws = wb.Sheets[wb.SheetNames[0]]
+        const rows = XLSX.utils.sheet_to_json<string[]>(ws, { header: 1 })
+        const cols = (rows[0] || []).map(s => String(s).trim()).filter(Boolean)
+        setCsvColumns(cols)
+      }
+      reader.readAsArrayBuffer(file)
     }
-    reader.readAsText(file)
+  }, [])
+
+  function handleFileInput(e: React.ChangeEvent<HTMLInputElement>) {
+    const file = e.target.files?.[0]
+    if (file) processFile(file)
+  }
+
+  function handleDrop(e: React.DragEvent) {
+    e.preventDefault()
+    setIsDragging(false)
+    const file = e.dataTransfer.files[0]
+    if (file) processFile(file)
   }
 
   async function handleSearch() {
@@ -326,23 +355,54 @@ ${colsHint}
           </div>
 
           <div>
-            <label className="label">上传 CSV（可选）</label>
+            <label className="label">上传数据文件（可选）</label>
             <div
-              onClick={() => fileRef.current?.click()}
-              className="border-2 border-dashed border-gray-200 rounded-lg p-4 text-center cursor-pointer hover:border-emerald-300 transition-colors"
+              onClick={() => !csvColumns.length && fileRef.current?.click()}
+              onDragOver={e => { e.preventDefault(); setIsDragging(true) }}
+              onDragEnter={e => { e.preventDefault(); setIsDragging(true) }}
+              onDragLeave={() => setIsDragging(false)}
+              onDrop={handleDrop}
+              className={`border-2 border-dashed rounded-xl transition-all cursor-pointer select-none ${
+                csvColumns.length
+                  ? 'border-emerald-300 bg-emerald-50 cursor-default'
+                  : isDragging
+                  ? 'border-emerald-400 bg-emerald-50 scale-[1.01]'
+                  : 'border-gray-200 hover:border-emerald-300 hover:bg-gray-50'
+              }`}
             >
-              <FileSpreadsheet className="w-6 h-6 text-gray-300 mx-auto mb-1" />
-              <p className="text-sm text-gray-500">点击上传 CSV，自动读取列名</p>
-              <p className="text-xs text-gray-400 mt-0.5">仅在本地读取，数据不离开你的浏览器</p>
+              {csvColumns.length > 0 ? (
+                <div className="p-4">
+                  <div className="flex items-center justify-between mb-2">
+                    <div className="flex items-center gap-2">
+                      <CheckCircle2 className="w-4 h-4 text-emerald-500" />
+                      <span className="text-sm font-medium text-emerald-700">{csvFileName}</span>
+                      <span className="text-xs text-emerald-500">已读取 {csvColumns.length} 列</span>
+                    </div>
+                    <button
+                      onClick={e => { e.stopPropagation(); setCsvColumns([]); setCsvFileName('') }}
+                      className="text-gray-400 hover:text-gray-600 p-0.5"
+                    >
+                      <X className="w-3.5 h-3.5" />
+                    </button>
+                  </div>
+                  <div className="flex flex-wrap gap-1">
+                    {csvColumns.map(col => (
+                      <span key={col} className="badge bg-white border border-emerald-200 text-emerald-700 text-xs">{col}</span>
+                    ))}
+                  </div>
+                </div>
+              ) : (
+                <div className="p-6 text-center">
+                  <Upload className={`w-7 h-7 mx-auto mb-2 transition-colors ${isDragging ? 'text-emerald-400' : 'text-gray-300'}`} />
+                  <p className="text-sm font-medium text-gray-600">
+                    {isDragging ? '松开以上传文件' : '拖拽文件到此处，或点击选择'}
+                  </p>
+                  <p className="text-xs text-gray-400 mt-1">支持 CSV · Excel (.xlsx/.xls) · TSV</p>
+                  <p className="text-xs text-gray-300 mt-0.5">仅读取列名，数据不离开你的浏览器</p>
+                </div>
+              )}
             </div>
-            <input ref={fileRef} type="file" accept=".csv" onChange={handleCSV} className="hidden" />
-            {csvColumns.length > 0 && (
-              <div className="mt-2 flex flex-wrap gap-1">
-                {csvColumns.map(col => (
-                  <span key={col} className="badge bg-emerald-50 text-emerald-700 text-xs">{col}</span>
-                ))}
-              </div>
-            )}
+            <input ref={fileRef} type="file" accept=".csv,.xlsx,.xls,.tsv,.txt" onChange={handleFileInput} className="hidden" />
           </div>
 
           <div>
