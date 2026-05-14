@@ -5,7 +5,7 @@ import {
   Search, Loader2, BarChart2, ChevronRight,
   Network, GitMerge, Calendar, Lightbulb, ArrowRight, CheckCircle2,
 } from 'lucide-react'
-import { searchPubMed, type SearchResult } from '@/lib/pubmed'
+import { searchPubMed, searchPubMedRCT, type SearchResult } from '@/lib/pubmed'
 import { chatCompletion } from '@/lib/ai'
 import ApiKeyBanner from '@/components/ApiKeyBanner'
 import StepWizard from '@/components/StepWizard'
@@ -88,6 +88,8 @@ export default function MetaPage() {
   const [typeRationale,  setTypeRationale]  = useState('')
   const [searching,      setSearching]      = useState(false)
   const [searchResult,   setSearchResult]   = useState<SearchResult | null>(null)
+  const [rctCount,       setRctCount]       = useState<number | null>(null)
+  const [ctCount,        setCtCount]        = useState<number | null>(null)
   const [assessing,      setAssessing]      = useState(false)
   const [feasibility,    setFeasibility]    = useState('')
   const [nmaNodes,       setNmaNodes]       = useState<NMANode[]>([])
@@ -195,9 +197,17 @@ P（人群）、I（干预/暴露）、C（对照）、O（结局）各一行说
   async function handleSearch() {
     setSearching(true)
     setError('')
+    setRctCount(null)
+    setCtCount(null)
     try {
-      const result = await searchPubMed(question, years)
+      // 主检索 + RCT 专项检索并行
+      const [result, rct] = await Promise.all([
+        searchPubMed(question, years),
+        searchPubMedRCT(question, years).catch(() => ({ rctCount: null, ctCount: null })),
+      ])
       setSearchResult(result)
+      setRctCount(rct.rctCount ?? null)
+      setCtCount(rct.ctCount ?? null)
       setStep(2)
     } catch (e) {
       setError(e instanceof Error ? e.message : '检索失败')
@@ -228,13 +238,15 @@ VERDICT: RECOMMEND 或 CAUTION 或 AVOID
         { role: 'system', content: '你是一位循证医学专家，评估 Meta 分析的可行性。回复使用中文，结构清晰，语言简洁专业。' },
         { role: 'user', content: `研究问题：${question}
 分析类型：${isNMA ? '网状 Meta 分析（NMA）' : '普通 Pairwise Meta 分析'}
-PubMed 文献量（近${years}年）：${searchResult.totalCount} 篇
+PubMed 文献量（近${years}年，全类型）：${searchResult.totalCount} 篇
+PubMed RCT 专项检索量：${rctCount !== null ? rctCount + ' 篇' : '未能获取'}
+ClinicalTrials.gov 已完成试验：${ctCount !== null ? ctCount + ' 项' : '未能获取'}
 主要期刊：${topJournals}
 
 请评估：
 
 ## 文献量解读
-该文献量做 ${isNMA ? 'NMA' : 'Meta'} 是否足够？预计筛选后可纳入多少篇 RCT？
+实际可纳入 RCT 约为 ${rctCount !== null ? rctCount : '未知'} 篇（PubMed 专项检索），做 ${isNMA ? 'NMA' : 'Meta'} 是否足够？预计全库筛选后可纳入多少篇？
 
 ${isNMA ? `## 干预节点识别
 根据该研究问题，识别主要的干预措施节点（≥3个才能做NMA），以及已知的直接比较关系。
@@ -490,15 +502,17 @@ ${isNMA ? `## 干预节点识别
           <h2 className="section-title">文献检索结果</h2>
 
           {/* Stats */}
-          <div className="grid grid-cols-3 gap-3">
+          <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
             {[
-              { label: 'PubMed 文献量', value: searchResult.totalCount.toLocaleString() + ' 篇', sub: `近 ${years} 年` },
-              { label: '覆盖期刊（样本）', value: searchResult.topJournals.length + ' 本', sub: 'Top 期刊分布' },
-              { label: '分析类型', value: metaType === 'nma' ? '网状 NMA' : '普通 Meta', sub: 'AI 推荐' },
+              { label: 'PubMed 文献量', value: searchResult.totalCount.toLocaleString() + ' 篇', sub: `近 ${years} 年`, color: '' },
+              { label: '可纳入 RCT', value: rctCount !== null ? rctCount.toLocaleString() + ' 篇' : '检索中…', sub: 'PubMed RCT 专项', color: rctCount !== null && rctCount < 5 ? 'amber' : '' },
+              { label: '已完成临床试验', value: ctCount !== null ? ctCount.toLocaleString() + ' 项' : '检索中…', sub: 'ClinicalTrials.gov', color: '' },
+              { label: '覆盖期刊（样本）', value: searchResult.topJournals.length + ' 本', sub: 'Top 期刊分布', color: '' },
+              { label: '分析类型', value: metaType === 'nma' ? '网状 NMA' : '普通 Meta', sub: 'AI 推荐', color: '' },
             ].map(s => (
-              <div key={s.label} className="bg-gray-50 rounded-xl p-3">
+              <div key={s.label} className={`rounded-xl p-3 ${s.color === 'amber' ? 'bg-amber-50' : 'bg-gray-50'}`}>
                 <p className="text-xs text-gray-400">{s.label}</p>
-                <p className="text-lg font-bold text-gray-900 mt-0.5">{s.value}</p>
+                <p className={`text-lg font-bold mt-0.5 ${s.color === 'amber' ? 'text-amber-700' : 'text-gray-900'}`}>{s.value}</p>
                 <p className="text-xs text-gray-400">{s.sub}</p>
               </div>
             ))}
