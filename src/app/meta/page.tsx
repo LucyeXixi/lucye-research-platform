@@ -88,6 +88,7 @@ export default function MetaPage() {
   const [typeRationale,  setTypeRationale]  = useState('')
   const [searching,      setSearching]      = useState(false)
   const [searchResult,   setSearchResult]   = useState<SearchResult | null>(null)
+  const [searchedQuery,  setSearchedQuery]  = useState('')
   const [rctCount,       setRctCount]       = useState<number | null>(null)
   const [ctCount,        setCtCount]        = useState<number | null>(null)
   const [assessing,      setAssessing]      = useState(false)
@@ -206,6 +207,7 @@ P（人群）、I（干预/暴露）、C（对照）、O（结局）各一行说
         searchPubMedRCT(question, years).catch(() => ({ rctCount: null, ctCount: null })),
       ])
       setSearchResult(result)
+      setSearchedQuery(result.translatedQuery ?? question)
       setRctCount(rct.rctCount ?? null)
       setCtCount(rct.ctCount ?? null)
       setStep(2)
@@ -499,7 +501,18 @@ ${isNMA ? `## 干预节点识别
       {/* ── Step 2：检索结果 ── */}
       {step >= 2 && searchResult && (
         <div className="card p-6 space-y-5">
-          <h2 className="section-title">文献检索结果</h2>
+          <div className="flex items-start justify-between flex-wrap gap-2">
+            <h2 className="section-title">文献检索结果</h2>
+            {searchedQuery && searchedQuery !== question && (
+              <div className="flex flex-col items-end gap-0.5">
+                <span className="flex items-center gap-1 text-xs text-blue-600 bg-blue-50 px-2 py-0.5 rounded-full max-w-xs truncate">
+                  <Search className="w-3 h-3 shrink-0" />
+                  检索式：{searchedQuery}
+                </span>
+                <span className="text-xs text-gray-400">原始输入：{question}</span>
+              </div>
+            )}
+          </div>
 
           {/* Stats */}
           <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
