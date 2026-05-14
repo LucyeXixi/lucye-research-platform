@@ -41,6 +41,13 @@ export default function NMANetwork({ nodes, edges, verdict }: Props) {
   const maxNodeStudies = Math.max(...nodes.map(n => n.studies), 1)
 
   const vc = verdict ? VERDICT_CONFIG[verdict] : null
+  const connectedIds = new Set(edges.flatMap(e => [e.from, e.to]))
+  const isolatedNodes = nodes.filter(n => !connectedIds.has(n.id))
+  const componentCount = countComponents(nodes, edges)
+  const hasClosedLoop = edges.length >= nodes.length && componentCount === 1
+  const structureLabel = componentCount === 1
+    ? hasClosedLoop ? '连通网络 · 存在闭合环' : '连通星状/链状网络'
+    : `不连通网络 · ${componentCount} 个子网`
 
   return (
     <div className="space-y-3">
@@ -51,6 +58,19 @@ export default function NMANetwork({ nodes, edges, verdict }: Props) {
           <span className={`ml-auto text-xs ${vc.text} opacity-70`}>{nodes.length} 个节点 · {edges.length} 条边</span>
         </div>
       )}
+
+      <div className="grid grid-cols-1 sm:grid-cols-3 gap-2">
+        {[
+          { label: '网络结构', value: structureLabel },
+          { label: '孤立节点', value: isolatedNodes.length ? isolatedNodes.map(n => n.label).join('、') : '无' },
+          { label: '不一致性检验', value: hasClosedLoop ? '可考虑局部检验' : '闭合环不足' },
+        ].map(item => (
+          <div key={item.label} className="rounded-lg bg-gray-50 border border-gray-100 px-3 py-2 min-w-0">
+            <p className="text-[10px] text-gray-400">{item.label}</p>
+            <p className="text-xs font-medium text-gray-700 truncate mt-0.5" title={item.value}>{item.value}</p>
+          </div>
+        ))}
+      </div>
 
       <div className="bg-gray-50 rounded-xl border border-gray-100 overflow-hidden">
         <svg viewBox={`0 0 ${W} ${H}`} className="w-full">
@@ -99,13 +119,40 @@ export default function NMANetwork({ nodes, edges, verdict }: Props) {
       <div className="flex items-center gap-4 text-xs text-gray-400 px-1">
         <span className="flex items-center gap-1">
           <span className="w-6 h-0.5 bg-blue-200 inline-block" style={{ height: 2 }} />
-          线条粗细 = 研究数量
+          线条粗细 = 预估直接比较数量
         </span>
         <span className="flex items-center gap-1">
           <span className="w-3 h-3 rounded-full bg-blue-100 border border-blue-400 inline-block" />
-          节点大小 = 相关文献量
+          节点大小 = 节点证据量
         </span>
       </div>
     </div>
   )
+}
+
+function countComponents(nodes: NMANode[], edges: NMAEdge[]) {
+  if (!nodes.length) return 0
+  const seen = new Set<string>()
+  const graph: Record<string, string[]> = {}
+  nodes.forEach(n => { graph[n.id] = [] })
+  edges.forEach(e => {
+    graph[e.from]?.push(e.to)
+    graph[e.to]?.push(e.from)
+  })
+
+  let components = 0
+  for (const node of nodes) {
+    if (seen.has(node.id)) continue
+    components += 1
+    const stack = [node.id]
+    while (stack.length) {
+      const id = stack.pop()!
+      if (seen.has(id)) continue
+      seen.add(id)
+      graph[id]?.forEach(next => {
+        if (!seen.has(next)) stack.push(next)
+      })
+    }
+  }
+  return components
 }

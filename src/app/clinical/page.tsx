@@ -303,6 +303,14 @@ function ExistingDataFlow({ onBack }: { onBack: () => void }) {
   const [csvSheetName, setCsvSheetName] = useState('')
   const [csvWarnings,  setCsvWarnings]  = useState<string[]>([])
   const [fileInsight,  setFileInsight]  = useState('')
+  const [autoDetecting,   setAutoDetecting]   = useState(false)
+  const [detectedOutcome, setDetectedOutcome] = useState<{
+    outcomeCol: string
+    outcomeType: OutcomeType
+    exposureCols: string[]
+    confounders: string[]
+    reasoning: string
+  } | null>(null)
   const [parsingFile,  setParsingFile]  = useState(false)
   const [profilingFile,setProfilingFile]= useState(false)
   const [isDragging,   setIsDragging]   = useState(false)
@@ -324,6 +332,7 @@ function ExistingDataFlow({ onBack }: { onBack: () => void }) {
     setCsvSheetName('')
     setCsvWarnings([])
     setFileInsight('')
+    setDetectedOutcome(null)
     if (fileRef.current) fileRef.current.value = ''
   }
 
@@ -332,6 +341,7 @@ function ExistingDataFlow({ onBack }: { onBack: () => void }) {
     setError('')
     setCsvFileName(file.name)
     setFileInsight('')
+    setDetectedOutcome(null)
     try {
       const profile = await extractDataProfile(file)
       setCsvColumns(profile.columns)
@@ -429,6 +439,58 @@ function ExistingDataFlow({ onBack }: { onBack: () => void }) {
       setError(e instanceof Error ? e.message : 'AI 识别失败，请检查 API 配置')
     } finally {
       setProfilingFile(false)
+    }
+  }
+
+  async function handleAutoDetect() {
+    if (!csvColumns.length) return
+    setAutoDetecting(true)
+    setError('')
+    try {
+      const text = await chatCompletion([
+        {
+          role: 'system',
+          content: `你是临床数据分析专家。根据列名分析数据集结构，识别最可能的结局变量、
+暴露/干预变量、主要混杂变量，以及结局类型。
+严格按 JSON 返回，不要任何额外文字：
+{"outcomeCol":"列名","outcomeType":"binary|survival|continuous|mediation",
+"exposureCols":["列名1","列名2"],"confounders":["列名1","列名2","列名3"],
+"reasoning":"一句话判断依据"}`,
+        },
+        {
+          role: 'user',
+          content: `数据文件：${csvFileName}
+用户描述：${description || '（未填写）'}
+列名（共${csvColumns.length}列）：${csvColumns.slice(0, 200).join(', ')}
+${csvColumns.length > 200 ? `...另有${csvColumns.length - 200}列` : ''}`,
+        },
+      ], { maxTokens: 300 })
+
+      const jsonText = text.replace(/```json|```/g, '').trim()
+      const parsed = JSON.parse(jsonText) as {
+        outcomeCol?: string
+        outcomeType?: OutcomeType
+        exposureCols?: string[]
+        confounders?: string[]
+        reasoning?: string
+      }
+      if (!parsed.outcomeCol || !['binary', 'survival', 'continuous', 'mediation'].includes(parsed.outcomeType || '')) {
+        throw new Error('AI 返回的变量识别结果格式不完整，请重试。')
+      }
+      const outcomeType = parsed.outcomeType as OutcomeType
+      const normalized = {
+        outcomeCol:   parsed.outcomeCol,
+        outcomeType,
+        exposureCols: Array.isArray(parsed.exposureCols) ? parsed.exposureCols : [],
+        confounders:  Array.isArray(parsed.confounders) ? parsed.confounders : [],
+        reasoning:    parsed.reasoning || '根据列名结构自动判断。',
+      }
+      setDetectedOutcome(normalized)
+      setOutcome(outcomeType)
+    } catch (e) {
+      setError(e instanceof Error ? e.message : 'AI 智能识别失败，请检查 API 配置后重试。')
+    } finally {
+      setAutoDetecting(false)
     }
   }
 
@@ -637,6 +699,54 @@ ${colsHint}
           </div>
 
           <div>
+            {csvColumns.length > 0 && (
+              <div className="mb-4">
+                {detectedOutcome ? (
+                  <div className="relative rounded-xl border border-emerald-200 bg-emerald-50 p-4">
+                    <button
+                      type="button"
+                      onClick={() => { setDetectedOutcome(null); handleAutoDetect() }}
+                      disabled={autoDetecting}
+                      className="absolute right-3 top-3 text-xs text-emerald-700 hover:text-emerald-800 disabled:opacity-50"
+                    >
+                      {autoDetecting ? '识别中…' : '重新识别'}
+                    </button>
+                    <div className="space-y-1.5 pr-16">
+                      <p className="text-sm font-medium text-emerald-800">
+                        结局变量 <span className="badge bg-white border border-emerald-300 text-emerald-700 mx-1">{detectedOutcome.outcomeCol}</span>
+                        <span className="text-xs font-normal text-emerald-600">
+                          已自动选中 {{
+                            binary: '二分类',
+                            survival: '生存分析',
+                            continuous: '连续变量',
+                            mediation: '中介/ML',
+                          }[detectedOutcome.outcomeType]}
+                        </span>
+                      </p>
+                      <p className="text-xs text-emerald-700">
+                        暴露/干预：{detectedOutcome.exposureCols.length ? detectedOutcome.exposureCols.join('、') : '未明确识别'}
+                      </p>
+                      <p className="text-xs text-emerald-700">
+                        主要混杂：{detectedOutcome.confounders.length ? detectedOutcome.confounders.join('、') : '未明确识别'}
+                      </p>
+                      <p className="text-xs text-gray-500">{detectedOutcome.reasoning}</p>
+                    </div>
+                  </div>
+                ) : (
+                  <button
+                    type="button"
+                    onClick={handleAutoDetect}
+                    disabled={autoDetecting}
+                    className="btn-secondary text-xs"
+                  >
+                    {autoDetecting
+                      ? <><Loader2 className="w-3.5 h-3.5 animate-spin" /> AI 智能识别中…</>
+                      : '✨ AI 智能识别结局变量'
+                    }
+                  </button>
+                )}
+              </div>
+            )}
             <label className="label">结局变量类型</label>
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-2">
               {([

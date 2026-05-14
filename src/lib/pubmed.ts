@@ -122,7 +122,13 @@ export interface Article {
 export interface SearchResult {
   totalCount:       number
   yearDistribution: Record<string, number>
-  topJournals:      { name: string; count: number }[]
+  topJournals:      {
+    name:     string
+    count:    number
+    fullName?: string
+    issn?:     string
+    eissn?:    string
+  }[]
   articles:         Article[]
   query:            string
   queryTooBoard?:   boolean   // true = query is too broad / probably malformed
@@ -209,18 +215,33 @@ export async function searchPubMed(
 
   const articles:   Article[]              = []
   const yearDist:   Record<string, number> = {}
-  const journalMap: Record<string, number> = {}
+  const journalMap: Record<string, {
+    count:    number
+    fullName?: string
+    issn?:     string
+    eissn?:    string
+  }> = {}
 
   const uids: string[] = summaryData.result?.uids || []
   for (const uid of uids) {
     const doc = summaryData.result?.[uid] as {
       pubdate?: string; title?: string; source?: string
+      fulljournalname?: string; issn?: string; essn?: string
       authors?: { name: string }[]
     } | undefined
     if (!doc || typeof doc !== 'object' || !doc.title) continue
     const yearStr = doc.pubdate?.split(' ')[0] || '未知'
-    yearDist[yearStr]                   = (yearDist[yearStr]      || 0) + 1
-    journalMap[doc.source ?? '']        = (journalMap[doc.source ?? ''] || 0) + 1
+    const source = doc.source ?? ''
+    yearDist[yearStr] = (yearDist[yearStr] || 0) + 1
+    if (source) {
+      const current = journalMap[source] || { count: 0 }
+      journalMap[source] = {
+        count:    current.count + 1,
+        fullName: current.fullName || doc.fulljournalname,
+        issn:     current.issn     || doc.issn,
+        eissn:    current.eissn    || doc.essn,
+      }
+    }
     articles.push({
       pmid:    uid,
       title:   doc.title   || '',
@@ -233,9 +254,15 @@ export async function searchPubMed(
 
   const topJournals = Object.entries(journalMap)
     .filter(([name]) => name.trim())
-    .sort((a, b) => b[1] - a[1])
+    .sort((a, b) => b[1].count - a[1].count)
     .slice(0, 8)
-    .map(([name, count]) => ({ name, count }))
+    .map(([name, meta]) => ({
+      name,
+      count:    meta.count,
+      fullName: meta.fullName,
+      issn:     meta.issn,
+      eissn:    meta.eissn,
+    }))
 
   return { totalCount, yearDistribution: yearDist, topJournals, articles, query: fullQuery, translatedQuery, queryTooBoard: false }
 }
@@ -245,27 +272,34 @@ export async function searchPubMedRCT(
   query: string,
   years = 10,
   skipTranslate = false
-): Promise<{ rctCount: number; ctCount: number }> {
+): Promise<{ rctCount: number; broadRctCount: number; ctCount: number }> {
   const minYear = new Date().getFullYear() - years
   const searchQuery = skipTranslate ? query : await translateToEnglish(query)
 
-  const rctQuery = `(${searchQuery}) AND ("${minYear}"[PDAT]:"3000"[PDAT]) AND (randomized controlled trial[pt] OR randomised controlled trial[pt] OR randomized[tiab] OR randomised[tiab] OR placebo[tiab])`
+  const dateClause = `("${minYear}"[PDAT]:"3000"[PDAT])`
+  const strictRctQuery = `(${searchQuery}) AND ${dateClause} AND randomized controlled trial[pt]`
+  const broadRctQuery = `(${searchQuery}) AND ${dateClause} AND (randomized controlled trial[pt] OR randomized[tiab] OR randomised[tiab] OR placebo[tiab])`
 
-  const [rctData, ctData] = await Promise.allSettled([
-    fetchJson(`${BASE}/esearch.fcgi?${qs({ db: 'pubmed', term: rctQuery, retmax: '0', retmode: 'json' })}`),
+  const [strictRctData, broadRctData, ctData] = await Promise.allSettled([
+    fetchJson(`${BASE}/esearch.fcgi?${qs({ db: 'pubmed', term: strictRctQuery, retmax: '0', retmode: 'json' })}`),
+    fetchJson(`${BASE}/esearch.fcgi?${qs({ db: 'pubmed', term: broadRctQuery, retmax: '0', retmode: 'json' })}`),
     fetch(`https://clinicaltrials.gov/api/v2/studies?query.term=${encodeURIComponent(searchQuery)}&filter.overallStatus=COMPLETED&pageSize=1&format=json`)
       .then(r => r.ok ? r.json() : { totalCount: 0 }),
   ])
 
-  const rctCount = rctData.status === 'fulfilled'
-    ? parseInt((rctData.value as { esearchresult: { count: string } }).esearchresult?.count || '0')
+  const rctCount = strictRctData.status === 'fulfilled'
+    ? parseInt((strictRctData.value as { esearchresult: { count: string } }).esearchresult?.count || '0')
+    : 0
+
+  const broadRctCount = broadRctData.status === 'fulfilled'
+    ? parseInt((broadRctData.value as { esearchresult: { count: string } }).esearchresult?.count || '0')
     : 0
 
   const ctCount = ctData.status === 'fulfilled'
     ? ((ctData.value as { totalCount?: number }).totalCount ?? 0)
     : 0
 
-  return { rctCount, ctCount }
+  return { rctCount, broadRctCount, ctCount }
 }
 
 export async function searchClinicalTrials(query: string) {

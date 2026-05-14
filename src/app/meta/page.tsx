@@ -1,11 +1,12 @@
 'use client'
 
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import {
   Search, Loader2, BarChart2, ChevronRight,
-  Network, GitMerge, Calendar, Lightbulb, ArrowRight, CheckCircle2,
+  Network, GitMerge, Calendar, Lightbulb, ArrowRight,
 } from 'lucide-react'
 import { searchPubMed, searchPubMedRCT, buildSearchQuery, type SearchResult } from '@/lib/pubmed'
+import { loadJournals, type Journal } from '@/lib/journals'
 import { chatCompletion } from '@/lib/ai'
 import ApiKeyBanner from '@/components/ApiKeyBanner'
 import StepWizard from '@/components/StepWizard'
@@ -32,19 +33,97 @@ interface TopicSuggestion {
   rationale: string
 }
 
+interface JournalRecommendation {
+  name: string
+  note: string
+}
+
+type TopJournal = SearchResult['topJournals'][number]
+
+const NMA_JOURNAL_RECOMMENDATIONS: JournalRecommendation[] = [
+  { name: 'BMJ',                         note: '适合大型、方法学严谨且临床意义强的 NMA' },
+  { name: 'JAMA Network Open',           note: '开放获取，偏好临床问题明确、证据完整的 Meta/NMA' },
+  { name: 'Annals of Internal Medicine', note: '综合临床高门槛，适合可改变实践的系统评价' },
+  { name: 'Journal of Clinical Medicine', note: '中等难度，临床主题和 NMA 接受度较高' },
+  { name: 'Systematic Reviews',          note: '专门发表系统评价、Meta 和方法学研究' },
+]
+
+const PAIRWISE_JOURNAL_RECOMMENDATIONS: JournalRecommendation[] = [
+  { name: 'Systematic Reviews',                  note: '专注系统评价和 Meta 分析，方法学呈现空间较大' },
+  { name: 'PLOS ONE',                            note: '开放获取，重视方法完整性和数据透明度' },
+  { name: 'BMC Medical Research Methodology',    note: '适合方法学较强或统计处理有亮点的 Meta' },
+  { name: 'Frontiers in Medicine',               note: '开放获取，临床主题覆盖宽' },
+  { name: 'European Journal of Clinical Investigation', note: '适合临床问题清晰的普通 Meta' },
+]
+
+function normalizeJournalName(value?: string) {
+  return (value || '')
+    .toLowerCase()
+    .replace(/&/g, 'and')
+    .replace(/^the\s+/, '')
+    .replace(/[^a-z0-9]/g, '')
+}
+
+function normalizeIssn(value?: string) {
+  return (value || '').toUpperCase().replace(/[^0-9X]/g, '')
+}
+
+function findJournalMeta(
+  journals: Journal[],
+  item: TopJournal | JournalRecommendation | string
+): Journal | null {
+  const names = typeof item === 'string'
+    ? [item]
+    : 'fullName' in item
+      ? [item.name, item.fullName].filter(Boolean) as string[]
+      : [item.name]
+
+  const issns = typeof item === 'object' && 'issn' in item
+    ? [item.issn, item.eissn].map(normalizeIssn).filter(Boolean)
+    : []
+
+  if (issns.length) {
+    const byIssn = journals.find(j => {
+      const localIds = [
+        normalizeIssn(j.issn),
+        normalizeIssn((j as Journal & { eissn?: string }).eissn),
+      ].filter(Boolean)
+      return localIds.some(id => issns.includes(id))
+    })
+    if (byIssn) return byIssn
+  }
+
+  const normalizedNames = names.map(normalizeJournalName).filter(Boolean)
+  if (!normalizedNames.length) return null
+
+  return journals.find(j => {
+    const candidates = [j.name, j.abbr].map(normalizeJournalName).filter(Boolean)
+    return candidates.some(candidate => normalizedNames.includes(candidate))
+  }) || null
+}
+
+function formatIF(value: number | null | undefined) {
+  return value == null ? 'IF 未收录' : `IF ${value.toFixed(1)}`
+}
+
+function formatCas(journal: Journal | null) {
+  if (!journal?.cas_2025) return 'CAS 未收录'
+  return `中科院 ${journal.cas_2025.tier} 区${journal.cas_2025.top ? ' Top' : ''}`
+}
+
 function parseNetwork(text: string): { nodes: NMANode[]; edges: NMAEdge[]; verdict: 'RECOMMEND' | 'CAUTION' | 'AVOID' | null } {
   const section = text.match(/===NETWORK===([\s\S]*?)===END===/)?.[1] ?? ''
   const nodesLine   = section.match(/NODES:\s*(.+)/)?.[1] ?? ''
   const edgesLine   = section.match(/EDGES:\s*(.+)/)?.[1] ?? ''
   const verdictLine = (section.match(/VERDICT:\s*(\w+)/)?.[1] ?? '') as string
 
-  const nodeLabels = nodesLine.split(',').map(s => s.trim()).filter(Boolean)
+  const nodeLabels = nodesLine.split(/[,，]/).map(s => s.trim()).filter(Boolean)
   const nodes: NMANode[] = nodeLabels.map((label, i) => ({ id: String(i), label, studies: 0 }))
   const nodeIndex: Record<string, string> = {}
   nodes.forEach(n => { nodeIndex[n.label.toLowerCase()] = n.id })
 
   const edges: NMAEdge[] = []
-  edgesLine.split(',').forEach(pair => {
+  edgesLine.split(/[,，]/).forEach(pair => {
     const m = pair.trim().match(/^(.+?)-(.+?):(\d+)$/)
     if (!m) return
     const [, a, b, n] = m
@@ -90,16 +169,22 @@ export default function MetaPage() {
   const [searchResult,   setSearchResult]   = useState<SearchResult | null>(null)
   const [searchedQuery,  setSearchedQuery]  = useState('')
   const [rctCount,       setRctCount]       = useState<number | null>(null)
+  const [broadRctCount,  setBroadRctCount]  = useState<number | null>(null)
   const [ctCount,        setCtCount]        = useState<number | null>(null)
   const [assessing,      setAssessing]      = useState(false)
   const [feasibility,    setFeasibility]    = useState('')
   const [nmaNodes,       setNmaNodes]       = useState<NMANode[]>([])
   const [nmaEdges,       setNmaEdges]       = useState<NMAEdge[]>([])
   const [nmaVerdict,     setNmaVerdict]     = useState<'RECOMMEND' | 'CAUTION' | 'AVOID' | null>(null)
+  const [journalCatalog, setJournalCatalog] = useState<Journal[]>([])
   const [deadline,       setDeadline]       = useState('')
   const [error,          setError]          = useState('')
 
   const years = depth === 'light' ? 5 : depth === 'medium' ? 10 : 20
+
+  useEffect(() => {
+    loadJournals().then(setJournalCatalog).catch(() => setJournalCatalog([]))
+  }, [])
 
   // ── 帮我想选题 ───────────────────────────────────────────────────────────────
   async function handleSuggest() {
@@ -199,17 +284,23 @@ P（人群）、I（干预/暴露）、C（对照）、O（结局）各一行说
     setSearching(true)
     setError('')
     setRctCount(null)
+    setBroadRctCount(null)
     setCtCount(null)
+    setNmaNodes([])
+    setNmaEdges([])
+    setNmaVerdict(null)
+    setFeasibility('')
     try {
       // Build PICOS-structured query first, then run searches in parallel
       const picosQuery = await buildSearchQuery(question, metaType === 'nma' ? 'nma' : 'meta')
       const [result, rct] = await Promise.all([
         searchPubMed(picosQuery, years, true),
-        searchPubMedRCT(picosQuery, years, true).catch(() => ({ rctCount: null, ctCount: null })),
+        searchPubMedRCT(picosQuery, years, true).catch(() => ({ rctCount: null, broadRctCount: null, ctCount: null })),
       ])
       setSearchResult(result)
       setSearchedQuery(picosQuery !== question ? picosQuery : (result.translatedQuery ?? ''))
       setRctCount(rct.rctCount ?? null)
+      setBroadRctCount(rct.broadRctCount ?? null)
       setCtCount(rct.ctCount ?? null)
       setStep(2)
     } catch (e) {
@@ -226,7 +317,13 @@ P（人群）、I（干预/暴露）、C（对照）、O（结局）各一行说
     setError('')
     try {
       const isNMA    = metaType === 'nma'
-      const topJournals = searchResult.topJournals.slice(0, 5).map(j => j.name).join('、')
+      const topJournals = searchResult.topJournals.slice(0, 5).map(j => {
+        const meta = findJournalMeta(journalCatalog, j)
+        return `${j.fullName || j.name}${meta?.if_2024 != null ? `（IF ${meta.if_2024.toFixed(1)}）` : ''}`
+      }).join('、')
+      const articleSample = searchResult.articles.slice(0, 12)
+        .map(a => `- ${a.title} (${a.journal}, ${a.year})`)
+        .join('\n')
 
       const networkSection = isNMA ? `
 
@@ -242,20 +339,23 @@ VERDICT: RECOMMEND 或 CAUTION 或 AVOID
         { role: 'user', content: `研究问题：${question}
 分析类型：${isNMA ? '网状 Meta 分析（NMA）' : '普通 Pairwise Meta 分析'}
 PubMed 文献量（近${years}年，全类型）：${searchResult.totalCount} 篇
-PubMed RCT 专项检索量：${rctCount !== null ? rctCount + ' 篇' : '未能获取'}
+PubMed 严格 RCT 检索量（randomized controlled trial[pt]）：${rctCount !== null ? rctCount + ' 篇' : '未能获取'}
+PubMed 宽泛 RCT 探索量（含 randomized/placebo 题摘词）：${broadRctCount !== null ? broadRctCount + ' 篇' : '未能获取'}
 ClinicalTrials.gov 已完成试验：${ctCount !== null ? ctCount + ' 项' : '未能获取'}
 主要期刊：${topJournals}
+样本文献标题（用于辅助识别直接比较，不要把标题样本当作最终纳入研究）：
+${articleSample || '无'}
 
 请评估：
 
 ## 文献量解读
-实际可纳入 RCT 约为 ${rctCount !== null ? rctCount : '未知'} 篇（PubMed 专项检索），做 ${isNMA ? 'NMA' : 'Meta'} 是否足够？预计全库筛选后可纳入多少篇？
+严格 RCT 记录为 ${rctCount !== null ? rctCount : '未知'} 篇，宽泛探索记录为 ${broadRctCount !== null ? broadRctCount : '未知'} 篇。请以严格 RCT 作为可行性主参考，并说明宽泛记录可能包含 protocol、非随机临床试验、综述或相关但非目标干预研究。做 ${isNMA ? 'NMA' : 'Meta'} 是否足够？预计全库筛选后可纳入多少篇？
 
 ${isNMA ? `## 干预节点识别
 根据该研究问题，识别主要的干预措施节点（≥3个才能做NMA），以及已知的直接比较关系。
 
 ## 网络结构评估
-网络是否连通？是否存在孤立节点？一致性假设是否有可能满足？` : `## 异质性预判
+网络是否连通？是否存在孤立节点或单研究边？是否形成闭合环？一致性假设是否有可能满足？` : `## 异质性预判
 该领域研究方案（人群、干预方式、结局定义）是否容易产生高度异质性？`}
 
 ## PROSPERO 注册
@@ -531,7 +631,7 @@ ${isNMA ? `## 干预节点识别
           )}
 
           {/* ── Primary metric: RCT count ── */}
-          <RctFeasibilityBadge rct={rctCount} ct={ctCount} type={metaType} />
+          <RctFeasibilityBadge rct={rctCount} broadRct={broadRctCount} ct={ctCount} type={metaType} />
 
           {/* Secondary stats */}
           <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
@@ -587,17 +687,34 @@ ${isNMA ? `## 干预节点识别
           {/* Top journals */}
           {searchResult.topJournals.length > 0 && !searchResult.queryTooBoard && (
             <div>
-              <p className="text-xs font-medium text-gray-500 uppercase tracking-wide mb-2">主要发表期刊（样本）</p>
-              <div className="space-y-1.5">
+              <div className="flex items-center justify-between mb-2">
+                <p className="text-xs font-medium text-gray-500 uppercase tracking-wide">主要发表期刊（样本）</p>
+                <p className="text-[10px] text-gray-400">IF 来自本地期刊库，优先按 ISSN 匹配</p>
+              </div>
+              <div className="space-y-2">
                 {searchResult.topJournals.map((j, i) => {
                   const pct = Math.round((j.count / searchResult.topJournals[0].count) * 100)
+                  const meta = findJournalMeta(journalCatalog, j)
                   return (
-                    <div key={j.name} className="flex items-center gap-2">
+                    <div key={j.name} className="flex items-center gap-2 min-w-0">
                       <span className="text-xs text-gray-300 w-4 shrink-0">{i + 1}</span>
-                      <span className="text-xs text-gray-700 truncate flex-1">{j.name}</span>
+                      <div className="min-w-0 flex-1">
+                        <p className="text-xs text-gray-700 truncate">{j.fullName || j.name}</p>
+                        {j.fullName && j.fullName !== j.name && (
+                          <p className="text-[10px] text-gray-400 truncate">{j.name}</p>
+                        )}
+                      </div>
                       <div className="w-24 h-1.5 bg-gray-100 rounded-full shrink-0">
                         <div className="h-1.5 bg-violet-300 rounded-full" style={{ width: `${pct}%` }} />
                       </div>
+                      <span className={`text-[10px] rounded-full px-2 py-0.5 shrink-0 ${
+                        meta?.if_2024 != null ? 'bg-violet-50 text-violet-700' : 'bg-gray-50 text-gray-400'
+                      }`}>
+                        {formatIF(meta?.if_2024)}
+                      </span>
+                      <span className="hidden sm:inline text-[10px] text-gray-400 w-16 shrink-0 truncate">
+                        {meta?.jcr || 'JCR —'}
+                      </span>
                       <span className="text-xs text-gray-400 w-8 text-right shrink-0">{j.count}</span>
                     </div>
                   )
@@ -656,44 +773,47 @@ ${isNMA ? `## 干预节点识别
       {step >= 4 && (
         <div className="card p-6 space-y-4">
           <h2 className="section-title">期刊匹配推荐</h2>
-          <div className="bg-amber-50 border border-amber-100 rounded-lg p-4">
-            <p className="text-sm font-medium text-amber-800">完整期刊数据库准备中</p>
-            <p className="text-xs text-amber-600 mt-1">
-              Codex 爬虫完成后自动接入中科院分区、IF、版面费、审稿周期数据。
-              目前推荐参考期刊：
+          <div className="bg-violet-50 border border-violet-100 rounded-lg p-4">
+            <p className="text-sm font-medium text-violet-800">期刊建议加入 IF/JCR/CAS 参考</p>
+            <p className="text-xs text-violet-600 mt-1">
+              IF 用于预判投稿目标层级；若本地库暂未按 ISSN 或标准刊名匹配，则显示“IF 未收录”，避免误填。
             </p>
           </div>
           <div className="space-y-2">
             {(metaType === 'nma'
-              ? [
-                  { name: 'BMJ',                              note: 'NMA 高影响力期刊，接受大型网状分析' },
-                  { name: 'JAMA Network Open',                note: '开放获取，Meta/NMA 友好' },
-                  { name: 'Annals of Internal Medicine',      note: '综合临床，高质量系统评价' },
-                  { name: 'Journal of Clinical Medicine',     note: '中等 IF，NMA 发表率高' },
-                  { name: 'Systematic Reviews',               note: '专门发表方法学和系统评价' },
-                ]
-              : [
-                  { name: 'Systematic Reviews',               note: '专注系统评价，无 IF 门槛限制' },
-                  { name: 'PLOS ONE',                         note: '开放获取，Meta 分析接受率高' },
-                  { name: 'BMC Medical Research Methodology', note: '方法学期刊，适合普通 Meta' },
-                  { name: 'Frontiers in Medicine',            note: '快审，开放获取，中等 IF' },
-                  { name: 'European Journal of Clinical Investigation', note: '临床 Meta 友好' },
-                ]
-            ).map(({ name, note }) => (
-              <div key={name} className="flex items-center justify-between border border-gray-100 rounded-lg px-4 py-3">
-                <div>
-                  <p className="text-sm font-medium text-gray-900">{name}</p>
-                  <p className="text-xs text-gray-400">{note}</p>
+              ? NMA_JOURNAL_RECOMMENDATIONS
+              : PAIRWISE_JOURNAL_RECOMMENDATIONS
+            ).map(({ name, note }) => {
+              const meta = findJournalMeta(journalCatalog, name)
+              return (
+                <div key={name} className="flex items-center justify-between gap-3 border border-gray-100 rounded-lg px-4 py-3">
+                  <div className="min-w-0">
+                    <div className="flex items-center gap-2 flex-wrap">
+                      <p className="text-sm font-medium text-gray-900">{meta?.name || name}</p>
+                      <span className={`text-[10px] rounded-full px-2 py-0.5 ${
+                        meta?.if_2024 != null ? 'bg-violet-50 text-violet-700' : 'bg-gray-50 text-gray-400'
+                      }`}>
+                        {formatIF(meta?.if_2024)}
+                      </span>
+                      <span className="text-[10px] rounded-full px-2 py-0.5 bg-gray-50 text-gray-500">
+                        {meta?.jcr || 'JCR 未收录'}
+                      </span>
+                      <span className="text-[10px] rounded-full px-2 py-0.5 bg-gray-50 text-gray-500">
+                        {formatCas(meta)}
+                      </span>
+                    </div>
+                    <p className="text-xs text-gray-400 mt-1">{note}</p>
+                  </div>
+                  <a
+                    href={`https://www.letpub.com.cn/index.php?page=journalapp&view=query&journal_name=${encodeURIComponent(name)}`}
+                    target="_blank" rel="noopener noreferrer"
+                    className="text-xs text-primary-600 hover:underline shrink-0 ml-3"
+                  >
+                    查 LetPub →
+                  </a>
                 </div>
-                <a
-                  href={`https://www.letpub.com.cn/index.php?page=journalapp&view=query&journal_name=${encodeURIComponent(name)}`}
-                  target="_blank" rel="noopener noreferrer"
-                  className="text-xs text-primary-600 hover:underline shrink-0 ml-3"
-                >
-                  查 LetPub →
-                </a>
-              </div>
-            ))}
+              )
+            })}
           </div>
           {step === 4 && (
             <button onClick={() => setStep(5)} className="btn-primary">
@@ -722,8 +842,8 @@ ${isNMA ? `## 干预节点识别
 
 // ── RCT 可行性指示器（NMAskill 阈值）────────────────────────────────────────
 function RctFeasibilityBadge({
-  rct, ct, type,
-}: { rct: number | null; ct: number | null; type: MetaType }) {
+  rct, broadRct, ct, type,
+}: { rct: number | null; broadRct: number | null; ct: number | null; type: MetaType }) {
   // Thresholds from NMAskill: NMA ≥20 RCTs = green, 10-19 = amber, <10 = red
   //                           Pairwise ≥10 = green, 5-9 = amber, <5 = red
   const minGreen  = type === 'nma' ? 20 : 10
@@ -754,10 +874,17 @@ function RctFeasibilityBadge({
         <div className="flex-1 min-w-0">
           <div className="flex items-baseline gap-3 flex-wrap">
             <div>
-              <span className="text-xs text-gray-500">可纳入 RCT</span>
+              <span className="text-xs text-gray-500">严格 RCT 估计</span>
               <p className={`text-2xl font-bold leading-tight ${text[verdict]}`}>{rctLabel}</p>
-              <span className="text-xs text-gray-400">PubMed RCT 专项检索</span>
+              <span className="text-xs text-gray-400">randomized controlled trial[pt]</span>
             </div>
+            {broadRct !== null && (
+              <div className="border-l border-gray-200 pl-3">
+                <span className="text-xs text-gray-500">宽泛探索</span>
+                <p className="text-xl font-bold text-gray-700 leading-tight">{broadRct.toLocaleString()} 篇</p>
+                <span className="text-xs text-gray-400">含 randomized/placebo 题摘词</span>
+              </div>
+            )}
             {ct !== null && ct > 0 && (
               <div className="border-l border-gray-200 pl-3">
                 <span className="text-xs text-gray-500">已完成临床试验</span>
@@ -767,7 +894,9 @@ function RctFeasibilityBadge({
             )}
           </div>
           {verdict !== 'pending' && (
-            <p className={`text-xs mt-2 font-medium ${text[verdict]}`}>{verdictText[verdict]}</p>
+            <p className={`text-xs mt-2 font-medium ${text[verdict]}`}>
+              {verdictText[verdict]}；宽泛探索数仅用于补充筛查，不能直接视为可纳入 RCT。
+            </p>
           )}
         </div>
       </div>
