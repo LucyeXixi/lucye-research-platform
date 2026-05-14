@@ -60,37 +60,40 @@ export async function buildSearchQuery(
   if (!cfg) return fallback
 
   const systemPrompts: Record<typeof type, string> = {
-    meta: `You are a PubMed search expert for systematic reviews and pairwise meta-analyses. Build a PubMed Boolean search string using PICOS structure.
+    meta: `You are a PubMed search expert for systematic reviews and pairwise meta-analyses.
+Build a PubMed Boolean search string using only the P (population) and I/C (intervention/comparator) blocks.
 
-Structure: (Population terms) AND (Intervention/Comparator terms) AND (randomized[tiab] OR randomised[tiab] OR placebo[tiab] OR "clinical trial"[pt])
+Structure: (Population terms) AND (Intervention/Comparator terms)
 
 Rules:
-- P block: disease/condition name + MeSH term if applicable (2 terms max)
-- I/C block: all interventions + 1-2 synonyms each, joined with OR
-- NEVER include outcome terms — they miss RCTs where outcome is in the body
-- Always end with the RCT filter
-- Keep each block concise (≤4 terms per block)
+- P block: disease/condition name + MeSH term if common (2 terms max)
+- I/C block: all interventions being compared + 1-2 synonyms each, joined with OR
+- NEVER include outcome terms — they miss RCTs where outcome is in the body only
+- DO NOT add any RCT or study-design filter — that is added separately
+- Keep each block concise (≤4 terms)
 - Return ONLY the complete balanced search string, nothing else`,
 
-    nma: `You are a PubMed search expert for network meta-analyses. Build a PubMed Boolean search string.
+    nma: `You are a PubMed search expert for network meta-analyses.
+Build a PubMed Boolean search string using only the P (population) and I (interventions) blocks.
 
-Structure: (Population/Disease) AND (Intervention1 OR Syn1 OR Intervention2 OR Syn2 OR ...) AND (randomized[tiab] OR randomised[tiab] OR placebo[tiab] OR "clinical trial"[pt])
+Structure: (Population/Disease) AND (Intervention1 OR Synonym1 OR Intervention2 OR Synonym2 OR ...)
 
 Rules:
-- P block: main disease/condition (2 terms max, keep short)
-- I block: list every intervention in the NMA network with 1 synonym each — this block must be comprehensive
+- P block: main disease/condition, 2 terms max (keep short)
+- I block: list EVERY intervention node in the NMA network with 1 key synonym each — this is critical for coverage
 - NO outcome terms
-- RCT filter is mandatory at the end
-- The entire string must have balanced parentheses
+- DO NOT add any RCT or study-design filter — it is added separately
+- Balanced parentheses required
 - Return ONLY the complete balanced search string, nothing else`,
 
-    observational: `You are a PubMed search expert for observational studies. Build a PubMed Boolean search string.
+    observational: `You are a PubMed search expert for observational studies.
+Build a PubMed Boolean search string using the condition and key exposure/outcome.
 
-Structure: (Condition terms) AND (Exposure/Outcome key terms)
+Structure: (Condition terms) AND (Exposure or Outcome key terms)
 
 Rules:
-- Extract the main condition + key exposure or outcome (2 blocks max)
-- No RCT filter
+- 2 concept blocks maximum
+- No study-design filter
 - Keep it simple to avoid over-restriction
 - Return ONLY the complete balanced search string, nothing else`,
   }
