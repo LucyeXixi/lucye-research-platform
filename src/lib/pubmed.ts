@@ -156,11 +156,12 @@ async function runEsearch(term: string, years: number) {
     `${BASE}/esearch.fcgi?${qs({
       db: 'pubmed', term: fullQuery, retmax: '100', usehistory: 'y', retmode: 'json',
     })}`
-  ) as { esearchresult: { count: string; webenv?: string; query_key?: string } }
+  ) as { esearchresult: { count: string; webenv?: string; querykey?: string; query_key?: string } }
   const count = parseInt(data.esearchresult.count) || 0
   return {
     ...data.esearchresult,
     fullQuery,
+    query_key: data.esearchresult.query_key ?? data.esearchresult.querykey,
     queryTooBoard: count > QUERY_TOO_BROAD,
   }
 }
