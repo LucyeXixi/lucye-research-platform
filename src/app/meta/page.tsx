@@ -123,8 +123,13 @@ function parseNetwork(text: string): { nodes: NMANode[]; edges: NMAEdge[]; verdi
   nodes.forEach(n => { nodeIndex[n.label.toLowerCase()] = n.id })
 
   const edges: NMAEdge[] = []
+  // Support ">>" separator (primary) and "-" separator (fallback, but only when no ">>" present)
   edgesLine.split(/[,，]/).forEach(pair => {
-    const m = pair.trim().match(/^(.+?)-(.+?):(\d+)$/)
+    const t = pair.trim()
+    // Try "NodeA>>NodeB:count" first (avoids hyphenated drug name ambiguity)
+    let m = t.match(/^(.+?)>>(.+?):(\d+)$/)
+    // Fallback to "NodeA-NodeB:count" only when no ">>" found
+    if (!m) m = t.match(/^(.+)-([^-]+?):(\d+)$/)
     if (!m) return
     const [, a, b, n] = m
     const fromId = nodeIndex[a.trim().toLowerCase()]
@@ -327,12 +332,22 @@ P（人群）、I（干预/暴露）、C（对照）、O（结局）各一行说
 
       const networkSection = isNMA ? `
 
-最后在回复末尾附上网络图数据（严格按格式）：
+最后在回复末尾附上网络图数据（严格按以下格式，必须输出）：
 ===NETWORK===
-NODES: 干预A, 干预B, 干预C, 安慰剂（列出你识别到的所有干预节点）
-EDGES: 干预A-干预B:12, 干预A-安慰剂:20（格式：节点A-节点B:预估直接比较研究数）
+NODES: 干预A, 干预B, 干预C, 安慰剂
+EDGES: 干预A>>干预B:12, 干预A>>安慰剂:20
 VERDICT: RECOMMEND 或 CAUTION 或 AVOID
-===END===` : ''
+===END===
+
+网络图数据填写规则：
+1. NODES：列出你从样本标题中识别到的所有干预措施节点（名称尽量短，≤6字），以英文逗号分隔
+2. EDGES：格式严格为「节点名>>节点名:数字」，节点名必须与NODES完全一致（区分大小写），数字为预估直接比较研究数量；
+   - 请扫描样本文献标题中出现的"A vs B"、"A versus B"、"A compared to B"等字样，统计各比较对出现次数作为边的权重
+   - 每条边只写一次（不重复）
+3. VERDICT规则（严格按NMA标准）：
+   - RECOMMEND：网络连通（无孤立节点）+ 存在≥1个闭合环 + ≥3个节点有≥2条边
+   - CAUTION：网络连通但为纯星状（所有边只连到1个中心节点） 或 孤立节点≤1个
+   - AVOID：存在≥2个孤立节点 或 网络不连通 或 节点数<3` : ''
 
       const text = await chatCompletion([
         { role: 'system', content: '你是一位循证医学专家，评估 Meta 分析的可行性。回复使用中文，结构清晰，语言简洁专业。' },
@@ -363,7 +378,7 @@ ${isNMA ? `## 干预节点识别
 
 ## 综合建议
 2-3句话的综合评价，可行性打分（1-10分）。${networkSection}` },
-      ], { maxTokens: 1500 })
+      ], { maxTokens: 2000 })
 
       if (isNMA) {
         const { nodes, edges, verdict } = parseNetwork(text)
